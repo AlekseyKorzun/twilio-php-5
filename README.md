@@ -12,3 +12,7 @@ Features
 * Cleaner file structure
 * Single coding standard across all of the components
 * 100% phpDocumentator 2 code coverage
+
+Bugs & Feedback
+===========
+Feel free to reach me via e-mail al.ko@webfoundation.net

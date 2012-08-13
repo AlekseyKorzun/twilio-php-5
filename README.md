@@ -12,6 +12,7 @@ Features
 * Cleaner file structure
 * Single coding standard across all of the components
 * 100% phpDocumentator 2 code coverage
+* 100% PSR2 standard coverage
 
 Usage
 ===========

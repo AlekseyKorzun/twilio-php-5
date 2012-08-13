@@ -13,6 +13,11 @@ Features
 * Single coding standard across all of the components
 * 100% phpDocumentator 2 code coverage
 
+Usage
+===========
+* This package assumes that you have autoloader setup within your framework, if you do not feel free to use included composer.json. You will have to include generated outloader on top of Twilio.php
+* Default namespace is setup as Library and Library\Twilio, you can either manually change it or use included namespace.sh script to update it 
+
 Bugs & Feedback
 ===========
 Feel free to reach me via e-mail al.ko@webfoundation.net

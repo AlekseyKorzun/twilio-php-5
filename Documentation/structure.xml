@@ -1,0 +1,3608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a8" title="">
+  <file path="Twilio.php" hash="3f58c60cf3a86ef327076c2d9cc2a072" package="Default">
+    <namespace-alias name="Account">Maintenr\Library\Twilio\Api\Action\Account</namespace-alias>
+    <namespace-alias name="ResponseException">Maintenr\Library\Twilio\Api\Exception\Response</namespace-alias>
+    <namespace-alias name="Client">Maintenr\Library\Twilio\Client\Client</namespace-alias>
+    <namespace-alias name="TinyHttp">Maintenr\Library\Twilio\Client\TinyHttp</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library" line="15" package="Library\Twilio">
+      <extends/>
+      <name>Twilio</name>
+      <full_name>\Maintenr\Library\Twilio</full_name>
+      <docblock line="8">
+        <description><![CDATA[Twilio API client]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="8" name="package" description="Library"/>
+        <tag line="8" name="subpackage" description="Twilio"/>
+        <tag line="8" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <constant namespace="Maintenr\Library" line="22" package="Library\Twilio">
+        <name>API_URI</name>
+        <full_name>API_URI</full_name>
+        <value><![CDATA['https://api.twilio.com']]></value>
+        <docblock line="17">
+          <description><![CDATA[API end point]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="17" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Maintenr\Library" line="29" package="Library\Twilio">
+        <name>USER_AGENT</name>
+        <full_name>USER_AGENT</full_name>
+        <value><![CDATA['twilio-php5/1.0']]></value>
+        <docblock line="24">
+          <description><![CDATA[User agent requests will identify as]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="24" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="public" line="36" namespace="Maintenr\Library" package="Default">
+        <name>$account</name>
+        <default><![CDATA[]]></default>
+        <docblock line="31">
+          <description><![CDATA[Instance of Account resource]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="31" name="var" description="" type="\Maintenr\Library\Twilio\Api\Action\Account">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\Account</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="43" namespace="Maintenr\Library" package="Default">
+        <name>$_client</name>
+        <default><![CDATA[]]></default>
+        <docblock line="38">
+          <description><![CDATA[Instance of client]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="var" description="" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="50" namespace="Maintenr\Library" package="Default">
+        <name>$_version</name>
+        <default><![CDATA[]]></default>
+        <docblock line="45">
+          <description><![CDATA[Current API version]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="45" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="57" namespace="Maintenr\Library" package="Default">
+        <name>$_versions</name>
+        <default><![CDATA[array('2008-08-01', '2010-04-01')]]></default>
+        <docblock line="52">
+          <description><![CDATA[Known API versions]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library" line="68" package="Library\Twilio">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="59">
+          <description><![CDATA[Twilio seervice onstructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="param" description="account sid" type="string" variable="$identifier">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="59" name="param" description="OAuth token" type="string" variable="$token">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="59" name="param" description="API version" type="string" variable="$version">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="59" name="param" description="optional HTTP client" type="\Maintenr\Library\Twilio\Client\Client" variable="$client">
+            <type by_reference="false">\Maintenr\Library\Twilio\Client\Client</type>
+          </tag>
+          <tag line="59" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="68">
+          <name>$identifier</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="68">
+          <name>$token</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="68">
+          <name>$version</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="68">
+          <name>$client</name>
+          <default><![CDATA[null]]></default>
+          <type>\Maintenr\Library\Twilio\Client\Client</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library" line="97" package="Library\Twilio">
+        <name>version</name>
+        <full_name>version</full_name>
+        <docblock line="92">
+          <description><![CDATA[Get the API version used by the REST client]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="92" name="return" description="the API version in use" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library" line="110" package="Library\Twilio">
+        <name>retrieveData</name>
+        <full_name>retrieveData</full_name>
+        <docblock line="102">
+          <description><![CDATA[GET the resource at the specified path.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="param" description="uri to the resource" type="string" variable="$uri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="102" name="param" description="query string parameters" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="102" name="param" description="indicates if passed URI contains full path to the resource" type="bool" variable="$isFullUri">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="102" name="return" description="" type="\Maintenr\Library\stdClass|bool">
+            <type by_reference="false">\Maintenr\Library\stdClass</type>
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="110">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="110">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="110">
+          <name>$isFullUri</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library" line="122" package="Library\Twilio">
+        <name>deleteData</name>
+        <full_name>deleteData</full_name>
+        <docblock line="115">
+          <description><![CDATA[DELETE the resource at the specified path.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="115" name="param" description="uri to the resource" type="string" variable="$uri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="param" description="query string parameters" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="115" name="return" description="" type="\Maintenr\Library\stdClass|bool">
+            <type by_reference="false">\Maintenr\Library\stdClass</type>
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="122">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="122">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library" line="134" package="Library\Twilio">
+        <name>createData</name>
+        <full_name>createData</full_name>
+        <docblock line="127">
+          <description><![CDATA[POST to the resource at the specified path.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="127" name="param" description="uri to the resource" type="string" variable="$uri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="127" name="param" description="query string parameters" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="127" name="return" description="" type="\Maintenr\Library\stdClass|bool">
+            <type by_reference="false">\Maintenr\Library\stdClass</type>
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="134">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="134">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Maintenr\Library" line="148" package="Library\Twilio">
+        <name>_processResponse</name>
+        <full_name>_processResponse</full_name>
+        <docblock line="141">
+          <description><![CDATA[Convert the JSON encoded resource into a PHP object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="141" name="throws" description="" type="\Maintenr\Library\DomainException">
+            <type by_reference="false">\Maintenr\Library\DomainException</type>
+          </tag>
+          <tag line="141" name="param" description="3-tuple containing status, headers, and body" type="array" variable="$response">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="141" name="return" description="PHP object decoded from JSON" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="148">
+          <name>$response</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Maintenr\Library" line="173" package="Library\Twilio">
+        <name>_processJsonResponse</name>
+        <full_name>_processJsonResponse</full_name>
+        <docblock line="163">
+          <description><![CDATA[Process JSON response]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="163" name="throws" description="" type="\Maintenr\Library\DomainException">
+            <type by_reference="false">\Maintenr\Library\DomainException</type>
+          </tag>
+          <tag line="163" name="throws" description="" type="\Maintenr\Library\RestException">
+            <type by_reference="false">\Maintenr\Library\RestException</type>
+          </tag>
+          <tag line="163" name="param" description="response code" type="int" variable="$status">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="163" name="param" description="response headers" type="array" variable="$headers">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="163" name="param" description="response body" type="string" variable="$body">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="163" name="return" description="" type="\Maintenr\Library\stdClass|bool">
+            <type by_reference="false">\Maintenr\Library\stdClass</type>
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="173">
+          <name>$status</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="173">
+          <name>$headers</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="173">
+          <name>$body</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="Maintenr\Library" line="200" package="Library\Twilio">
+        <name>_getRequestUri</name>
+        <full_name>_getRequestUri</full_name>
+        <docblock line="191">
+          <description><![CDATA[Construct a URI based on initial path, query params, and paging
+information]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="191" name="param" description="uri to the resource" type="string" variable="$uri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="191" name="param" description="parameters to use with current request" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="191" name="param" description="indicates if passed URI contains full path to the resource" type="bool" variable="$isFullUri">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="191" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="200">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="200">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="200">
+          <name>$isFullUri</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library" line="217" package="Library\Twilio">
+        <name>_authenticate</name>
+        <full_name>_authenticate</full_name>
+        <docblock line="212">
+          <description><![CDATA[Authenticate with API]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="212" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Exception/Response.php" hash="cb2efae821b8e3e3390c0d42525f09b6" package="Default">
+    <namespace-alias name="Exception">Exception</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Exception" line="12" package="Library\Twilio\Api\Exception">
+      <extends>\Exception</extends>
+      <name>Response</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Exception\Response</full_name>
+      <docblock line="5">
+        <description><![CDATA[Exception handler for unsuccessful service responses]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Exception"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="19" namespace="Maintenr\Library\Twilio\Api\Exception" package="Default">
+        <name>$status</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Returned status]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="26" namespace="Maintenr\Library\Twilio\Api\Exception" package="Default">
+        <name>$info</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Additional information]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Exception" line="37" package="Library\Twilio\Api\Exception">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="28">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="returned status" type="string" variable="$status">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="param" description="returned message" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="param" description="returned code" type="int" variable="$code">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="28" name="param" description="additional information" type="string" variable="$info">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$status</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$code</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$info</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Exception" line="50" package="Library\Twilio\Api\Exception">
+        <name>getStatus</name>
+        <full_name>getStatus</full_name>
+        <docblock line="45">
+          <description><![CDATA[Retrieve status]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="45" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Exception" line="60" package="Library\Twilio\Api\Exception">
+        <name>getInfo</name>
+        <full_name>getInfo</full_name>
+        <docblock line="55">
+          <description><![CDATA[Retrieve information]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="55" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Exception/Response.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Conference.php" hash="befbdaba3b7e544db419f6ac578aba3f" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Conference</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Conference</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio conference resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Conference.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Notification/Notification.php" hash="6b986c3ac871938df27ec8a85ccbcf44" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Notification" line="12" package="Library\Twilio\Api\Action\Notification">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Notification</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Notification\Notification</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio notification instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Notification"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Notification/Notification.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Recording/Recording.php" hash="d6b4c06620d0a8c26262c36621956bfd" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Recording" line="12" package="Library\Twilio\Api\Action\Recording">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Recording</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Recording\Recording</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio recoding instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Recording"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Recording/Recording.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Transcription/Transcription.php" hash="49e04e1c9d17f8268169eeb11a8c775a" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Transcription" line="12" package="Library\Twilio\Api\Action\Transcription">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Transcription</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Transcription\Transcription</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio transcription instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Transcription"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Transcription/Transcription.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/SmsMessage.php" hash="ac9f2fabdec0faf606a04d6cf4462a18" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>SmsMessage</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\SmsMessage</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio SMS message resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api\Action" line="18" package="Library\Twilio\Api\Action">
+        <name>_init</name>
+        <full_name>_init</full_name>
+        <docblock line="13">
+          <description><![CDATA[Initializer]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="32" package="Library\Twilio\Api\Action">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="23">
+          <description><![CDATA[Method overwrite]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="phone number to send SMS from" type="string" variable="$from">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="phone number to send SMS to" type="string" variable="$to">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="message body" type="string" variable="$body">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="23" name="return" description="" type="\Maintenr\Library\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="32">
+          <name>$from</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="32">
+          <name>$to</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="32">
+          <name>$body</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="32">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/SmsMessage.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/ConnectApp.php" hash="4079037157095f065d39dbb0cacfb5ca" package="Default">
+    <namespace-alias name="BadMethodCallException">BadMethodCallException</namespace-alias>
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>ConnectApp</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\ConnectApp</full_name>
+      <docblock line="6">
+        <description><![CDATA[Twilio connect app resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="6" name="package" description="Library"/>
+        <tag line="6" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="23" package="Library\Twilio\Api\Action">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="15">
+          <description><![CDATA[Method overwrite]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="throws" description="" type="\BadMethodCallException">
+            <type by_reference="false">\BadMethodCallException</type>
+          </tag>
+          <tag line="15" name="param" description="" type="mixed" variable="$name">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="15" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="15" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="23">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ConnectApp.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/IncomingPhoneNumber/IncomingPhoneNumber.php" hash="bf6db6210f19370b38dbd17cbdb633c2" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\IncomingPhoneNumber" line="12" package="Library\Twilio\Api\Action\IncomingPhoneNumber">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>IncomingPhoneNumber</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\IncomingPhoneNumber\IncomingPhoneNumber</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio incoming phone number instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\IncomingPhoneNumber"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/IncomingPhoneNumber/IncomingPhoneNumber.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Account/Sandbox.php" hash="2dada5324b41900f6b9343b3549ee185" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Account" line="12" package="Library\Twilio\Api\Action\Account">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Sandbox</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Account\Sandbox</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio sandbox instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Account"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Account/Sandbox.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Account/Account.php" hash="5d49cc5e5eafadb307549fa56b7cc33a" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <namespace-alias name="Sandbox">Maintenr\Library\Twilio\Api\Action\Account\Sandbox</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Account" line="13" package="Library\Twilio\Api\Action\Account">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Account</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Account\Account</full_name>
+      <docblock line="6">
+        <description><![CDATA[Twilio account instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="6" name="package" description="Library"/>
+        <tag line="6" name="subpackage" description="Twilio\Api\Action\Account"/>
+        <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api\Action\Account" line="20" package="Library\Twilio\Api\Action\Account">
+        <name>_init</name>
+        <full_name>_init</full_name>
+        <docblock line="15">
+          <description><![CDATA[Initializer]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Account/Account.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Conference/Conference.php" hash="eb2330d698c668eff8d57c44268a55dc" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Conference" line="12" package="Library\Twilio\Api\Action\Conference">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Conference</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Conference\Conference</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio conference instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Conference"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api\Action\Conference" line="19" package="Library\Twilio\Api\Action\Conference">
+        <name>_init</name>
+        <full_name>_init</full_name>
+        <docblock line="14">
+          <description><![CDATA[Initializer]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Conference/Conference.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/AvailablePhoneNumber/Helper.php" hash="01b42a58fb16b4bd603c316ff7ef1eea" package="Default">
+    <namespace-alias name="Exception">Exception</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber" line="13" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+      <extends/>
+      <name>Helper</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</full_name>
+      <docblock line="5">
+        <description><![CDATA[Helper class to wrap an object with a modified interface created by
+a partial application of its existing methods.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\AvailablePhoneNumber"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="20" namespace="Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber" package="Default">
+        <name>$_callbacks</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="15">
+          <description><![CDATA[Storage for our call back methods]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber" line="30" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+        <name>set</name>
+        <full_name>set</full_name>
+        <docblock line="22">
+          <description><![CDATA[Set-up a new call back method for internal storage]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="param" description="name of internal method" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="22" name="param" description="function that we should associate with internal call back" type="string" variable="$callback">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="22" name="param" description="additional arguments" type="array" variable="$arguments">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="22" name="return" description="" type="bool|void">
+            <type by_reference="false">bool</type>
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="30">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="30">
+          <name>$callback</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="30">
+          <name>$arguments</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber" line="49" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+        <name>__call</name>
+        <full_name>__call</full_name>
+        <docblock line="40">
+          <description><![CDATA[Magic call wrapper that checks against internal callback storage for
+requested methods]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+          <tag line="40" name="param" description="method that user is attempting to call" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="param" description="optional additional arguments" type="array" variable="$arguments">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="40" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$arguments</name>
+          <default><![CDATA[null]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AvailablePhoneNumber/Helper.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/AvailablePhoneNumber/AvailablePhoneNumber.php" hash="2355fc0f3f375fff26f95e832533c1a3" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber" line="12" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>AvailablePhoneNumber</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber\AvailablePhoneNumber</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio available phone number instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\AvailablePhoneNumber"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AvailablePhoneNumber/AvailablePhoneNumber.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Account.php" hash="1e75c0ecb88e79db69fd8af5201e35dd" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Account</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Account</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio account resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Account.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Application.php" hash="2cad1c2b0e0a4baef29aa92cb1059ab2" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Application</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Application</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio application resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="21" package="Library\Twilio\Api\Action">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="14">
+          <description><![CDATA[Method overwrite]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="14" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="14" name="return" description="" type="\Maintenr\Library\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="21">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Application.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/AuthorizedConnectApp/AuthorizedConnectApp.php" hash="559e1ba5a8db62b25c277de169bb352d" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\AuthorizedConnectApp" line="12" package="Library\Twilio\Api\Action\AuthorizedConnectApp">
+      <extends>\Maintenr\Library\Twilio\Resource\Instance</extends>
+      <name>AuthorizedConnectApp</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\AuthorizedConnectApp\AuthorizedConnectApp</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio authorized connect application instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\AuthorizedConnectApp"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AuthorizedConnectApp/AuthorizedConnectApp.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/AvailablePhoneNumber.php" hash="74763517994bf5b8a2ba7b5520ab1e47" package="Default">
+    <namespace-alias name="Helper">Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</namespace-alias>
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>AvailablePhoneNumber</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber</full_name>
+      <docblock line="6">
+        <description><![CDATA[Twilio available phone number resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="6" name="package" description="Library"/>
+        <tag line="6" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <constant namespace="Maintenr\Library\Twilio\Api\Action" line="20" package="Library\Twilio\Api\Action">
+        <name>TYPE_LOCAL</name>
+        <full_name>TYPE_LOCAL</full_name>
+        <value><![CDATA['Local']]></value>
+        <docblock line="15">
+          <description><![CDATA[Local number identifier]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Maintenr\Library\Twilio\Api\Action" line="27" package="Library\Twilio\Api\Action">
+        <name>TYPE_TOLL_FREE</name>
+        <full_name>TYPE_TOLL_FREE</full_name>
+        <value><![CDATA['TollFree']]></value>
+        <docblock line="22">
+          <description><![CDATA[Toll free number identifier]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="36" package="Library\Twilio\Api\Action">
+        <name>getLocal</name>
+        <full_name>getLocal</full_name>
+        <docblock line="29">
+          <description><![CDATA[Get local numbers]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="param" description="country The 2-digit country code you'd like to search for numbers e.g. ('US', 'CA', 'GB')" type="string" variable="$country">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="29" name="return" description="" type="\Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</type>
+          </tag>
+        </docblock>
+        <argument line="36">
+          <name>$country</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="54" package="Library\Twilio\Api\Action">
+        <name>getTollFree</name>
+        <full_name>getTollFree</full_name>
+        <docblock line="47">
+          <description><![CDATA[Get toll free numbers]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="param" description="country The 2-digit country code you'd like to search for numbers e.g. ('US', 'CA', 'GB')" type="string" variable="$country">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="47" name="return" description="" type="\Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</type>
+          </tag>
+        </docblock>
+        <argument line="54">
+          <name>$country</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="74" package="Library\Twilio\Api\Action">
+        <name>getList</name>
+        <full_name>getList</full_name>
+        <docblock line="65">
+          <description><![CDATA[Get a list of all available phone numbers.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="65" name="param" description="country The 2-digit country code you'd like to search for numbers e.g. ('US', 'CA', 'GB')" type="string" variable="$country">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="65" name="param" description="type number type" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="65" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="65" name="return" description="" type="\Maintenr\Library\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="74">
+          <name>$country</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="74">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="74">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="84" package="Library\Twilio\Api\Action">
+        <name>getResourceName</name>
+        <full_name>getResourceName</full_name>
+        <docblock line="79">
+          <description><![CDATA[Get resource name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="79" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AvailablePhoneNumber.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Notification.php" hash="86a6d29c828d010d26d4036f509ee4ea" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Notification</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Notification</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio notification resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Notification.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Application/Application.php" hash="6fbe897451055950f13b0166c5afb84d" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Application" line="12" package="Library\Twilio\Api\Action\Application">
+      <extends>\Maintenr\Library\Twilio\Resource\Instance</extends>
+      <name>Application</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Application\Application</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio application instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Application"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Application/Application.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/ShortCode.php" hash="873298775afd756ddb10fd3d03bc7914" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>ShortCode</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\ShortCode</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio short code resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ShortCode.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Participant/Participant.php" hash="9f26f214d1487d7987e948cf0d09dfa7" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Participant" line="12" package="Library\Twilio\Api\Action\Participant">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Participant</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Participant\Participant</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio participant instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Participant"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action\Participant" line="19" package="Library\Twilio\Api\Action\Participant">
+        <name>mute</name>
+        <full_name>mute</full_name>
+        <docblock line="14">
+          <description><![CDATA[Mute participant]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Participant/Participant.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/ConnectApp/ConnectApp.php" hash="22ac954c6ee6f24e04c5202874296139" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\ConnectApp" line="12" package="Library\Twilio\Api\Action\ConnectApp">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>ConnectApp</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\ConnectApp\ConnectApp</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio connect application instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\ConnectApp"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ConnectApp/ConnectApp.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Call/Call.php" hash="7bcce048c7ac2f1b1e1449a5a6b2ed74" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\Call" line="12" package="Library\Twilio\Api\Action\Call">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>Call</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Call\Call</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio call instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\Call"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api\Action\Call" line="19" package="Library\Twilio\Api\Action\Call">
+        <name>_init</name>
+        <full_name>_init</full_name>
+        <docblock line="14">
+          <description><![CDATA[Initializer]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action\Call" line="32" package="Library\Twilio\Api\Action\Call">
+        <name>hangup</name>
+        <full_name>hangup</full_name>
+        <docblock line="27">
+          <description><![CDATA[Hang up the call]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="27" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action\Call" line="43" package="Library\Twilio\Api\Action\Call">
+        <name>route</name>
+        <full_name>route</full_name>
+        <docblock line="37">
+          <description><![CDATA[Route call]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="param" description="" type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$url</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Call/Call.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Call.php" hash="eb10eef06c07b1e849468186526c721c" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Call</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Call</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio call resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="20" package="Library\Twilio\Api\Action">
+        <name>isApplicationSid</name>
+        <full_name>isApplicationSid</full_name>
+        <docblock line="14">
+          <description><![CDATA[Check if application SID is valid]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="param" description="application serial identifier" type="\Maintenr\Library\Twilio\Api\Action\$id" variable="$id">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\$id</type>
+          </tag>
+          <tag line="14" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="20">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="34" package="Library\Twilio\Api\Action">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="25">
+          <description><![CDATA[Create method overwrite]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="param" description="number you are calling from" type="string" variable="$from">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="25" name="param" description="number you are calling to" type="string" variable="$to">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="25" name="param" description="url or application serial identifier" type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="25" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="25" name="return" description="" type="\Maintenr\Library\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$from</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="34">
+          <name>$to</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="34">
+          <name>$url</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="34">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Call.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/AuthorizedConnectApp.php" hash="4cc0fa590449b84baa19f8584a5650ec" package="Default">
+    <namespace-alias name="BadMethodCallException">BadMethodCallException</namespace-alias>
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>AuthorizedConnectApp</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\AuthorizedConnectApp</full_name>
+      <docblock line="6">
+        <description><![CDATA[Twilio authorized connect application resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="6" name="package" description="Library"/>
+        <tag line="6" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="23" package="Library\Twilio\Api\Action">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="15">
+          <description><![CDATA[Method overwrite]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="throws" description="" type="\BadMethodCallException">
+            <type by_reference="false">\BadMethodCallException</type>
+          </tag>
+          <tag line="15" name="param" description="" type="mixed" variable="$name">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="15" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="15" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="23">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AuthorizedConnectApp.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Recording.php" hash="3a84435aabe0a871ae691e4d3fa9d131" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Recording</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Recording</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio recording resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Recording.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/ShortCode/ShortCode.php" hash="bdcf046eff2b5d4eb9ba943fd629939a" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\ShortCode" line="12" package="Library\Twilio\Api\Action\ShortCode">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>ShortCode</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\ShortCode\ShortCode</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio short code instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\ShortCode"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ShortCode/ShortCode.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/OutgoingCallerId/OutgoingCallerId.php" hash="029d4d00550d4c3819184c380294afa5" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\OutgoingCallerId" line="12" package="Library\Twilio\Api\Action\OutgoingCallerId">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>OutgoingCallerId</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\OutgoingCallerId\OutgoingCallerId</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio outgoing caller id instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\OutgoingCallerId"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/OutgoingCallerId/OutgoingCallerId.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/SmsMessage/SmsMessage.php" hash="04ae2e2d90bf428cd2f85ef6225a16a8" package="Default">
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action\SmsMessage" line="12" package="Library\Twilio\Api\Action\SmsMessage">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Instance</extends>
+      <name>SmsMessage</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\SmsMessage\SmsMessage</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio SMS message instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action\SmsMessage"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/SmsMessage/SmsMessage.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Transcription.php" hash="40f4dafd59a6a7418611e12aec07b9ed" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Transcription</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Transcription</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio transcription resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Transcription.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/OutgoingCallerId.php" hash="c6f3d0ae6394325b47cf72ab1e544342" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>OutgoingCallerId</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\OutgoingCallerId</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio outgoing caller id resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Action" line="21" package="Library\Twilio\Api\Action">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="14">
+          <description><![CDATA[Method overwrite]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="param" description="" type="string" variable="$phoneNumber">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="14" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="14" name="return" description="" type="\Maintenr\Library\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Action\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$phoneNumber</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="21">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/OutgoingCallerId.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/Participant.php" hash="a05c6999213bacc0152a2e23fbc5ecef" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>Participant</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\Participant</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio participants resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Participant.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Action/IncomingPhoneNumber.php" hash="2b86bdd894ff3428fac4de7a4eccc8f6" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Action" line="12" package="Library\Twilio\Api\Action">
+      <extends>\Maintenr\Library\Twilio\Api\Resource\Listing</extends>
+      <name>IncomingPhoneNumber</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Action\IncomingPhoneNumber</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio incoming phone number resource]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Action"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/IncomingPhoneNumber.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Resource/Listing/Page.php" hash="124293f215c915c57ec898fbe57ce1cc" package="Default">
+    <namespace-alias name="IteratorAggregate">IteratorAggregate</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="12" package="Library\Twilio\Api\Resource\Listing">
+      <extends/>
+      <implements>\IteratorAggregate</implements>
+      <name>Page</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Resource\Listing\Page</full_name>
+      <docblock line="5">
+        <description><![CDATA[Page containing items]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Resource\Listing"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="18" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_page</name>
+        <default><![CDATA[]]></default>
+        <docblock line="13">
+          <description><![CDATA[Page]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="25" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_items</name>
+        <default><![CDATA[]]></default>
+        <docblock line="20">
+          <description><![CDATA[List of items within this page]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="20" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="32" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_nextUri</name>
+        <default><![CDATA[]]></default>
+        <docblock line="27">
+          <description><![CDATA[Storage for URI for the next page]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="27" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="42" package="Library\Twilio\Api\Resource\Listing">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="34">
+          <description><![CDATA[Class constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="param" description="object returned from server" type="object" variable="$page">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="34" name="param" description="key of the item list" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="34" name="param" description="" type="string" variable="$nextUri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="34" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="42">
+          <name>$page</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="42">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="42">
+          <name>$nextUri</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="55" package="Library\Twilio\Api\Resource\Listing">
+        <name>items</name>
+        <full_name>items</full_name>
+        <docblock line="50">
+          <description><![CDATA[The item list of the page]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="return" description="items" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="66" package="Library\Twilio\Api\Resource\Listing">
+        <name>__get</name>
+        <full_name>__get</full_name>
+        <docblock line="60">
+          <description><![CDATA[Magic method to allow retrieving the properties of the wrapped page.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="60" name="param" description="name of the property to retrieve" type="string" variable="$property">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="60" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="66">
+          <name>$property</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="76" package="Library\Twilio\Api\Resource\Listing">
+        <name>getIterator</name>
+        <full_name>getIterator</full_name>
+        <docblock line="71">
+          <description><![CDATA[Implementation of IteratorAggregate::getIterator().]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Listing/Page.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Resource/Listing/Paginator.php" hash="9f370773c5c3b80a36bb11b9626483fe" package="Default">
+    <namespace-alias name="Iterator">Iterator</namespace-alias>
+    <namespace-alias name="BadMethodCallException">BadMethodCallException</namespace-alias>
+    <namespace-alias name="ResponseException">Maintenr\Library\Twilio\Api\Exception\Response</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="14" package="Library\Twilio\Api\Resource\Listing">
+      <extends/>
+      <implements>\Iterator</implements>
+      <name>Paginator</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Resource\Listing\Paginator</full_name>
+      <docblock line="7">
+        <description><![CDATA[Paginator for pages returned via API results]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="7" name="package" description="Library"/>
+        <tag line="7" name="subpackage" description="Twilio\Api\Resource\Listing"/>
+        <tag line="7" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <constant namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="21" package="Library\Twilio\Api\Resource\Listing">
+        <name>DEFAULT_PAGE_SIZE</name>
+        <full_name>DEFAULT_PAGE_SIZE</full_name>
+        <value><![CDATA[50]]></value>
+        <docblock line="16">
+          <description><![CDATA[Default size of pages]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="16" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="28" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_items</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="23">
+          <description><![CDATA[Current items]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="35" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_page</name>
+        <default><![CDATA[]]></default>
+        <docblock line="30">
+          <description><![CDATA[Current page]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="42" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_size</name>
+        <default><![CDATA[]]></default>
+        <docblock line="37">
+          <description><![CDATA[Current page size]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="49" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_filters</name>
+        <default><![CDATA[]]></default>
+        <docblock line="44">
+          <description><![CDATA[Filters]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="56" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_generator</name>
+        <default><![CDATA[]]></default>
+        <docblock line="51">
+          <description><![CDATA[Method to generate pages]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="var" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="63" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_snapshot</name>
+        <default><![CDATA[]]></default>
+        <docblock line="58">
+          <description><![CDATA[Snapshot of current state]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="71" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" package="Default">
+        <name>$_nextUri</name>
+        <default><![CDATA[]]></default>
+        <docblock line="65">
+          <description><![CDATA[Storage for URI for the next page returned via generator for
+each iteration]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="65" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="82" package="Library\Twilio\Api\Resource\Listing">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="73">
+          <description><![CDATA[Class constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="param" description="" type="mixed" variable="$generator">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="73" name="param" description="" type="int" variable="$page">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="73" name="param" description="" type="int" variable="$size">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="73" name="param" description="" type="array" variable="$filters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="73" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="82">
+          <name>$generator</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="82">
+          <name>$page</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="82">
+          <name>$size</name>
+          <default><![CDATA[self::DEFAULT_PAGE_SIZE]]></default>
+          <type/>
+        </argument>
+        <argument line="82">
+          <name>$filters</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="102" package="Library\Twilio\Api\Resource\Listing">
+        <name>current</name>
+        <full_name>current</full_name>
+        <docblock line="97">
+          <description><![CDATA[Current item]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="97" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="112" package="Library\Twilio\Api\Resource\Listing">
+        <name>key</name>
+        <full_name>key</full_name>
+        <docblock line="107">
+          <description><![CDATA[Current key]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="107" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="123" package="Library\Twilio\Api\Resource\Listing">
+        <name>next</name>
+        <full_name>next</full_name>
+        <docblock line="117">
+          <description><![CDATA[Return the next item in the list, making another HTTP call to the next
+page of resources if necessary.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="117" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="135" package="Library\Twilio\Api\Resource\Listing">
+        <name>rewind</name>
+        <full_name>rewind</full_name>
+        <docblock line="129">
+          <description><![CDATA[Restore everything to the way it was before we began paging.]]></description>
+          <long-description><![CDATA[<p>This gets
+called at the beginning of any foreach() loop</p>]]></long-description>
+          <tag line="129" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="153" package="Library\Twilio\Api\Resource\Listing">
+        <name>count</name>
+        <full_name>count</full_name>
+        <docblock line="147">
+          <description><![CDATA[Disable build in method by overwriting it]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="147" name="throws" description="" type="\BadMethodCallException">
+            <type by_reference="false">\BadMethodCallException</type>
+          </tag>
+          <tag line="147" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="163" package="Library\Twilio\Api\Resource\Listing">
+        <name>valid</name>
+        <full_name>valid</full_name>
+        <docblock line="158">
+          <description><![CDATA[Overwrites default method to check if current position is valid]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="158" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api\Resource\Listing" line="177" package="Library\Twilio\Api\Resource\Listing">
+        <name>_loadIfNecessary</name>
+        <full_name>_loadIfNecessary</full_name>
+        <docblock line="172">
+          <description><![CDATA[Fill $this->items with a new page from the API, if necessary.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="172" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Listing/Paginator.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Resource/Listing.php" hash="b3b1292961830dd162a12ef721a51538" package="Default">
+    <namespace-alias name="IteratorAggregate">IteratorAggregate</namespace-alias>
+    <namespace-alias name="Resource">Maintenr\Library\Twilio\Api\Resource</namespace-alias>
+    <namespace-alias name="Instance">Maintenr\Library\Twilio\Api\Resource\Instance</namespace-alias>
+    <namespace-alias name="Page">Maintenr\Library\Twilio\Api\Resource\Listing\Page</namespace-alias>
+    <namespace-alias name="Paginator">Maintenr\Library\Twilio\Api\Resource\Listing\Paginator</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Resource" line="16" package="Library\Twilio\Api\Resource">
+      <extends>\Maintenr\Library\Twilio\Api\Resource</extends>
+      <implements>\IteratorAggregate</implements>
+      <name>Listing</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Resource\Listing</full_name>
+      <docblock line="9">
+        <description><![CDATA[Abstrresource of a list resource from the Twilio API]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="9" name="package" description="Library"/>
+        <tag line="9" name="subpackage" description="Twilio\Api\Resource"/>
+        <tag line="9" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="23" package="Library\Twilio\Api\Resource">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="18">
+          <description><![CDATA[Class constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="38" package="Library\Twilio\Api\Resource">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="32">
+          <description><![CDATA[Gets a resource from this list.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="param" description="resource identifier" type="string" variable="$identifier">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="32" name="return" description="" type="\Maintenr\Library\Twilio\Api\Resource\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Resource\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$identifier</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="52" package="Library\Twilio\Api\Resource">
+        <name>getObjectFromJson</name>
+        <full_name>getObjectFromJson</full_name>
+        <docblock line="46">
+          <description><![CDATA[Construct an InstanceResource with the specified params.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="46" name="param" description="usually a JSON HTTP response from the API" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="46" name="return" description="" type="\Maintenr\Library\Twilio\Api\Resource\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Resource\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="52">
+          <name>$parameters</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="72" package="Library\Twilio\Api\Resource">
+        <name>delete</name>
+        <full_name>delete</full_name>
+        <docblock line="65">
+          <description><![CDATA[Deletes a resource from this list.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="65" name="param" description="resource identifier" type="string" variable="$identifier">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="65" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="65" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="72">
+          <name>$identifier</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="72">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api\Resource" line="84" package="Library\Twilio\Api\Resource">
+        <name>_create</name>
+        <full_name>_create</full_name>
+        <docblock line="77">
+          <description><![CDATA[Create a resource on the list and then return its representation as an
+InstanceResource.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="77" name="param" description="The parameters with which to create the resource" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="77" name="return" description="" type="\Maintenr\Library\Twilio\Api\Resource\Instance">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Resource\Instance</type>
+          </tag>
+        </docblock>
+        <argument line="84">
+          <name>$parameters</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="108" package="Library\Twilio\Api\Resource">
+        <name>getPage</name>
+        <full_name>getPage</full_name>
+        <docblock line="98">
+          <description><![CDATA[Returns a page of InstanceResources from this list.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="98" name="param" description="start page" type="int" variable="$page">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="98" name="param" description="number of items per page" type="int" variable="$size">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="98" name="param" description="optional filters" type="array" variable="$filters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="98" name="param" description="if provided, the $page and $size parameters will be ignored and this URI will be requested directly." type="string" variable="$pagingUri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="98" name="return" description="" type="\Maintenr\Library\Twilio\Api\Resource\Listing\Page">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Resource\Listing\Page</type>
+          </tag>
+        </docblock>
+        <argument line="108">
+          <name>$page</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="108">
+          <name>$size</name>
+          <default><![CDATA[\Maintenr\Library\Twilio\Api\Resource\Listing\Paginator::DEFAULT_PAGE_SIZE]]></default>
+          <type/>
+        </argument>
+        <argument line="108">
+          <name>$filters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="108">
+          <name>$pagingUri</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="154" package="Library\Twilio\Api\Resource">
+        <name>paginator</name>
+        <full_name>paginator</full_name>
+        <docblock line="137">
+          <description><![CDATA[Returns an iterable list of InstanceResources]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="137" name="param" description="start page" type="int" variable="$page">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="137" name="param" description="number of items per page" type="int" variable="$size">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="137" name="param" description="optional filters The filter array can accept full datetimes when StartTime or DateCreated are used. Inequalities should be within the key portion of the array and multiple filter parameters can be combined for more specific searches. eg. array('DateCreated&gt;' =&gt; '2011-07-05 08:00:00', 'DateCreated&lt;' =&gt; '2011-08-01') or array('StartTime&lt;' =&gt; '2011-07-05 08:00:00')" type="array" variable="$filters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="137" name="return" description="" type="\Maintenr\Library\Twilio\Api\Resource\Listing\Paginator">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Resource\Listing\Paginator</type>
+          </tag>
+        </docblock>
+        <argument line="154">
+          <name>$page</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="154">
+          <name>$size</name>
+          <default><![CDATA[\Maintenr\Library\Twilio\Api\Resource\Listing\Paginator::DEFAULT_PAGE_SIZE]]></default>
+          <type/>
+        </argument>
+        <argument line="154">
+          <name>$filters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="167" package="Library\Twilio\Api\Resource">
+        <name>getIterator</name>
+        <full_name>getIterator</full_name>
+        <docblock line="161">
+          <description><![CDATA[Implementing placeholder method for IteratorAggregate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="161" name="see" description="\IteratorAggregate" refers="\IteratorAggregate"/>
+          <tag line="161" name="return" description="" type="\Maintenr\Library\Twilio\Api\Resource\Listing\Paginator">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Resource\Listing\Paginator</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Listing.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Resource/Instance.php" hash="175ed5f75866cb46c2836e559a257346" package="Default">
+    <namespace-alias name="Resource">Maintenr\Library\Twilio\Api\Resource</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api\Resource" line="12" package="Library\Twilio\Api\Resource">
+      <extends>\Maintenr\Library\Twilio\Api\Resource</extends>
+      <name>Instance</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Resource\Instance</full_name>
+      <docblock line="5">
+        <description><![CDATA[Abstraction of an instance resource from the Twilio API.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api\Resource"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="19" namespace="Maintenr\Library\Twilio\Api\Resource" package="Default">
+        <name>$_isInitialized</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="14">
+          <description><![CDATA[Flag that indicates that instance was already initialized]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="28" package="Library\Twilio\Api\Resource">
+        <name>update</name>
+        <full_name>update</full_name>
+        <docblock line="21">
+          <description><![CDATA[Update instance parameters]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="param" description="array of updates, or a property name" type="mixed" variable="$parameters">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="21" name="param" description="a value with which to update the resource" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="21" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="28">
+          <name>$parameters</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$value</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="44" package="Library\Twilio\Api\Resource">
+        <name>updateAttributes</name>
+        <full_name>updateAttributes</full_name>
+        <docblock line="37">
+          <description><![CDATA[Add all properties from an associative array (the JSON response body) as
+properties on this instance resource]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="param" description="" type="mixed" variable="$parameters">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="37" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="44">
+          <name>$parameters</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api\Resource" line="64" package="Library\Twilio\Api\Resource">
+        <name>__get</name>
+        <full_name>__get</full_name>
+        <docblock line="53">
+          <description><![CDATA[Get the value of a property on this resource.]]></description>
+          <long-description><![CDATA[<p>To help with lazy HTTP requests, we don't actually retrieve an object
+from the API unless you really need it. Hence, this function may make
+API requests if the property you're requesting isn't available on the
+resource.</p>]]></long-description>
+          <tag line="53" name="param" description="property name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="64">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api\Resource" line="90" package="Library\Twilio\Api\Resource">
+        <name>_initialize</name>
+        <full_name>_initialize</full_name>
+        <docblock line="85">
+          <description><![CDATA[Initialize instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="85" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Instance.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Api/Resource.php" hash="9dfdd07b8a7dd7281e084efa38fc3e81" package="Default">
+    <namespace-alias name="Listing">Maintenr\Library\Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Api" line="12" package="Library\Twilio\Api">
+      <extends/>
+      <name>Resource</name>
+      <full_name>\Maintenr\Library\Twilio\Api\Resource</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twilio API resource handler]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Api"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <property final="false" static="true" visibility="protected" line="19" namespace="Maintenr\Library\Twilio\Api" package="Default">
+        <name>$_client</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Instance of client]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="\Maintenr\Library\Twilio\Api\Client">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Client</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="26" namespace="Maintenr\Library\Twilio\Api" package="Default">
+        <name>$_resource</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Resource instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="33" namespace="Maintenr\Library\Twilio\Api" package="Default">
+        <name>$_actions</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="28">
+          <description><![CDATA[Storage of sub resources a resource might have]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="40" namespace="Maintenr\Library\Twilio\Api" package="Default">
+        <name>$_uri</name>
+        <default><![CDATA[]]></default>
+        <docblock line="35">
+          <description><![CDATA[Resource URI]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api" line="48" package="Library\Twilio\Api">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="42">
+          <description><![CDATA[Class constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="42" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="42" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api" line="62" package="Library\Twilio\Api">
+        <name>uri</name>
+        <full_name>uri</full_name>
+        <docblock line="57">
+          <description><![CDATA[Retrieve currently set URI]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api" line="74" package="Library\Twilio\Api">
+        <name>setUri</name>
+        <full_name>setUri</full_name>
+        <docblock line="67">
+          <description><![CDATA[Set new URI]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="67" name="param" description="new address" type="string" variable="$uri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="param" description="optional action end point to append" type="bool|string" variable="$action">
+            <type by_reference="false">bool</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="74">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="74">
+          <name>$action</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Api" line="87" package="Library\Twilio\Api">
+        <name>client</name>
+        <full_name>client</full_name>
+        <docblock line="82">
+          <description><![CDATA[Retrieve instance of a client]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="82" name="return" description="" type="\Maintenr\Library\Twilio\Api\Client">
+            <type by_reference="false">\Maintenr\Library\Twilio\Api\Client</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Api" line="98" package="Library\Twilio\Api">
+        <name>setClient</name>
+        <full_name>setClient</full_name>
+        <docblock line="92">
+          <description><![CDATA[Set a new client]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="92" name="param" description="" type="object" variable="$client">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="92" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="98">
+          <name>$client</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Api" line="109" package="Library\Twilio\Api">
+        <name>getActions</name>
+        <full_name>getActions</full_name>
+        <docblock line="103">
+          <description><![CDATA[Retrieve sub-resources]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="103" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$name</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Api" line="125" package="Library\Twilio\Api">
+        <name>_setupActions</name>
+        <full_name>_setupActions</full_name>
+        <docblock line="120">
+          <description><![CDATA[Setup sub-resources]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="120" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Client/Exception/TinyHttp.php" hash="a9e9b3fbc0a53ebbe8d3be38da1cdf61" package="Default">
+    <namespace-alias name="ErrorException">ErrorException</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Client\Exception" line="12" package="Library\Twilio\Client\Exception">
+      <extends>\ErrorException</extends>
+      <name>TinyHttp</name>
+      <full_name>\Maintenr\Library\Twilio\Client\Exception\TinyHttp</full_name>
+      <docblock line="5">
+        <description><![CDATA[Exception handler for TinyHttp client]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Client\Exception"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Client/Exception/TinyHttp.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Client/TinyHttp.php" hash="fba372b8eed0c312889abcc267484adb" package="Default">
+    <namespace-alias name="TinyHttpException">Maintenr\Library\Twilio\Client\Exception\TinyHttp</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Client" line="12" package="Library\Twilio\Client">
+      <extends>\Maintenr\Library\Twilio\Client\Client</extends>
+      <name>TinyHttp</name>
+      <full_name>\Maintenr\Library\Twilio\Client\TinyHttp</full_name>
+      <docblock line="5">
+        <description><![CDATA[TinyHttp client]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Client"/>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="19" namespace="Maintenr\Library\Twilio\Client" package="Default">
+        <name>$scheme</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[URI Scheme (http/https/ftp/etc)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="26" namespace="Maintenr\Library\Twilio\Client" package="Default">
+        <name>$host</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Host of the remote server we are attempting to send request to]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="33" namespace="Maintenr\Library\Twilio\Client" package="Default">
+        <name>$port</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[Port of the remote server we are attempting to send request to]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Client" line="42" package="Library\Twilio\Client">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="35">
+          <description><![CDATA[Constructor that setups basic options]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="param" description="" type="string|bool" variable="$uri">
+            <type by_reference="false">string</type>
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="35" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="35" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="42">
+          <name>$uri</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+        <argument line="42">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Client" line="76" package="Library\Twilio\Client">
+        <name>__call</name>
+        <full_name>__call</full_name>
+        <docblock line="68">
+          <description><![CDATA[Magic call method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="68" name="throws" description="" type="\Maintenr\Library\Twilio\Client\TinyHttp_Exception">
+            <type by_reference="false">\Maintenr\Library\Twilio\Client\TinyHttp_Exception</type>
+          </tag>
+          <tag line="68" name="param" description="" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="68" name="param" description="" type="array" variable="$arguments">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="68" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$arguments</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Client/TinyHttp.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Client/Client.php" hash="7213121dca50e72557d22be6630e51ca" package="Default">
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Client" line="11" package="Library\Twilio\Client">
+      <extends/>
+      <name>Client</name>
+      <full_name>\Maintenr\Library\Twilio\Client\Client</full_name>
+      <docblock line="4">
+        <description><![CDATA[Abstract client class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="4" name="package" description="Library"/>
+        <tag line="4" name="subpackage" description="Twilio\Client"/>
+        <tag line="4" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+      </docblock>
+      <constant namespace="Maintenr\Library\Twilio\Client" line="19" package="Library\Twilio\Client">
+        <name>TIMEOUT</name>
+        <full_name>TIMEOUT</full_name>
+        <value><![CDATA[60]]></value>
+        <docblock line="13">
+          <description><![CDATA[Default connection time out in seconds, adjust if you are connecting
+to a local network or have a slow up-link]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="26" namespace="Maintenr\Library\Twilio\Client" package="Default">
+        <name>$_identifier</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Secure identifier to use when prompted for authentication]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="33" namespace="Maintenr\Library\Twilio\Client" package="Default">
+        <name>$_token</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[Token to use when prompted for authentication]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="40" namespace="Maintenr\Library\Twilio\Client" package="Default">
+        <name>$_options</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="35">
+          <description><![CDATA[Various options for cURL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="47" namespace="Maintenr\Library\Twilio\Client" package="Default">
+        <name>$_isDebug</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="42">
+          <description><![CDATA[Debugging switch]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="42" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Client" line="56" package="Library\Twilio\Client">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="49">
+          <description><![CDATA[Constructor that setups basic options]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="49" name="param" description="" type="string|bool" variable="$uri">
+            <type by_reference="false">string</type>
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="49" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="49" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="56">
+          <name>$uri</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+        <argument line="56">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Client" line="66" package="Library\Twilio\Client">
+        <name>__call</name>
+        <full_name>__call</full_name>
+        <docblock line="58">
+          <description><![CDATA[Magic call method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="throws" description="" type="\Maintenr\Library\Twilio\Client\TinyHttp_Exception">
+            <type by_reference="false">\Maintenr\Library\Twilio\Client\TinyHttp_Exception</type>
+          </tag>
+          <tag line="58" name="param" description="" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="58" name="param" description="" type="array" variable="$arguments">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="58" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="66">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="66">
+          <name>$arguments</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Client" line="73" package="Library\Twilio\Client">
+        <name>identifier</name>
+        <full_name>identifier</full_name>
+        <docblock line="68">
+          <description><![CDATA[Get identifier we use for authentication]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="68" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Client" line="84" package="Library\Twilio\Client">
+        <name>setIdentifier</name>
+        <full_name>setIdentifier</full_name>
+        <docblock line="78">
+          <description><![CDATA[Set identifier to use when making a request that requires authentication]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="param" description="" type="string" variable="$identifier">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="78" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="84">
+          <name>$identifier</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Client" line="95" package="Library\Twilio\Client">
+        <name>setToken</name>
+        <full_name>setToken</full_name>
+        <docblock line="89">
+          <description><![CDATA[Set token to use when making a request that requires authentication]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="89" name="param" description="" type="string" variable="$token">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="89" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="95">
+          <name>$token</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Client/Client.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Utility/Capability/Scope.php" hash="dfc532e285194d7821733e58248c37e9" package="Default">
+    <namespace-alias name="UnexpectedValueException">UnexpectedValueException</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Utility\Capability" line="20" package="Library\Twilio\Utility\Capability">
+      <extends/>
+      <name>Scope</name>
+      <full_name>\Maintenr\Library\Twilio\Utility\Capability\Scope</full_name>
+      <docblock line="5">
+        <description><![CDATA[Scope URI implementation]]></description>
+        <long-description><![CDATA[<p>Simple way to represent configurable privileges in an OAuth
+friendly way. For our case, they look like this:</p>
+
+<p>scope:<service>:<privilege>?<params></p>
+
+<p>For example:
+scope:client:incoming?name=jonas</p>]]></long-description>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Utility\Capability"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="27" namespace="Maintenr\Library\Twilio\Utility\Capability" package="Default">
+        <name>$service</name>
+        <default><![CDATA[]]></default>
+        <docblock line="22">
+          <description><![CDATA[Storage for service]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="34" namespace="Maintenr\Library\Twilio\Utility\Capability" package="Default">
+        <name>$privilege</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[Storage for privilege]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="41" namespace="Maintenr\Library\Twilio\Utility\Capability" package="Default">
+        <name>$parameters</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[Storage for parameters]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="50" package="Library\Twilio\Utility\Capability">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="43">
+          <description><![CDATA[Class constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="param" description="" type="string" variable="$service">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="43" name="param" description="" type="string" variable="$privilege">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="43" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="50">
+          <name>$service</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="50">
+          <name>$privilege</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="50">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="62" package="Library\Twilio\Utility\Capability">
+        <name>toString</name>
+        <full_name>toString</full_name>
+        <docblock line="57">
+          <description><![CDATA[Ouput scope]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="78" package="Library\Twilio\Utility\Capability">
+        <name>parse</name>
+        <full_name>parse</full_name>
+        <docblock line="71">
+          <description><![CDATA[Parse a scope URI into a ScopeURI object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="throws" description="" type="\UnexpectedValueException">
+            <type by_reference="false">\UnexpectedValueException</type>
+          </tag>
+          <tag line="71" name="param" description="the scope URI" type="string" variable="$uri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="71" name="return" description="the parsed scope uri" type="\Maintenr\Library\Twilio\Utility\Capability\Scope">
+            <type by_reference="false">\Maintenr\Library\Twilio\Utility\Capability\Scope</type>
+          </tag>
+        </docblock>
+        <argument line="78">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Capability/Scope.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Utility/Capability/Jwt.php" hash="9d6c01cf229d6e63c1146c581d994da7" package="Default">
+    <namespace-alias name="DomainException">DomainException</namespace-alias>
+    <namespace-alias name="UnexpectedValueException">UnexpectedValueException</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Utility\Capability" line="16" package="Library\Twilio\Utility\Capability">
+      <extends/>
+      <name>Jwt</name>
+      <full_name>\Maintenr\Library\Twilio\Utility\Capability\Jwt</full_name>
+      <docblock line="6">
+        <description><![CDATA[JSON Web Token implementation]]></description>
+        <long-description><![CDATA[<p>Minimum implementation used by Realtime auth, based on this spec:
+http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-description>
+        <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+        <tag line="6" name="package" description="Library"/>
+        <tag line="6" name="subpackage" description="Twilio\Utility\Capability"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="28" package="Library\Twilio\Utility\Capability">
+        <name>decode</name>
+        <full_name>decode</full_name>
+        <docblock line="18">
+          <description><![CDATA[Decode payload]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="throws" description="" type="\UnexpectedValueException">
+            <type by_reference="false">\UnexpectedValueException</type>
+          </tag>
+          <tag line="18" name="throws" description="" type="\DomainException">
+            <type by_reference="false">\DomainException</type>
+          </tag>
+          <tag line="18" name="param" description="the JWT" type="string" variable="$jwt">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="18" name="param" description="the secret key" type="string|null" variable="$key">
+            <type by_reference="false">string</type>
+            <type by_reference="false">null</type>
+          </tag>
+          <tag line="18" name="param" description="don't skip verification process" type="bool" variable="$verify">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="18" name="return" description="JSON Web Token implementation as PHP object" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="28">
+          <name>$jwt</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$key</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$verify</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="63" package="Library\Twilio\Utility\Capability">
+        <name>encode</name>
+        <full_name>encode</full_name>
+        <docblock line="55">
+          <description><![CDATA[Encode payload]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="55" name="param" description="PHP object or array" type="object|array" variable="$payload">
+            <type by_reference="false">object</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="55" name="param" description="the secret key" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="55" name="param" description="the signing algorithm" type="string" variable="$algorithm">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="55" name="return" description="JSON Web Token implementation" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="63">
+          <name>$payload</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="63">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="63">
+          <name>$algorithm</name>
+          <default><![CDATA['HS256']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="87" package="Library\Twilio\Utility\Capability">
+        <name>sign</name>
+        <full_name>sign</full_name>
+        <docblock line="79">
+          <description><![CDATA[Securily sign a message]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="79" name="param" description="the message to sign" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="79" name="param" description="the secret key" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="79" name="param" description="the signing algorithm" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="79" name="return" description="an encrypted message" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="87">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="87">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="87">
+          <name>$method</name>
+          <default><![CDATA['HS256']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="109" package="Library\Twilio\Utility\Capability">
+        <name>jsonDecode</name>
+        <full_name>jsonDecode</full_name>
+        <docblock line="102">
+          <description><![CDATA[Decode previously encoded JSON]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="throws" description="" type="\DomainException">
+            <type by_reference="false">\DomainException</type>
+          </tag>
+          <tag line="102" name="param" description="JSON string" type="string" variable="$input">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="102" name="return" description="object representation of JSON string" type="object|array">
+            <type by_reference="false">object</type>
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$input</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="130" package="Library\Twilio\Utility\Capability">
+        <name>jsonEncode</name>
+        <full_name>jsonEncode</full_name>
+        <docblock line="123">
+          <description><![CDATA[Encode input in JSON]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="123" name="throws" description="" type="\DomainException">
+            <type by_reference="false">\DomainException</type>
+          </tag>
+          <tag line="123" name="param" description="a PHP object or array" type="object|array" variable="$input">
+            <type by_reference="false">object</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="123" name="return" description="JSON representation of the PHP object or array" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="130">
+          <name>$input</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="150" package="Library\Twilio\Utility\Capability">
+        <name>urlsafeB64Decode</name>
+        <full_name>urlsafeB64Decode</full_name>
+        <docblock line="144">
+          <description><![CDATA[Decode previously encoded input]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="144" name="param" description="a base64 encoded string" type="string" variable="$input">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="144" name="return" description="a decoded string" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="150">
+          <name>$input</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Maintenr\Library\Twilio\Utility\Capability" line="163" package="Library\Twilio\Utility\Capability">
+        <name>urlsafeB64Encode</name>
+        <full_name>urlsafeB64Encode</full_name>
+        <docblock line="157">
+          <description><![CDATA[Base64 encode URL's]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="157" name="param" description="anything really" type="string" variable="$input">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="157" name="return" description="the base64 encode of what you passed in" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="163">
+          <name>$input</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="Maintenr\Library\Twilio\Utility\Capability" line="175" package="Library\Twilio\Utility\Capability">
+        <name>_handleJsonError</name>
+        <full_name>_handleJsonError</full_name>
+        <docblock line="168">
+          <description><![CDATA[Handle JSON error]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="168" name="throws" description="" type="\DomainException">
+            <type by_reference="false">\DomainException</type>
+          </tag>
+          <tag line="168" name="param" description="an error number from json_last_error()" type="int" variable="$error">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="168" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="175">
+          <name>$error</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Capability/Jwt.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Utility/Exception/Twiml.php" hash="4fd1e03c66b4bc5b0629238326d222c2" package="Default">
+    <namespace-alias name="Exception">Exception</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Utility\Exception" line="12" package="Library\Twilio\Utility\Exception">
+      <extends>\Exception</extends>
+      <name>Twiml</name>
+      <full_name>\Maintenr\Library\Twilio\Utility\Exception\Twiml</full_name>
+      <docblock line="5">
+        <description><![CDATA[Twiml response generator exception]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+        <tag line="5" name="package" description="Library"/>
+        <tag line="5" name="subpackage" description="Twilio\Utility\Exception"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Exception/Twiml.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Utility/Twiml.php" hash="9f2b39180069c586823cd70586b0dee0" package="Default">
+    <namespace-alias name="SimpleXmlElement">SimpleXmlElement</namespace-alias>
+    <namespace-alias name="TwimlException">Maintenr\Library\Twilio\Utility\Exception\Twiml</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Utility" line="13" package="Library\Twilio\Utility">
+      <extends/>
+      <name>Twiml</name>
+      <full_name>\Maintenr\Library\Twilio\Utility\Twiml</full_name>
+      <docblock line="6">
+        <description><![CDATA[Twilio capability token generator]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+        <tag line="6" name="package" description="Library"/>
+        <tag line="6" name="subpackage" description="Twilio\Utility"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="20" namespace="Maintenr\Library\Twilio\Utility" package="Default">
+        <name>$_element</name>
+        <default><![CDATA[]]></default>
+        <docblock line="15">
+          <description><![CDATA[Storage for parsed element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="var" description="" type="\SimpleXmlElement">
+            <type by_reference="false">\SimpleXmlElement</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="31" package="Library\Twilio\Utility">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="22">
+          <description><![CDATA[Constructs a Twiml response]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="throws" description="" type="\Maintenr\Library\Twilio\Utility\Exception\Twiml">
+            <type by_reference="false">\Maintenr\Library\Twilio\Utility\Exception\Twiml</type>
+          </tag>
+          <tag line="22" name="param" description="the element to wrap/attributes to add to the element. If nothing is passed we will initialize an empty element named 'Response'." type="\SimpleXmlElement|array" variable="$argument">
+            <type by_reference="false">\SimpleXmlElement</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="22" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$argument</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="73" package="Library\Twilio\Utility">
+        <name>__call</name>
+        <full_name>__call</full_name>
+        <docblock line="51">
+          <description><![CDATA[Converts method calls into Twiml verbs.]]></description>
+          <long-description><![CDATA[<p>A basic example:</p>
+
+<pre><code>php&gt; print $this-&gt;say('hello');
+&lt;Say&gt;hello&lt;/Say&gt;
+</code></pre>
+
+<p>An example with attributes:</p>
+
+<pre><code>php&gt; print $this-&gt;say('hello', array('voice' =&gt; 'woman'));
+&lt;Say voice="woman"&gt;hello&lt;/Say&gt;
+</code></pre>
+
+<p>You could even just pass in an attributes array, omitting the noun:</p>
+
+<pre><code>php&gt; print $this-&gt;gather(array('timeout' =&gt; '20'));
+&lt;Gather timeout="20"/&gt;
+</code></pre>]]></long-description>
+          <tag line="51" name="param" description="The Twiml verb." type="string" variable="$verb">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="param" description="" type="array|string" variable="$attributes">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="return" description="" type="\SimpleXmlElement">
+            <type by_reference="false">\SimpleXmlElement</type>
+          </tag>
+        </docblock>
+        <argument line="73">
+          <name>$verb</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="73">
+          <name>$attributes</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="132" package="Library\Twilio\Utility">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+        <docblock line="127">
+          <description><![CDATA[Returns the object as XML.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="127" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Twiml.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Utility/Capability.php" hash="ab6ba54e9d5d62084f0660c7c3d36bfe" package="Default">
+    <namespace-alias name="InvalidArgumentException">InvalidArgumentException</namespace-alias>
+    <namespace-alias name="Scope">Maintenr\Library\Twilio\Utility\Capability\Scope</namespace-alias>
+    <namespace-alias name="Jwt">Maintenr\Library\Twilio\Utility\Capability\Jwt</namespace-alias>
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Utility" line="14" package="Library\Twilio\Utility">
+      <extends/>
+      <name>Capability</name>
+      <full_name>\Maintenr\Library\Twilio\Utility\Capability</full_name>
+      <docblock line="7">
+        <description><![CDATA[Twilio capability token generator]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="7" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+        <tag line="7" name="package" description="Library"/>
+        <tag line="7" name="subpackage" description="Twilio\Utility"/>
+      </docblock>
+      <constant namespace="Maintenr\Library\Twilio\Utility" line="21" package="Library\Twilio\Utility">
+        <name>DEFAULT_TTL</name>
+        <full_name>DEFAULT_TTL</full_name>
+        <value><![CDATA[3600]]></value>
+        <docblock line="16">
+          <description><![CDATA[Default time to live]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="16" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="public" line="28" namespace="Maintenr\Library\Twilio\Utility" package="Default">
+        <name>$identifier</name>
+        <default><![CDATA[]]></default>
+        <docblock line="23">
+          <description><![CDATA[Storage for identifier]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="35" namespace="Maintenr\Library\Twilio\Utility" package="Default">
+        <name>$token</name>
+        <default><![CDATA[]]></default>
+        <docblock line="30">
+          <description><![CDATA[Storage for token]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="42" namespace="Maintenr\Library\Twilio\Utility" package="Default">
+        <name>$scopes</name>
+        <default><![CDATA[]]></default>
+        <docblock line="37">
+          <description><![CDATA[Storage for scopes]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="49" namespace="Maintenr\Library\Twilio\Utility" package="Default">
+        <name>$clientName</name>
+        <default><![CDATA[]]></default>
+        <docblock line="44">
+          <description><![CDATA[Name of a client]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="60" package="Library\Twilio\Utility">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="51">
+          <description><![CDATA[Create a new TwilioCapability with zero permissions.]]></description>
+          <long-description><![CDATA[<p>Next steps are to
+grant access to resources by configuring this token through the
+functions allowXXXX.</p>]]></long-description>
+          <tag line="51" name="param" description="the account secure identifier to which this token is granted access" type="string" variable="$identifier">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="param" description="the secret key used to sign the token." type="string" variable="$token">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="60">
+          <name>$identifier</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="60">
+          <name>$token</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="75" package="Library\Twilio\Utility">
+        <name>allowClientIncoming</name>
+        <full_name>allowClientIncoming</full_name>
+        <docblock line="66">
+          <description><![CDATA[If the user of this token should be allowed to accept incoming
+connections then configure the TwilioCapability through this method and
+specify the client name.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="66" name="throws" description="" type="\InvalidArgumentException">
+            <type by_reference="false">\InvalidArgumentException</type>
+          </tag>
+          <tag line="66" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="66" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="75">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="102" package="Library\Twilio\Utility">
+        <name>allowClientOutgoing</name>
+        <full_name>allowClientOutgoing</full_name>
+        <docblock line="94">
+          <description><![CDATA[Allow the user of this token to make outgoing connections.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="94" name="param" description="the application to which this token grants access" type="int" variable="$applicationSid">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="94" name="param" description="signed parameters that the user of this token cannot overwrite." type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="94" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$applicationSid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="102">
+          <name>$parameters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="116" package="Library\Twilio\Utility">
+        <name>allowEventStream</name>
+        <full_name>allowEventStream</full_name>
+        <docblock line="110">
+          <description><![CDATA[Allow the user of this token to access their event stream.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="110" name="param" description="key/value filters to apply to the event stream" type="array" variable="$filters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="110" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="116">
+          <name>$filters</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="132" package="Library\Twilio\Utility">
+        <name>generateToken</name>
+        <full_name>generateToken</full_name>
+        <docblock line="124">
+          <description><![CDATA[Generates a new token based on the credentials and permissions that
+previously has been granted to this token.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="124" name="param" description="the expiration time of the token (in seconds)." type="int" variable="$ttl">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="124" name="return" description="the newly generated token that is valid for specified number of seconds" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="132">
+          <name>$ttl</name>
+          <default><![CDATA[self::DEFAULT_TTL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Maintenr\Library\Twilio\Utility" line="164" package="Library\Twilio\Utility">
+        <name>_allow</name>
+        <full_name>_allow</full_name>
+        <docblock line="156">
+          <description><![CDATA[Create a new scope]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="156" name="param" description="" type="string" variable="$service">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="156" name="param" description="" type="string" variable="$privilege">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="156" name="param" description="" type="array" variable="$parameters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="156" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="164">
+          <name>$service</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="164">
+          <name>$privilege</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="164">
+          <name>$parameters</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Capability.php</error>
+    </parse_markers>
+  </file>
+  <file path="Twilio/Utility/RequestValidator.php" hash="76b53b7471c45575e9cd0a4490e93ca9" package="Default">
+    <class final="false" abstract="false" namespace="Maintenr\Library\Twilio\Utility" line="26" package="Library\Twilio\Utility">
+      <extends/>
+      <name>RequestValidator</name>
+      <full_name>\Maintenr\Library\Twilio\Utility\RequestValidator</full_name>
+      <docblock line="4">
+        <description><![CDATA[An important part of any secure Twilio application is correctly performing
+request validation.]]></description>
+        <long-description><![CDATA[<p>For a complete description of how request validation works, see the Twilio
+security documentation.</p>
+
+<p>The basic idea is that Twilio builds a string based on the parameters sent to
+your server and then creates a hash of this string using your account's
+AuthToken (a shared secret).</p>
+
+<p>Twilio sends this hash to your server as a header in its request.</p>
+
+<p>You can then build the same string and create the same hash as Twilio did,
+and compare yours to the one Twilio sent to determine the authenticity of
+the request.</p>]]></long-description>
+        <tag line="4" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+        <tag line="4" name="package" description="Library"/>
+        <tag line="4" name="subpackage" description="Twilio\Utility"/>
+        <tag line="4" name="link" description="http://www.twilio.com/docs/security#validating-requests" link="http://www.twilio.com/docs/security#validating-requests"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="33" namespace="Maintenr\Library\Twilio\Utility" package="Default">
+        <name>$_token</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[Storage for token]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="41" package="Library\Twilio\Utility">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="35">
+          <description><![CDATA[Class constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="param" description="the secret key used to sign the token." type="string" variable="$token">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="35" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="41">
+          <name>$token</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="53" package="Library\Twilio\Utility">
+        <name>computeSignature</name>
+        <full_name>computeSignature</full_name>
+        <docblock line="46">
+          <description><![CDATA[Compute signature]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="46" name="param" description="" type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="46" name="param" description="" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="46" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="53">
+          <name>$url</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$data</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Maintenr\Library\Twilio\Utility" line="76" package="Library\Twilio\Utility">
+        <name>validate</name>
+        <full_name>validate</full_name>
+        <docblock line="68">
+          <description><![CDATA[Validate signature]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="68" name="param" description="expected signature" type="string" variable="$signature">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="68" name="param" description="" type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="68" name="param" description="" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="68" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$signature</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$url</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$data</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/RequestValidator.php</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="Library" full_name="Library">
+    <package name="Twilio" full_name="Library\Twilio">
+      <package name="Api" full_name="Library\Twilio\Api">
+        <package name="Action" full_name="Library\Twilio\Api\Action">
+          <package name="Account" full_name="Library\Twilio\Api\Action\Account"/>
+          <package name="Application" full_name="Library\Twilio\Api\Action\Application"/>
+          <package name="AuthorizedConnectApp" full_name="Library\Twilio\Api\Action\AuthorizedConnectApp"/>
+          <package name="AvailablePhoneNumber" full_name="Library\Twilio\Api\Action\AvailablePhoneNumber"/>
+          <package name="Call" full_name="Library\Twilio\Api\Action\Call"/>
+          <package name="Conference" full_name="Library\Twilio\Api\Action\Conference"/>
+          <package name="ConnectApp" full_name="Library\Twilio\Api\Action\ConnectApp"/>
+          <package name="IncomingPhoneNumber" full_name="Library\Twilio\Api\Action\IncomingPhoneNumber"/>
+          <package name="Notification" full_name="Library\Twilio\Api\Action\Notification"/>
+          <package name="OutgoingCallerId" full_name="Library\Twilio\Api\Action\OutgoingCallerId"/>
+          <package name="Participant" full_name="Library\Twilio\Api\Action\Participant"/>
+          <package name="Recording" full_name="Library\Twilio\Api\Action\Recording"/>
+          <package name="ShortCode" full_name="Library\Twilio\Api\Action\ShortCode"/>
+          <package name="SmsMessage" full_name="Library\Twilio\Api\Action\SmsMessage"/>
+          <package name="Transcription" full_name="Library\Twilio\Api\Action\Transcription"/>
+        </package>
+        <package name="Exception" full_name="Library\Twilio\Api\Exception"/>
+        <package name="Resource" full_name="Library\Twilio\Api\Resource">
+          <package name="Listing" full_name="Library\Twilio\Api\Resource\Listing"/>
+        </package>
+      </package>
+      <package name="Client" full_name="Library\Twilio\Client">
+        <package name="Exception" full_name="Library\Twilio\Client\Exception"/>
+      </package>
+      <package name="Utility" full_name="Library\Twilio\Utility">
+        <package name="Capability" full_name="Library\Twilio\Utility\Capability"/>
+        <package name="Exception" full_name="Library\Twilio\Utility\Exception"/>
+      </package>
+    </package>
+  </package>
+  <namespace name="Maintenr" full_name="Maintenr">
+    <namespace name="Library" full_name="Maintenr\Library">
+      <namespace name="Twilio" full_name="Maintenr\Library\Twilio">
+        <namespace name="Api" full_name="Maintenr\Library\Twilio\Api">
+          <namespace name="Action" full_name="Maintenr\Library\Twilio\Api\Action">
+            <namespace name="Account" full_name="Maintenr\Library\Twilio\Api\Action\Account"/>
+            <namespace name="Application" full_name="Maintenr\Library\Twilio\Api\Action\Application"/>
+            <namespace name="AuthorizedConnectApp" full_name="Maintenr\Library\Twilio\Api\Action\AuthorizedConnectApp"/>
+            <namespace name="AvailablePhoneNumber" full_name="Maintenr\Library\Twilio\Api\Action\AvailablePhoneNumber"/>
+            <namespace name="Call" full_name="Maintenr\Library\Twilio\Api\Action\Call"/>
+            <namespace name="Conference" full_name="Maintenr\Library\Twilio\Api\Action\Conference"/>
+            <namespace name="ConnectApp" full_name="Maintenr\Library\Twilio\Api\Action\ConnectApp"/>
+            <namespace name="IncomingPhoneNumber" full_name="Maintenr\Library\Twilio\Api\Action\IncomingPhoneNumber"/>
+            <namespace name="Notification" full_name="Maintenr\Library\Twilio\Api\Action\Notification"/>
+            <namespace name="OutgoingCallerId" full_name="Maintenr\Library\Twilio\Api\Action\OutgoingCallerId"/>
+            <namespace name="Participant" full_name="Maintenr\Library\Twilio\Api\Action\Participant"/>
+            <namespace name="Recording" full_name="Maintenr\Library\Twilio\Api\Action\Recording"/>
+            <namespace name="ShortCode" full_name="Maintenr\Library\Twilio\Api\Action\ShortCode"/>
+            <namespace name="SmsMessage" full_name="Maintenr\Library\Twilio\Api\Action\SmsMessage"/>
+            <namespace name="Transcription" full_name="Maintenr\Library\Twilio\Api\Action\Transcription"/>
+          </namespace>
+          <namespace name="Exception" full_name="Maintenr\Library\Twilio\Api\Exception"/>
+          <namespace name="Resource" full_name="Maintenr\Library\Twilio\Api\Resource">
+            <namespace name="Listing" full_name="Maintenr\Library\Twilio\Api\Resource\Listing"/>
+          </namespace>
+        </namespace>
+        <namespace name="Client" full_name="Maintenr\Library\Twilio\Client">
+          <namespace name="Exception" full_name="Maintenr\Library\Twilio\Client\Exception"/>
+        </namespace>
+        <namespace name="Utility" full_name="Maintenr\Library\Twilio\Utility">
+          <namespace name="Capability" full_name="Maintenr\Library\Twilio\Utility\Capability"/>
+          <namespace name="Exception" full_name="Maintenr\Library\Twilio\Utility\Exception"/>
+        </namespace>
+      </namespace>
+    </namespace>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

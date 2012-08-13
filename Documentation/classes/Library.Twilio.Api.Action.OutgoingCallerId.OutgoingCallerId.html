@@ -1,0 +1,438 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \Library\Twilio\Api\Action\OutgoingCallerId\OutgoingCallerId</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Library.html"><i class="icon-th"></i> Library</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Library.html"><i class="icon-folder-open"></i> Library</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">48</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Class constructor"><span class="description">Class constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__get" title="__get :: Get the value of a property on this resource."><span class="description">Get the value of a property on this resource.</span><pre>__get()</pre></a></li>
+<li class="method public inherited"><a href="#client" title="client :: Retrieve instance of a client"><span class="description">Retrieve instance of a client</span><pre>client()</pre></a></li>
+<li class="method public inherited"><a href="#getActions" title="getActions :: Retrieve sub-resources"><span class="description">Retrieve sub-resources</span><pre>getActions()</pre></a></li>
+<li class="method public inherited"><a href="#setClient" title="setClient :: Set a new client"><span class="description">Set a new client</span><pre>setClient()</pre></a></li>
+<li class="method public inherited"><a href="#setUri" title="setUri :: Set new URI"><span class="description">Set new URI</span><pre>setUri()</pre></a></li>
+<li class="method public inherited"><a href="#update" title="update :: Update instance parameters"><span class="description">Update instance parameters</span><pre>update()</pre></a></li>
+<li class="method public inherited"><a href="#updateAttributes" title="updateAttributes :: Add all properties from an associative array (the JSON response body) as
+properties on this instance resource"><span class="description">Add all properties from an associative array (the JSON response body) as
+properties on this instance resource</span><pre>updateAttributes()</pre></a></li>
+<li class="method public inherited"><a href="#uri" title="uri :: Retrieve currently set URI"><span class="description">Retrieve currently set URI</span><pre>uri()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#initialize" title="initialize :: Initialize instance"><span class="description">Initialize instance</span><pre>initialize()</pre></a></li>
+<li class="method protected inherited"><a href="#setupActions" title="setupActions :: Setup sub-resources"><span class="description">Setup sub-resources</span><pre>setupActions()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected inherited"><a href="#%24actions" title="$actions :: Storage of sub resources a resource might have"><span class="description">Storage of sub resources a resource might have</span><pre>$actions</pre></a></li>
+<li class="property protected inherited"><a href="#%24client" title="$client :: Instance of client"><span class="description">Instance of client</span><pre>$client</pre></a></li>
+<li class="property protected inherited"><a href="#%24isInitialized" title="$isInitialized :: Flag that indicates that instance was already initialized"><span class="description">Flag that indicates that instance was already initialized</span><pre>$isInitialized</pre></a></li>
+<li class="property protected inherited"><a href="#%24resource" title="$resource :: Resource instance"><span class="description">Resource instance</span><pre>$resource</pre></a></li>
+<li class="property protected inherited"><a href="#%24uri" title="$uri :: Resource URI"><span class="description">Resource URI</span><pre>$uri</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CLibrary%5CTwilio%5CApi%5CAction%5COutgoingCallerId%5COutgoingCallerId" id="\Library\Twilio\Api\Action\OutgoingCallerId\OutgoingCallerId"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Library.html">Library</a></li>
+<span class="divider">\</span><li><a href="../namespaces/Library.Twilio.html">Twilio</a></li>
+<span class="divider">\</span><li><a href="../namespaces/Library.Twilio.Api.html">Api</a></li>
+<span class="divider">\</span><li><a href="../namespaces/Library.Twilio.Api.Action.html">Action</a></li>
+<span class="divider">\</span><li><a href="../namespaces/Library.Twilio.Api.Action.OutgoingCallerId.html">OutgoingCallerId</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Library.Twilio.Api.Action.OutgoingCallerId.OutgoingCallerId.html">OutgoingCallerId</a>
+</li>
+</ul>
+<div href="../classes/Library.Twilio.Api.Action.OutgoingCallerId.OutgoingCallerId.html" class="element class">
+<p class="short_description">Twilio outgoing caller id instance</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/Library.Twilio.Api.Action.OutgoingCallerId.html">Library</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Twilio\Api\Action\OutgoingCallerId</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:al.ko@webfoundation.net">Aleksey Korzun</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Class constructor</h2>
+<pre>__construct(array $parameters) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::__construct()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::__construct()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>Get the value of a property on this resource.</h2>
+<pre>__get(string $name) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>To help with lazy HTTP requests, we don't actually retrieve an object
+from the API unless you really need it. Hence, this function may make
+API requests if the property you're requesting isn't available on the
+resource.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::__get()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>property name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a name="client" id="client"></a><div class="element clickable method public client" data-toggle="collapse" data-target=".client .collapse">
+<h2>Retrieve instance of a client</h2>
+<pre>client() : \Library\Twilio\Api\Client</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::client()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::client()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Library\Twilio\Api\Client</code></div>
+</div></div>
+</div>
+<a name="getActions" id="getActions"></a><div class="element clickable method public getActions" data-toggle="collapse" data-target=".getActions .collapse">
+<h2>Retrieve sub-resources</h2>
+<pre>getActions(string $name) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::getActions()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::getActions()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="setClient" id="setClient"></a><div class="element clickable method public setClient" data-toggle="collapse" data-target=".setClient .collapse">
+<h2>Set a new client</h2>
+<pre>setClient(object $client) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::setClient()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::setClient()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$client</h4>
+<code>object</code>
+</div>
+</div></div>
+</div>
+<a name="setUri" id="setUri"></a><div class="element clickable method public setUri" data-toggle="collapse" data-target=".setUri .collapse">
+<h2>Set new URI</h2>
+<pre>setUri(string $uri, bool | string $action) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::setUri()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::setUri()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>new address</p></div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>boolstring</code><p>optional action end point to append</p></div>
+</div></div>
+</div>
+<a name="update" id="update"></a><div class="element clickable method public update" data-toggle="collapse" data-target=".update .collapse">
+<h2>Update instance parameters</h2>
+<pre>update(mixed $parameters, mixed $value) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::update()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>mixed</code><p>array of updates, or a property name</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>a value with which to update the resource</p></div>
+</div></div>
+</div>
+<a name="updateAttributes" id="updateAttributes"></a><div class="element clickable method public updateAttributes" data-toggle="collapse" data-target=".updateAttributes .collapse">
+<h2>Add all properties from an associative array (the JSON response body) as
+properties on this instance resource</h2>
+<pre>updateAttributes(mixed $parameters) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::updateAttributes()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>mixed</code>
+</div>
+</div></div>
+</div>
+<a name="uri" id="uri"></a><div class="element clickable method public uri" data-toggle="collapse" data-target=".uri .collapse">
+<h2>Retrieve currently set URI</h2>
+<pre>uri() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::uri()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::uri()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="initialize" id="initialize"></a><div class="element clickable method protected initialize" data-toggle="collapse" data-target=".initialize .collapse">
+<h2>Initialize instance</h2>
+<pre>initialize() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::initialize()</td>
+</tr></table>
+</div></div>
+</div>
+<a name="setupActions" id="setupActions"></a><div class="element clickable method protected setupActions" data-toggle="collapse" data-target=".setupActions .collapse">
+<h2>Setup sub-resources</h2>
+<pre>setupActions() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::setupActions()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::setupActions()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24actions" id="$actions"> </a><div class="element clickable property protected $actions" data-toggle="collapse" data-target=".$actions .collapse">
+<h2>Storage of sub resources a resource might have</h2>
+<pre>$actions : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::$$actions</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::$$actions</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24client" id="$client"> </a><div class="element clickable property protected $client" data-toggle="collapse" data-target=".$client .collapse">
+<h2>Instance of client</h2>
+<pre>$client : \Library\Twilio\Api\Client</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::$$client</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::$$client</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24isInitialized" id="$isInitialized"> </a><div class="element clickable property protected $isInitialized" data-toggle="collapse" data-target=".$isInitialized .collapse">
+<h2>Flag that indicates that instance was already initialized</h2>
+<pre>$isInitialized : bool</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::$$isInitialized</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24resource" id="$resource"> </a><div class="element clickable property protected $resource" data-toggle="collapse" data-target=".$resource .collapse">
+<h2>Resource instance</h2>
+<pre>$resource : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::$$resource</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::$$resource</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24uri" id="$uri"> </a><div class="element clickable property protected $uri" data-toggle="collapse" data-target=".$uri .collapse">
+<h2>Resource URI</h2>
+<pre>$uri : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource::$$uri</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Library\Twilio\Api\Resource\Instance::$$uri</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
+            generated on 2012-08-13T19:53:17-04:00.<br></footer></div>
+</div>
+</body>
+</html>

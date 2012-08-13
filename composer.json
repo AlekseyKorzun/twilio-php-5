@@ -1,0 +1,25 @@
+composer.json 
+{
+    "name": "twilio/php",
+    "type": "library",
+    "description": "Refactored Twilio PHP 5 package",
+    "keywords": ["twilio", "sms", "cloud", "voip", "php"],
+    "homepage": "https://github.com/AlekseyKorzun/Twilio-PHP-5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aleksey Korzun",
+            "email": "al.ko@webfoundation.net",
+            "homepage": "http://www.alekseykorzun.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Twilio": "Package"
+        }
+    }
+}

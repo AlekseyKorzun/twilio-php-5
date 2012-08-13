@@ -42,7 +42,6 @@ class Page implements IteratorAggregate {
 	public function __construct($page, $name, $nextUri = null)
 	{
 		$this->_page = $page;
-		print_r($page);
 		$this->_items = $page->{$name};
 		$this->_nextUri = $nextUri;
 	}

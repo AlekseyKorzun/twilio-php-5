@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Exception;
+
 use \Exception;
 
 /**
@@ -62,3 +63,4 @@ class Response extends Exception
 		return $this->info;
 	}
 }
+

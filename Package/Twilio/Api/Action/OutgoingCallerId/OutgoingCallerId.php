@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\OutgoingCallerId;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Api\Resource\Instance;
  * @subpackage Twilio\Api\Action\OutgoingCallerId
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class OutgoingCallerId extends Instance {}
+class OutgoingCallerId extends Instance
+{
+}
+

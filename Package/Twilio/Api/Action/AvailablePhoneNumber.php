@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action;
+
 use Library\Twilio\Api\Action\AvailablePhoneNumber\Helper;
 use Library\Twilio\Api\Resource\Listing;
 
@@ -37,10 +38,10 @@ class AvailablePhoneNumber extends Listing
 	{
 		$helper = new Helper();
 		$helper->set(
-						'getList',
-						array($this, 'getList'),
-						array($country, self::TYPE_LOCAL)
-					);
+			'getList',
+			array($this, 'getList'),
+			array($country, self::TYPE_LOCAL)
+		);
 		return $helper;
 	}
 
@@ -55,10 +56,10 @@ class AvailablePhoneNumber extends Listing
 	{
 		$helper = new Helper();
 		$helper->set(
-						'getList',
-						array($this, 'getList'),
-						array($country,  self::TYPE_TOLL_FREE)
-					);
+			'getList',
+			array($this, 'getList'),
+			array($country,  self::TYPE_TOLL_FREE)
+		);
 		return $helper;
 	}
 
@@ -86,3 +87,4 @@ class AvailablePhoneNumber extends Listing
 		return 'Country';
 	}
 }
+

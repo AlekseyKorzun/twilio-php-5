@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\ShortCode;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Api\Resource\Instance;
  * @subpackage Twilio\Api\Action\ShortCode
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class ShortCode extends Instance {}
+class ShortCode extends Instance
+{
+}
+

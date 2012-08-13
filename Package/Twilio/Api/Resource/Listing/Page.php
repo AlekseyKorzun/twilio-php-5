@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Resource\Listing;
+
 use \IteratorAggregate;
 
 /**
@@ -9,27 +10,28 @@ use \IteratorAggregate;
  * @subpackage Twilio\Api\Resource\Listing
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class Page implements IteratorAggregate {
+class Page implements IteratorAggregate
+{
 	/**
 	 * Page
 	 *
 	 * @var array
 	 */
-	protected $_page;
+	protected $page;
 
 	/**
 	 * List of items within this page
 	 *
 	 * @var array
 	 */
-	protected $_items;
+	protected $items;
 
 	/**
 	 * Storage for URI for the next page
 	 *
 	 * @var string
 	 */
-	protected $_nextUri;
+	protected $nextUri;
 
 	/**
 	 * Class constructor
@@ -41,9 +43,9 @@ class Page implements IteratorAggregate {
 	 */
 	public function __construct($page, $name, $nextUri = null)
 	{
-		$this->_page = $page;
-		$this->_items = $page->{$name};
-		$this->_nextUri = $nextUri;
+		$this->page = $page;
+		$this->items = $page->{$name};
+		$this->nextUri = $nextUri;
 	}
 
 	/**
@@ -53,7 +55,7 @@ class Page implements IteratorAggregate {
 	 */
 	public function items()
 	{
-		return $this->_items;
+		return $this->items;
 	}
 
 	/**
@@ -64,7 +66,7 @@ class Page implements IteratorAggregate {
 	 */
 	public function __get($property)
 	{
-		return $this->_page->$property;
+		return $this->page->$property;
 	}
 
 	/**
@@ -77,3 +79,4 @@ class Page implements IteratorAggregate {
 		return $this->getItems();
 	}
 }
+

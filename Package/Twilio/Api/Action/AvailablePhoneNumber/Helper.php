@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\AvailablePhoneNumber;
+
 use \Exception;
 
 /**
@@ -17,7 +18,7 @@ class Helper
 	 *
 	 * @var array
 	 */
-	private $_callbacks = array();
+	private $callbacks = array();
 
 	/**
 	 * Set-up a new call back method for internal storage
@@ -34,7 +35,7 @@ class Helper
 			return false;
 		}
 
-		$this->_callbacks[$method] = array($callback, $arguments);
+		$this->callbacks[$method] = array($callback, $arguments);
 	}
 
 	/**
@@ -48,15 +49,16 @@ class Helper
 	 */
 	public function __call($method, array $arguments = null)
 	{
-		if (!isset($this->_callbacks[$method])) {
+		if (!isset($this->callbacks[$method])) {
 			throw new Exception('Method was not found within internal storage: ' . $method);
 		}
 
-		list($callback, $callbackArguments) = $this->_callbacks[$method];
+		list($callback, $callbackArguments) = $this->callbacks[$method];
 
 		return call_user_func_array(
-										$callback,
-										array_merge($callbackArguments, $arguments)
-									);
+			$callback,
+			array_merge($callbackArguments, $arguments)
+		);
 	}
 }
+

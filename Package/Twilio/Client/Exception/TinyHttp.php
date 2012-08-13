@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Client\Exception;
+
 use \ErrorException;
 
 /**
@@ -9,4 +10,7 @@ use \ErrorException;
  * @subpackage Twilio\Client\Exception
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class TinyHttp extends ErrorException {}
+class TinyHttp extends ErrorException
+{
+}
+

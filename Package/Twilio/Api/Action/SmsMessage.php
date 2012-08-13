@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action;
+
 use Library\Twilio\Api\Resource\Listing;
 
 /**
@@ -9,13 +10,14 @@ use Library\Twilio\Api\Resource\Listing;
  * @subpackage Twilio\Api\Action
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class SmsMessage extends Listing {
+class SmsMessage extends Listing
+{
 	/**
 	 * Initializer
 	 *
 	 * @return void
 	 */
-	protected function _init()
+	protected function init()
 	{
 		$this->setUri(preg_replace('#SmsMessages#', 'SMS/Messages', $this->uri()));
 	}
@@ -31,10 +33,13 @@ class SmsMessage extends Listing {
 	 */
 	public function create($from, $to, $body, array $parameters = array())
 	{
-		return parent::_create(array(
-										'From' => $from,
-										'To' => $to,
-										'Body' => $body
-									) + $parameters);
+		return parent::create(
+			array(
+					'From' => $from,
+					'To' => $to,
+					'Body' => $body
+				 ) + $parameters
+		);
 	}
 }
+

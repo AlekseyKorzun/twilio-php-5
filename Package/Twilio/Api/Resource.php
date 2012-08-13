@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api;
+
 use Library\Twilio\Api\Resource\Listing;
 
 /**
@@ -16,28 +17,28 @@ abstract class Resource
 	 *
 	 * @var Client
 	 */
-	protected static $_client;
+	protected static $client;
 
 	/**
 	 * Resource instance
 	 *
 	 * @var mixed
 	 */
-	protected $_resource;
+	protected $resource;
 
 	/**
 	 * Storage of sub resources a resource might have
 	 *
 	 * @var array
 	 */
-	protected $_actions = array();
+	protected $actions = array();
 
 	/**
 	 * Resource URI
 	 *
 	 * @var string
 	 */
-	protected $_uri;
+	protected $uri;
 
 	/**
 	 * Class constructor
@@ -61,7 +62,7 @@ abstract class Resource
 	 */
 	public function uri()
 	{
-		return $this->_uri;
+		return $this->uri;
 	}
 
 	/**
@@ -73,9 +74,9 @@ abstract class Resource
 	 */
 	public function setUri($uri, $action = false)
 	{
-		$this->_uri = (string) $uri;
+		$this->uri = (string) $uri;
 		if ($action) {
-			$this->_uri .= '/' . (string) $action;
+			$this->uri .= '/' . (string) $action;
 		}
 	}
 
@@ -86,7 +87,7 @@ abstract class Resource
 	 */
 	public static function client()
 	{
-		return self::$_client;
+		return self::$client;
 	}
 
 	/**
@@ -97,7 +98,7 @@ abstract class Resource
 	 */
 	public static function setClient($client)
 	{
-		self::$_client = $client;
+		self::$client = $client;
 	}
 
 	/**
@@ -109,12 +110,12 @@ abstract class Resource
 	public function getActions($name = null)
 	{
 		if (isset($name)) {
-			return isset($this->_actions[$name])
-							? $this->_actions[$name]
+			return isset($this->actions[$name])
+							? $this->actions[$name]
 							: null;
 		}
 
-		return $this->_actions;
+		return $this->actions;
 	}
 
 	/**
@@ -122,7 +123,7 @@ abstract class Resource
 	 *
 	 * @return void
 	 */
-	protected function _setupActions()
+	protected function setupActions()
 	{
 		$actions = func_get_args();
 		if ($actions) {
@@ -131,18 +132,19 @@ abstract class Resource
 				$name = str_replace(' ', null, ucwords(str_replace('_', ' ', rtrim($action, 's'))));
 
 				$class = __NAMESPACE__ . '\\Action\\' . $name;
-				$this->_actions[$action] = new $class;
+				$this->actions[$action] = new $class;
 
-				if ($this->_actions[$action] instanceof Listing) {
+				if ($this->actions[$action] instanceof Listing) {
 					$name = $name . 's';
 				}
-				$this->_actions[$action]->setUri(str_replace('.json', null, $this->uri()), $name);
+				$this->actions[$action]->setUri(str_replace('.json', null, $this->uri()), $name);
 
 				// Initiliaze if action contains init method
-				if (method_exists($this->_actions[$action], '_init')) {
-					$this->_actions[$action]->_init();
+				if (method_exists($this->actions[$action], 'init')) {
+					$this->actions[$action]->init();
 				}
 			}
 		}
 	}
 }
+

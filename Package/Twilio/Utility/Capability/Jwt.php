@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Utility\Capability;
+
 use \DomainException;
 use \UnexpectedValueException;
 
@@ -114,7 +115,7 @@ class Jwt
 		}
 
 		if (function_exists('json_last_error') && $error = json_last_error()) {
-			self::_handleJsonError($error);
+			self::handleJsonError($error);
 		}
 
 		return $object;
@@ -135,7 +136,7 @@ class Jwt
 		}
 
 		if (function_exists('json_last_error') && $error = json_last_error()) {
-			self::_handleJsonError($error);
+			self::handleJsonError($error);
 		}
 
 		return $json;
@@ -172,7 +173,7 @@ class Jwt
 	 * @param int $error an error number from json_last_error()
 	 * @return void
 	 */
-	private static function _handleJsonError($error)
+	private static function handleJsonError($error)
 	{
 		$messages = array(
 							JSON_ERROR_DEPTH => 'Maximum stack depth exceeded',
@@ -180,9 +181,11 @@ class Jwt
 							JSON_ERROR_SYNTAX => 'Syntax error, malformed JSON'
 						);
 
-		throw new DomainException(isset($messages[$error])
+		throw new DomainException(
+			isset($messages[$error])
 			? $messages[$error]
 			: 'Unknown JSON error: ' . $error
 		);
 	}
 }
+

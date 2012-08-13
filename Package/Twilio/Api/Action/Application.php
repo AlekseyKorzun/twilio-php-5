@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action;
+
 use Library\Twilio\Api\Resource\Listing;
 
 /**
@@ -20,8 +21,11 @@ class Application extends Listing
 	 */
 	public function create($name, array $parameters = array())
 	{
-		return parent::_create(array(
-										'FriendlyName' => $name
-									) + $parameters);
+		return parent::create(
+			array(
+				'FriendlyName' => $name
+				) + $parameters
+		);
 	}
 }
+

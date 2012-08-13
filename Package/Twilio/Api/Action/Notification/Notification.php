@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\Notification;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Api\Resource\Instance;
  * @subpackage Twilio\Api\Action\Notification
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class Notification extends Instance {}
+class Notification extends Instance
+{
+}
+

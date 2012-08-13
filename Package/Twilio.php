@@ -1,5 +1,6 @@
 <?php
 namespace Library;
+
 use Library\Twilio\Api\Action\Account;
 use Library\Twilio\Api\Exception\Response as ResponseException;
 use Library\Twilio\Client\Client;
@@ -40,21 +41,21 @@ class Twilio
 	 *
 	 * @var object
 	 */
-	protected $_client;
+	protected $client;
 
 	/**
 	 * Current API version
 	 *
 	 * @var string
 	 */
-	protected $_version;
+	protected $version;
 
 	/**
 	 * Known API versions
 	 *
 	 * @var array
 	 */
-	protected $_versions = array('2008-08-01', '2010-04-01');
+	protected $versions = array('2008-08-01', '2010-04-01');
 
 	/**
 	 * Twilio seervice onstructor
@@ -70,11 +71,15 @@ class Twilio
 
 		// If custom client was not passed, use build in version
 		if (!$client) {
-			$client = new TinyHttp(self::API_URI, array('curl' => array(
-																		CURLOPT_USERAGENT => self::USER_AGENT,
-																		CURLOPT_HTTPHEADER => array('Accept-Charset: utf-8'),
-																		CURLOPT_CAINFO => dirname(__FILE__) . '/Twilio/Certificate/Twilio.crt',
-																	)));
+			// Setup client parameters
+			$parameters = array(
+								'curl' => array(
+												CURLOPT_USERAGENT => self::USER_AGENT,
+												CURLOPT_HTTPHEADER => array('Accept-Charset: utf-8'),
+												CURLOPT_CAINFO => dirname(__FILE__) . '/Twilio/Certificate/Twilio.crt')
+												);
+
+			$client = new TinyHttp(self::API_URI, $parameters);
 		}
 
 		// Set-up authentication
@@ -82,11 +87,11 @@ class Twilio
 		$client->setToken($token);
 
 		// Initialize
-		$this->_client = $client;
-		$this->_version = in_array($version, $this->_versions) ? $version : end($this->_versions);
+		$this->client = $client;
+		$this->version = in_array($version, $this->versions) ? $version : end($this->versions);
 
 		// Authenticate
-		$this->_authenticate();
+		$this->authenticate();
 	}
 
 	/**
@@ -96,7 +101,7 @@ class Twilio
 	 */
 	public function version()
 	{
-		return $this->_version;
+		return $this->version;
 	}
 
 	/**
@@ -109,7 +114,7 @@ class Twilio
 	 */
 	public function retrieveData($uri, array $parameters = array(), $isFullUri = false)
 	{
-		return $this->_processResponse($this->_client->get(self::_getRequestUri($uri, $parameters, $isFullUri)));
+		return $this->processResponse($this->client->get(self::getRequestUri($uri, $parameters, $isFullUri)));
 	}
 
 	/**
@@ -121,7 +126,7 @@ class Twilio
 	 */
 	public function deleteData($uri, array $parameters = array())
 	{
-		return $this->_processResponse($this->_client->delete(self::_getRequestUri($uri, $parameters)));
+		return $this->processResponse($this->client->delete(self::getRequestUri($uri, $parameters)));
 	}
 
 	/**
@@ -135,7 +140,13 @@ class Twilio
 	{
 		$headers = array('Content-Type' => 'application/x-www-form-urlencoded');
 
-		return $this->_processResponse($this->_client->post(self::_getRequestUri($uri), $headers, http_build_query($parameters, '', '&')));
+		$response = $this->client->post(
+			self::getRequestUri($uri),
+			$headers,
+			http_build_query($parameters, '', '&')
+		);
+
+		return $this->processResponse($response);
 	}
 
 	/**
@@ -145,7 +156,7 @@ class Twilio
 	 * @param array $response 3-tuple containing status, headers, and body
 	 * @return object PHP object decoded from JSON
 	 */
-	private function _processResponse(array $response)
+	private function processResponse(array $response)
 	{
 		list($status, $headers, $body) = $response;
 
@@ -157,7 +168,7 @@ class Twilio
 			throw new DomainException('Response header is missing Content-Type');
 		}
 
-		return $this->_processJsonResponse($status, $headers, $body);
+		return $this->processJsonResponse($status, $headers, $body);
 	}
 
 	/**
@@ -170,7 +181,7 @@ class Twilio
 	 * @param string $body response body
 	 * @return stdClass|bool
 	 */
-	private function _processJsonResponse($status, $headers, $body)
+	private function processJsonResponse($status, $headers, $body)
 	{
 		$decoded = json_decode($body);
 
@@ -180,7 +191,9 @@ class Twilio
 			}
 
 			throw new ResponseException(
-				(int) $decoded->status, $decoded->message, isset($decoded->code) ? $decoded->code : null,
+				(int) $decoded->status,
+				$decoded->message,
+				isset($decoded->code) ? $decoded->code : null,
 				isset($decoded->more_info) ? $decoded->more_info : null
 			);
 		}
@@ -197,7 +210,8 @@ class Twilio
 	 * @param bool $isFullUri indicates if passed URI contains full path to the resource
 	 * @return string
 	 */
-	protected static function _getRequestUri($uri, array $parameters = array(), $isFullUri = false) {
+	protected static function getRequestUri($uri, array $parameters = array(), $isFullUri = false)
+	{
 		if ($uri) {
 			$uri = $isFullUri ? $uri : "$uri.json";
 
@@ -214,12 +228,14 @@ class Twilio
 	 *
 	 * @return void
 	 */
-	protected function _authenticate() {
+	protected function authenticate()
+	{
 		$resource = new Account();
 		$resource->setClient($this);
 		$resource->setUri('/' . $this->version() . '/Accounts');
 
 		// Initialize our parent resource
-		$this->account = $resource->get($this->_client->identifier());
+		$this->account = $resource->get($this->client->identifier());
 	}
 }
+

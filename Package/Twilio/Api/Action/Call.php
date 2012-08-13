@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action;
+
 use Library\Twilio\Api\Resource\Listing;
 
 /**
@@ -42,6 +43,7 @@ class Call extends Listing
 			$parameters['Url'] = $url;
 		}
 
-		return parent::_create($parameters);
+		return parent::create($parameters);
 	}
 }
+

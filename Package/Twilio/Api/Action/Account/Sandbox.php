@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\Account;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Api\Resource\Instance;
  * @subpackage Twilio\Api\Action\Account
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class Sandbox extends Instance {}
+class Sandbox extends Instance
+{
+}
+

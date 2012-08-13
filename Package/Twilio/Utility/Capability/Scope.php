@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Utility\Capability;
+
 use \UnexpectedValueException;
 
 /**
@@ -99,3 +100,4 @@ class Scope
 		return new Scope($service, $privilege, $parameters);
 	}
 }
+

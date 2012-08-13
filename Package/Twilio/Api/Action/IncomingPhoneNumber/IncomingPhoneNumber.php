@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\IncomingPhoneNumber;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Api\Resource\Instance;
  * @subpackage Twilio\Api\Action\IncomingPhoneNumber
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class IncomingPhoneNumber extends Instance {}
+class IncomingPhoneNumber extends Instance
+{
+}
+

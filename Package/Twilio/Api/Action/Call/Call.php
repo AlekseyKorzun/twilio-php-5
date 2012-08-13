@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\Call;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -16,12 +17,12 @@ class Call extends Instance
 	 *
 	 * @return void
 	 */
-	protected function _init()
+	protected function init()
 	{
-		$this->_setupActions(
-								'notifications',
-								'recordings'
-							);
+		$this->setupActions(
+			'notifications',
+			'recordings'
+		);
 	}
 
 	/**
@@ -40,7 +41,9 @@ class Call extends Instance
 	 * @param string $url
 	 * @return void
 	 */
-	public function route($url) {
+	public function route($url)
+	{
 		$this->update('Url', $url);
 	}
 }
+

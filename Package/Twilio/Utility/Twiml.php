@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Utility;
+
 use \SimpleXmlElement;
 use Library\Twilio\Utility\Exception\Twiml as TwimlException;
 
@@ -17,7 +18,7 @@ class Twiml
 	 *
 	 * @var SimpleXmlElement
 	 */
-	protected $_element;
+	protected $element;
 
 	/**
 	 * Constructs a Twiml response
@@ -32,15 +33,15 @@ class Twiml
 	{
 		switch (true) {
 			case $argument instanceof SimpleXmlElement:
-				$this->_element = $argument;
+				$this->element = $argument;
 				break;
 			case $argument === null:
-				$this->_element = new SimpleXmlElement('<Response/>');
+				$this->element = new SimpleXmlElement('<Response/>');
 				break;
 			case is_array($argument):
-				$this->_element = new SimpleXmlElement('<Response/>');
+				$this->element = new SimpleXmlElement('<Response/>');
 				foreach ($argument as $name => $value) {
-					$this->_element->addAttribute($name, $value);
+					$this->element->addAttribute($name, $value);
 				}
 				break;
 			default:
@@ -102,8 +103,8 @@ class Twiml
 
 		// Then escape it again
 		$child = empty($noun)
-			? $this->_element->addChild(ucfirst($verb))
-			: $this->_element->addChild(ucfirst($verb), $normalized);
+			? $this->element->addChild(ucfirst($verb))
+			: $this->element->addChild(ucfirst($verb), $normalized);
 
 
 		foreach ($attributes as $name => $value) {
@@ -131,10 +132,13 @@ class Twiml
 	 */
 	public function __toString()
 	{
-		$xml = $this->_element->asXml();
+		$xml = $this->element->asXml();
 
 		return str_replace(
 			'<?xml version="1.0"?>',
-			'<?xml version="1.0" encoding="UTF-8"?>', $xml);
+			'<?xml version="1.0" encoding="UTF-8"?>',
+			$xml
+		);
 	}
 }
+

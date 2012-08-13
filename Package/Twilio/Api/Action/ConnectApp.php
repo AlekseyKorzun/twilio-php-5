@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action;
+
 use \BadMethodCallException;
 use Library\Twilio\Api\Resource\Listing;
 
@@ -25,3 +26,4 @@ class ConnectApp extends Listing
 		throw new BadMethodCallException('Not allowed');
 	}
 }
+

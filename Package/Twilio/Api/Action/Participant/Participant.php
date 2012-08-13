@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\Participant;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -21,3 +22,4 @@ class Participant extends Instance
 		$this->update('Muted', 'true');
 	}
 }
+

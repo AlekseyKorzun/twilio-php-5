@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\ConnectApp;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Api\Resource\Instance;
  * @subpackage Twilio\Api\Action\ConnectApp
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class ConnectApp extends Instance {}
+class ConnectApp extends Instance
+{
+}
+

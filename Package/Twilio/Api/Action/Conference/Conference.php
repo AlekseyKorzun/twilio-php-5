@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\Conference;
+
 use Library\Twilio\Api\Resource\Instance;
 
 /**
@@ -16,10 +17,9 @@ class Conference extends Instance
 	 *
 	 * @return void
 	 */
-	protected function _init()
+	protected function init()
 	{
-		$this->_setupActions(
-								'participants'
-							);
+		$this->setupActions('participants');
 	}
 }
+

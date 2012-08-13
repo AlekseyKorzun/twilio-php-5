@@ -23,28 +23,28 @@ abstract class Client
 	 *
 	 * @var string
 	 */
-	protected $_identifier;
+	protected $identifier;
 
 	/**
 	 * Token to use when prompted for authentication
 	 *
 	 * @var string
 	 */
-	protected $_token;
+	protected $token;
 
 	/**
 	 * Various options for cURL
 	 *
 	 * @var array
 	 */
-	protected $_options = array();
+	protected $options = array();
 
 	/**
 	 * Debugging switch
 	 *
 	 * @var bool
 	 */
-	protected $_isDebug = false;
+	protected $isDebug = false;
 
 	/**
 	 * Constructor that setups basic options
@@ -72,7 +72,7 @@ abstract class Client
 	 */
 	public function identifier()
 	{
-		return (string) $this->_identifier;
+		return (string) $this->identifier;
 	}
 
 	/**
@@ -83,7 +83,7 @@ abstract class Client
 	 */
 	public function setIdentifier($identifier)
 	{
-		$this->_identifier = (string) $identifier;
+		$this->identifier = (string) $identifier;
 	}
 
 	/**
@@ -94,6 +94,7 @@ abstract class Client
 	 */
 	public function setToken($token)
 	{
-		$this->_token = (string) $token;
+		$this->token = (string) $token;
 	}
 }
+

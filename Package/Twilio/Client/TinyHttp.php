@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Client;
+
 use Library\Twilio\Client\Exception\TinyHttp as TinyHttpException;
 
 /**
@@ -43,7 +44,9 @@ class TinyHttp extends Client
 	{
 		// Sanity check to ensure that cURL is present on this system
 		if (!in_array('curl', get_loaded_extensions())) {
-			throw new TinyHttpException('Curl was not found on this system, aborting.');
+			throw new TinyHttpException(
+				'Curl was not found on this system, aborting.'
+			);
 		}
 
 		// If URI is passed, set parameters
@@ -56,11 +59,11 @@ class TinyHttp extends Client
 		// Process additional parameters
 		if ($parameters) {
 			if (isset($parameters['debug'])) {
-				$this->_isDebug = true;
+				$this->isDebug = true;
 			}
 
 			if (isset($parameters['curl'])) {
-				$this->_options = $parameters['curl'];
+				$this->options = $parameters['curl'];
 			}
 		}
 	}
@@ -77,7 +80,7 @@ class TinyHttp extends Client
 	{
 		list($resource, $headers, $body) = $arguments + array(0, array(), '');
 
-		$options = $this->_options + array(
+		$options = $this->options + array(
 										CURLOPT_URL => "$this->scheme://$this->host$resource",
 										CURLOPT_HEADER => true,
 										CURLOPT_RETURNTRANSFER => true,
@@ -93,15 +96,15 @@ class TinyHttp extends Client
 		}
 
 		if ($this->port) {
-			$options[CURLOPTport] = $this->port;
+			$options[CURLOPTPORT] = $this->port;
 		}
 
-		if ($this->_isDebug) {
+		if ($this->isDebug) {
 			$options[CURLINFO_HEADER_OUT] = true;
 		}
 
-		if ($this->_identifier && $this->_token) {
-			$options[CURLOPT_USERPWD] = "$this->_identifier:$this->_token";
+		if ($this->identifier && $this->token) {
+			$options[CURLOPT_USERPWD] = "$this->identifier:$this->token";
 		}
 
 		// Handle different request methods
@@ -157,7 +160,9 @@ class TinyHttp extends Client
 			$parts = explode("\r\n\r\n", $response, 3);
 
 
-			list($header, $body) = ($parts[0] == 'HTTP/1.1 100 Continue') ? array($parts[1], $parts[2]) : array($parts[0], $parts[1]);
+			list($header, $body) = ($parts[0] == 'HTTP/1.1 100 Continue')
+										? array($parts[1], $parts[2])
+										: array($parts[0], $parts[1]);
 
 			// Process headers
 			$headers = explode("\r\n", $header);
@@ -178,7 +183,7 @@ class TinyHttp extends Client
 			$status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 			// If debugging is enabled, let's log request and response to our error log
-			if ($this->_isDebug) {
+			if ($this->isDebug) {
 				error_log(curl_getinfo($curl, CURLINFO_HEADER_OUT) . $body);
 			}
 
@@ -205,3 +210,4 @@ class TinyHttp extends Client
 		}
 	}
 }
+

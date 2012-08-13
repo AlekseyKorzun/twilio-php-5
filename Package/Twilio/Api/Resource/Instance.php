@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Resource;
+
 use Library\Twilio\Api\Resource as Resource;
 
 /**
@@ -16,7 +17,7 @@ abstract class Instance extends Resource
 	 *
 	 * @var bool
 	 */
-	protected $_isInitialized = false;
+	protected $isInitialized = false;
 
 	/**
 	 * Update instance parameters
@@ -64,8 +65,8 @@ abstract class Instance extends Resource
 	public function __get($name)
 	{
 		// If we did not initialize, do so now
-		if (!$_isInitialized) {
-			$this->_initialize();
+		if (!$isInitialized) {
+			$this->initialize();
 		}
 
 		if ($name) {
@@ -87,12 +88,13 @@ abstract class Instance extends Resource
 	 *
 	 * @return void
 	 */
-	protected function _initialize()
+	protected function initialize()
 	{
-		if (method_exists($this, '_init')) {
-			$this->_init();
+		if (method_exists($this, 'init')) {
+			$this->init();
 		}
 
-		$this->_isInitialized = true;
+		$this->isInitialized = true;
 	}
 }
+

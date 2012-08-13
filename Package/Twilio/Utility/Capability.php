@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Utility;
+
 use \InvalidArgumentException;
 use Library\Twilio\Utility\Capability\Scope;
 use Library\Twilio\Utility\Capability\Jwt;
@@ -77,18 +78,22 @@ class Capability
 		// Name must be a non-zero length alphanumeric string
 		if (preg_match('/\W/', $name)) {
 			throw new InvalidArgumentException(
-				'Only alphanumeric characters allowed in client name.');
+				'Only alphanumeric characters allowed in client name.'
+			);
 		}
 
 		if (strlen($name) == 0) {
 			throw new InvalidArgumentException(
-				'Client name must not be a zero length string.');
+				'Client name must not be a zero length string.'
+			);
 		}
 
 		$this->clientName = $name;
-		$this->_allow('client', 'incoming', array(
-													'clientName' => $this->clientName
-												));
+		$this->allow(
+			'client',
+			'incoming',
+			array('clientName' => $this->clientName)
+		);
 	}
 
 	/**
@@ -101,10 +106,13 @@ class Capability
 	 */
 	public function allowClientOutgoing($applicationSid, array $parameters = array())
 	{
-		$this->_allow('client', 'outgoing', array(
-													'appSid' => $applicationSid,
-													'appParams' => http_build_query($parameters)
-												));
+		$this->allow(
+			'client',
+			'outgoing',
+			array(
+					'appSid' => $applicationSid,
+					'appParams' => http_build_query($parameters))
+		);
 	}
 
 	/**
@@ -115,10 +123,13 @@ class Capability
 	 */
 	public function allowEventStream(array $filters = array())
 	{
-		$this->_allow('stream', 'subscribe', array(
-													'path' => '/2010-04-01/Events',
-													'params' => http_build_query($filters),
-												));
+		$this->allow(
+			'stream',
+			'subscribe',
+			array(
+					'path' => '/2010-04-01/Events',
+					'params' => http_build_query($filters))
+		);
 	}
 
 	/**
@@ -161,7 +172,8 @@ class Capability
 	 * @param array $parameters
 	 * @return void
 	 */
-	protected function _allow($service, $privilege, $parameters) {
+	protected function allow($service, $privilege, $parameters)
+	{
 		$this->scopes[] = new Scope($service, $privilege, $parameters);
 	}
 }

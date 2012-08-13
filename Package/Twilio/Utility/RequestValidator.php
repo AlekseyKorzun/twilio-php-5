@@ -30,7 +30,7 @@ class RequestValidator
 	 *
 	 * @var string
 	 */
-	protected $_token;
+	protected $token;
 
 	/**
 	 * Class constructor
@@ -38,9 +38,9 @@ class RequestValidator
 	 * @param string $token the secret key used to sign the token.
 	 * @return void
 	 */
-	function __construct($token)
+	public function __construct($token)
 	{
-		$this->_token = $token;
+		$this->token = $token;
 	}
 
 	/**
@@ -56,13 +56,13 @@ class RequestValidator
 		ksort($data);
 
 		// Append them to the data string in order without delimiters
-		foreach($data as $key => $value) {
+		foreach ($data as $key => $value) {
 			$url .= "$key$value";
 		}
 
 		// This function calculates the HMAC hash of the data with the key
 		// passed in
-		return base64_encode(hash_hmac('sha1', $url, $this->_token, true));
+		return base64_encode(hash_hmac('sha1', $url, $this->token, true));
 	}
 
 	/**
@@ -78,3 +78,4 @@ class RequestValidator
 		return (bool) ($this->computeSignature($url, $data) == $signature);
 	}
 }
+

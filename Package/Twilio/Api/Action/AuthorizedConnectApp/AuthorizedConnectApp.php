@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action\AuthorizedConnectApp;
+
 use Library\Twilio\Resource\Instance;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Resource\Instance;
  * @subpackage Twilio\Api\Action\AuthorizedConnectApp
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class AuthorizedConnectApp extends Instance {}
+class AuthorizedConnectApp extends Instance
+{
+}
+

@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Resource;
+
 use \IteratorAggregate;
 use Library\Twilio\Api\Resource;
 use Library\Twilio\Api\Resource\Instance;
@@ -22,8 +23,8 @@ abstract class Listing extends Resource implements IteratorAggregate
 	 */
 	public function __construct()
 	{
-		if (!isset($this->_resource)) {
-			$this->_resource = get_class($this) . '\\' . array_pop(explode('\\', get_class($this)));
+		if (!isset($this->resource)) {
+			$this->resource = get_class($this) . '\\' . array_pop(explode('\\', get_class($this)));
 		}
 
 		parent::__construct();
@@ -37,7 +38,7 @@ abstract class Listing extends Resource implements IteratorAggregate
 	 */
 	public function get($identifier)
 	{
-		$resource = new $this->_resource();
+		$resource = new $this->resource();
 		$resource->setUri($this->uri(), $identifier);
 		$resource->identifier = $identifier;
 		return $resource;
@@ -57,7 +58,7 @@ abstract class Listing extends Resource implements IteratorAggregate
 			$uri .=  '/' . $parameters->identifier;
 		}
 
-		$resource = new $this->_resource();
+		$resource = new $this->resource();
 		$resource->setUri($uri);
 		return $resource;
 	}
@@ -81,7 +82,7 @@ abstract class Listing extends Resource implements IteratorAggregate
 	 * @param array $parameters The parameters with which to create the resource
 	 * @return Instance
 	 */
-	protected function _create(array $parameters)
+	protected function create(array $parameters)
 	{
 		$uri = $this->uri();
 
@@ -90,7 +91,7 @@ abstract class Listing extends Resource implements IteratorAggregate
 			$uri .=  '/' . $parameters->identifier;
 		}
 
-		$resource = new $this->_resource($parameters);
+		$resource = new $this->resource($parameters);
 		$resource->setUri($uri);
 		return $resource;
 	}
@@ -110,10 +111,13 @@ abstract class Listing extends Resource implements IteratorAggregate
 		if (!is_null($pagingUri)) {
 			$page = self::client()->retrieveData($pagingUri, $filters, true);
 		} else {
-			$page = self::client()->retrieveData($this->uri(), array(
-																		'Page' => $page,
-																		'PageSize' => $size,
-																	) + $filters);
+			$page = self::client()->retrieveData(
+				$this->uri(),
+				array(
+						'Page' => $page,
+						'PageSize' => $size,
+					   ) + $filters
+			);
 		}
 
 		// Retrieve resource alias
@@ -122,9 +126,9 @@ abstract class Listing extends Resource implements IteratorAggregate
 
 		// Create a new PHP object for each JSON object in the API response
 		$page->$resource = array_map(
-										array($this, 'getObjectFromJson'),
-										$page->$resource
-									);
+			array($this, 'getObjectFromJson'),
+			$page->$resource
+		);
 
 		$next_page_uri = null;
 		if (isset($page->next_page_uri)) {
@@ -154,8 +158,11 @@ abstract class Listing extends Resource implements IteratorAggregate
 	public function paginator($page = 0, $size = Paginator::DEFAULT_PAGE_SIZE, array $filters = array())
 	{
 		return new Paginator(
-								array($this, 'getPage'), $page, $size, $filters
-							);
+			array($this, 'getPage'),
+			$page,
+			$filters,
+			$size
+		);
 	}
 
 	/**
@@ -164,7 +171,9 @@ abstract class Listing extends Resource implements IteratorAggregate
 	 * @see IteratorAggregate
 	 * @return Paginator
 	 */
-	public function getIterator() {
+	public function getIterator()
+	{
 		return $this->paginator();
 	}
 }
+

@@ -1,5 +1,6 @@
 <?php
 namespace Library\Twilio\Api\Action;
+
 use Library\Twilio\Api\Resource\Listing;
 
 /**
@@ -9,4 +10,7 @@ use Library\Twilio\Api\Resource\Listing;
  * @subpackage Twilio\Api\Action
  * @author Aleksey Korzun <al.ko@webfoundation.net>
  */
-class Recording extends Listing {}
+class Recording extends Listing
+{
+}
+

@@ -1,6 +1,7 @@
 <?php
 namespace Twilio;
 
+use \Exception;
 use Twilio\Api\Action\Account;
 use Twilio\Api\Exception\Response as ResponseException;
 use Twilio\Client\Client;
@@ -68,6 +69,10 @@ class Twilio
 	 */
 	public function __construct($identifier, $token, $version = null, Client $client = null)
 	{
+		// Throw an error on empty identifier/token
+		if (!$identifier || !$token) {
+			throw new Exception('You must pass identifier (SID) and token provided to you by Twilio!');
+		}
 
 		// If custom client was not passed, use build in version
 		if (!$client) {

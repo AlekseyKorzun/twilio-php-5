@@ -1,10 +1,10 @@
 <?php
-namespace Zend\Framework;
+namespace Twilio;
 
-use Zend\Framework\Api\Action\Account;
-use Zend\Framework\Api\Exception\Response as ResponseException;
-use Zend\Framework\Client\Client;
-use Zend\Framework\Client\TinyHttp;
+use Twilio\Api\Action\Account;
+use Twilio\Api\Exception\Response as ResponseException;
+use Twilio\Client\Client;
+use Twilio\Client\TinyHttp;
 
 /**
  * Twilio API client

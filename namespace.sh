@@ -2,7 +2,7 @@
 echo "In order to use this package with your own autoloader, please enter fully qualified namespace"
 echo "for your framework library."
 echo ""
-echo "Entering Framework\Library will update packages namespace to Framework\Library\Twilio"
+echo "Entering Framework\Library\Twilio will update packages namespace to Framework\Library\Twilio"
 echo ""
 echo "Namespace:"
 

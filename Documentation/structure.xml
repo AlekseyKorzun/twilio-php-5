@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a8" title="">
-  <file path="Twilio.php" hash="2eb6ab90b5727d3108fabd10890092ea" package="Default">
-    <namespace-alias name="Account">Library\Twilio\Api\Action\Account</namespace-alias>
-    <namespace-alias name="ResponseException">Library\Twilio\Api\Exception\Response</namespace-alias>
-    <namespace-alias name="Client">Library\Twilio\Client\Client</namespace-alias>
-    <namespace-alias name="TinyHttp">Library\Twilio\Client\TinyHttp</namespace-alias>
-    <class final="false" abstract="false" namespace="Library" line="16" package="Library\Twilio">
+  <file path="Twilio.php" hash="ea67ac619e891fd300ccb0569defd3a3" package="Default">
+    <namespace-alias name="Account">Twilio\Api\Action\Account</namespace-alias>
+    <namespace-alias name="ResponseException">Twilio\Api\Exception\Response</namespace-alias>
+    <namespace-alias name="Client">Twilio\Client\Client</namespace-alias>
+    <namespace-alias name="TinyHttp">Twilio\Client\TinyHttp</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio" line="16" package="Library\Twilio">
       <extends/>
       <name>Twilio</name>
-      <full_name>\Library\Twilio</full_name>
+      <full_name>\Twilio\Twilio</full_name>
       <docblock line="9">
         <description><![CDATA[Twilio API client]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -16,7 +16,7 @@
         <tag line="9" name="subpackage" description="Twilio"/>
         <tag line="9" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <constant namespace="Library" line="23" package="Library\Twilio">
+      <constant namespace="Twilio" line="23" package="Library\Twilio">
         <name>API_URI</name>
         <full_name>API_URI</full_name>
         <value><![CDATA['https://api.twilio.com']]></value>
@@ -28,7 +28,7 @@
           </tag>
         </docblock>
       </constant>
-      <constant namespace="Library" line="30" package="Library\Twilio">
+      <constant namespace="Twilio" line="30" package="Library\Twilio">
         <name>USER_AGENT</name>
         <full_name>USER_AGENT</full_name>
         <value><![CDATA['twilio-php5/1.0']]></value>
@@ -40,18 +40,18 @@
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="public" line="37" namespace="Library" package="Default">
+      <property final="false" static="false" visibility="public" line="37" namespace="Twilio" package="Default">
         <name>$account</name>
         <default><![CDATA[]]></default>
         <docblock line="32">
           <description><![CDATA[Instance of Account resource]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="32" name="var" description="" type="\Library\Twilio\Api\Action\Account">
-            <type by_reference="false">\Library\Twilio\Api\Action\Account</type>
+          <tag line="32" name="var" description="" type="\Twilio\Api\Action\Account">
+            <type by_reference="false">\Twilio\Api\Action\Account</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="44" namespace="Library" package="Default">
+      <property final="false" static="false" visibility="protected" line="44" namespace="Twilio" package="Default">
         <name>$client</name>
         <default><![CDATA[]]></default>
         <docblock line="39">
@@ -62,7 +62,7 @@
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="51" namespace="Library" package="Default">
+      <property final="false" static="false" visibility="protected" line="51" namespace="Twilio" package="Default">
         <name>$version</name>
         <default><![CDATA[]]></default>
         <docblock line="46">
@@ -73,7 +73,7 @@
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="58" namespace="Library" package="Default">
+      <property final="false" static="false" visibility="protected" line="58" namespace="Twilio" package="Default">
         <name>$versions</name>
         <default><![CDATA[array('2008-08-01', '2010-04-01')]]></default>
         <docblock line="53">
@@ -84,7 +84,7 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library" line="69" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio" line="69" package="Library\Twilio">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="60">
@@ -99,8 +99,8 @@
           <tag line="60" name="param" description="API version" type="string" variable="$version">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="60" name="param" description="optional HTTP client" type="\Library\Twilio\Client\Client" variable="$client">
-            <type by_reference="false">\Library\Twilio\Client\Client</type>
+          <tag line="60" name="param" description="optional HTTP client" type="\Twilio\Client\Client" variable="$client">
+            <type by_reference="false">\Twilio\Client\Client</type>
           </tag>
           <tag line="60" name="return" description="" type="void">
             <type by_reference="false">void</type>
@@ -124,10 +124,10 @@
         <argument line="69">
           <name>$client</name>
           <default><![CDATA[null]]></default>
-          <type>\Library\Twilio\Client\Client</type>
+          <type>\Twilio\Client\Client</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library" line="102" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio" line="102" package="Library\Twilio">
         <name>version</name>
         <full_name>version</full_name>
         <docblock line="97">
@@ -138,7 +138,7 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library" line="115" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio" line="115" package="Library\Twilio">
         <name>retrieveData</name>
         <full_name>retrieveData</full_name>
         <docblock line="107">
@@ -153,8 +153,8 @@
           <tag line="107" name="param" description="indicates if passed URI contains full path to the resource" type="bool" variable="$isFullUri">
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="107" name="return" description="" type="\Library\stdClass|bool">
-            <type by_reference="false">\Library\stdClass</type>
+          <tag line="107" name="return" description="" type="\Twilio\stdClass|bool">
+            <type by_reference="false">\Twilio\stdClass</type>
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
@@ -174,7 +174,7 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library" line="127" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio" line="127" package="Library\Twilio">
         <name>deleteData</name>
         <full_name>deleteData</full_name>
         <docblock line="120">
@@ -186,8 +186,8 @@
           <tag line="120" name="param" description="query string parameters" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="120" name="return" description="" type="\Library\stdClass|bool">
-            <type by_reference="false">\Library\stdClass</type>
+          <tag line="120" name="return" description="" type="\Twilio\stdClass|bool">
+            <type by_reference="false">\Twilio\stdClass</type>
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
@@ -202,7 +202,7 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library" line="139" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio" line="139" package="Library\Twilio">
         <name>createData</name>
         <full_name>createData</full_name>
         <docblock line="132">
@@ -214,8 +214,8 @@
           <tag line="132" name="param" description="query string parameters" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="132" name="return" description="" type="\Library\stdClass|bool">
-            <type by_reference="false">\Library\stdClass</type>
+          <tag line="132" name="return" description="" type="\Twilio\stdClass|bool">
+            <type by_reference="false">\Twilio\stdClass</type>
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
@@ -230,14 +230,14 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Library" line="159" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Twilio" line="159" package="Library\Twilio">
         <name>processResponse</name>
         <full_name>processResponse</full_name>
         <docblock line="152">
           <description><![CDATA[Convert the JSON encoded resource into a PHP object.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="152" name="throws" description="" type="\Library\DomainException">
-            <type by_reference="false">\Library\DomainException</type>
+          <tag line="152" name="throws" description="" type="\Twilio\DomainException">
+            <type by_reference="false">\Twilio\DomainException</type>
           </tag>
           <tag line="152" name="param" description="3-tuple containing status, headers, and body" type="array" variable="$response">
             <type by_reference="false">array</type>
@@ -252,17 +252,17 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="Library" line="184" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Twilio" line="184" package="Library\Twilio">
         <name>processJsonResponse</name>
         <full_name>processJsonResponse</full_name>
         <docblock line="174">
           <description><![CDATA[Process JSON response]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="174" name="throws" description="" type="\Library\DomainException">
-            <type by_reference="false">\Library\DomainException</type>
+          <tag line="174" name="throws" description="" type="\Twilio\DomainException">
+            <type by_reference="false">\Twilio\DomainException</type>
           </tag>
-          <tag line="174" name="throws" description="" type="\Library\RestException">
-            <type by_reference="false">\Library\RestException</type>
+          <tag line="174" name="throws" description="" type="\Twilio\RestException">
+            <type by_reference="false">\Twilio\RestException</type>
           </tag>
           <tag line="174" name="param" description="response code" type="int" variable="$status">
             <type by_reference="false">int</type>
@@ -273,8 +273,8 @@
           <tag line="174" name="param" description="response body" type="string" variable="$body">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="174" name="return" description="" type="\Library\stdClass|bool">
-            <type by_reference="false">\Library\stdClass</type>
+          <tag line="174" name="return" description="" type="\Twilio\stdClass|bool">
+            <type by_reference="false">\Twilio\stdClass</type>
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
@@ -294,7 +294,7 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="Library" line="213" package="Library\Twilio">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="Twilio" line="213" package="Library\Twilio">
         <name>getRequestUri</name>
         <full_name>getRequestUri</full_name>
         <docblock line="204">
@@ -330,7 +330,7 @@ information]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library" line="231" package="Library\Twilio">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio" line="231" package="Library\Twilio">
         <name>authenticate</name>
         <full_name>authenticate</full_name>
         <docblock line="226">
@@ -346,12 +346,12 @@ information]]></description>
       <error line="0" code="50007">No page-level DocBlock was found in file Twilio.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Exception/Response.php" hash="8b56be029cdea11fe3a476e6dc4f04ec" package="Default">
+  <file path="Api/Exception/Response.php" hash="ecaaa71136a09304234e5dda95a2878f" package="Default">
     <namespace-alias name="Exception">Exception</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Exception" line="13" package="Library\Twilio\Api\Exception">
+    <class final="false" abstract="false" namespace="Twilio\Api\Exception" line="13" package="Library\Twilio\Api\Exception">
       <extends>\Exception</extends>
       <name>Response</name>
-      <full_name>\Library\Twilio\Api\Exception\Response</full_name>
+      <full_name>\Twilio\Api\Exception\Response</full_name>
       <docblock line="6">
         <description><![CDATA[Exception handler for unsuccessful service responses]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -359,7 +359,7 @@ information]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Exception"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="20" namespace="Library\Twilio\Api\Exception" package="Default">
+      <property final="false" static="false" visibility="protected" line="20" namespace="Twilio\Api\Exception" package="Default">
         <name>$status</name>
         <default><![CDATA[]]></default>
         <docblock line="15">
@@ -370,7 +370,7 @@ information]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="27" namespace="Library\Twilio\Api\Exception" package="Default">
+      <property final="false" static="false" visibility="protected" line="27" namespace="Twilio\Api\Exception" package="Default">
         <name>$info</name>
         <default><![CDATA[]]></default>
         <docblock line="22">
@@ -381,7 +381,7 @@ information]]></description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Exception" line="38" package="Library\Twilio\Api\Exception">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Exception" line="38" package="Library\Twilio\Api\Exception">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="29">
@@ -424,7 +424,7 @@ information]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Exception" line="51" package="Library\Twilio\Api\Exception">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Exception" line="51" package="Library\Twilio\Api\Exception">
         <name>getStatus</name>
         <full_name>getStatus</full_name>
         <docblock line="46">
@@ -435,7 +435,7 @@ information]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Exception" line="61" package="Library\Twilio\Api\Exception">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Exception" line="61" package="Library\Twilio\Api\Exception">
         <name>getInfo</name>
         <full_name>getInfo</full_name>
         <docblock line="56">
@@ -448,15 +448,15 @@ information]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Exception/Response.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Exception/Response.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Conference.php" hash="9930c97ef5952ab36c98e0c8fca326b1" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Conference.php" hash="8a35fef0d07eccfaa13ed7c43690a335" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Conference</name>
-      <full_name>\Library\Twilio\Api\Action\Conference</full_name>
+      <full_name>\Twilio\Api\Action\Conference</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio conference resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -466,15 +466,15 @@ information]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Conference.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Conference.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Notification/Notification.php" hash="2b37c92a1a48fef3d4ddb481c0f45354" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Notification" line="13" package="Library\Twilio\Api\Action\Notification">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Notification/Notification.php" hash="4be1de73c5a53aaa6c66f71aa69b42eb" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Notification" line="13" package="Library\Twilio\Api\Action\Notification">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Notification</name>
-      <full_name>\Library\Twilio\Api\Action\Notification\Notification</full_name>
+      <full_name>\Twilio\Api\Action\Notification\Notification</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio notification instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -484,15 +484,15 @@ information]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Notification/Notification.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Notification/Notification.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Recording/Recording.php" hash="0cf5e5d6fe5a70686fdc370483c89c42" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Recording" line="13" package="Library\Twilio\Api\Action\Recording">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Recording/Recording.php" hash="f122dd7a5fc11e9b3c65f8de7a2fdc51" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Recording" line="13" package="Library\Twilio\Api\Action\Recording">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Recording</name>
-      <full_name>\Library\Twilio\Api\Action\Recording\Recording</full_name>
+      <full_name>\Twilio\Api\Action\Recording\Recording</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio recoding instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -502,15 +502,15 @@ information]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Recording/Recording.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Recording/Recording.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Transcription/Transcription.php" hash="ef8a3aca20b9fca01e6f9448609b2423" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Transcription" line="13" package="Library\Twilio\Api\Action\Transcription">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Transcription/Transcription.php" hash="45f013306314a69dfb34181c9e2aec06" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Transcription" line="13" package="Library\Twilio\Api\Action\Transcription">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Transcription</name>
-      <full_name>\Library\Twilio\Api\Action\Transcription\Transcription</full_name>
+      <full_name>\Twilio\Api\Action\Transcription\Transcription</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio transcription instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -520,15 +520,15 @@ information]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Transcription/Transcription.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Transcription/Transcription.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/SmsMessage.php" hash="d1398bb640c2048288ef3a30fe44afcb" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/SmsMessage.php" hash="411aaf2f8a8a73d04a9ac18185975911" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>SmsMessage</name>
-      <full_name>\Library\Twilio\Api\Action\SmsMessage</full_name>
+      <full_name>\Twilio\Api\Action\SmsMessage</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio SMS message resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -536,7 +536,7 @@ information]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api\Action" line="20" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api\Action" line="20" package="Library\Twilio\Api\Action">
         <name>init</name>
         <full_name>init</full_name>
         <docblock line="15">
@@ -547,7 +547,7 @@ information]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="34" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="34" package="Library\Twilio\Api\Action">
         <name>create</name>
         <full_name>create</full_name>
         <docblock line="25">
@@ -565,8 +565,8 @@ information]]></description>
           <tag line="25" name="param" description="" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="25" name="return" description="" type="\Library\Twilio\Api\Action\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Action\Instance</type>
+          <tag line="25" name="return" description="" type="\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Twilio\Api\Action\Instance</type>
           </tag>
         </docblock>
         <argument line="34">
@@ -592,16 +592,16 @@ information]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/SmsMessage.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/SmsMessage.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/ConnectApp.php" hash="677aef862d7fb20656108fcc0f6ecf39" package="Default">
+  <file path="Api/Action/ConnectApp.php" hash="e1e00ac19f18523e1e478d61121d60b8" package="Default">
     <namespace-alias name="BadMethodCallException">BadMethodCallException</namespace-alias>
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="14" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="14" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>ConnectApp</name>
-      <full_name>\Library\Twilio\Api\Action\ConnectApp</full_name>
+      <full_name>\Twilio\Api\Action\ConnectApp</full_name>
       <docblock line="7">
         <description><![CDATA[Twilio connect app resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -609,7 +609,7 @@ information]]></description>
         <tag line="7" name="subpackage" description="Twilio\Api\Action"/>
         <tag line="7" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="24" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="24" package="Library\Twilio\Api\Action">
         <name>create</name>
         <full_name>create</full_name>
         <docblock line="16">
@@ -641,15 +641,15 @@ information]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ConnectApp.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/ConnectApp.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/IncomingPhoneNumber/IncomingPhoneNumber.php" hash="30a6b0b205b51a7518af99ac3ac2f5e9" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\IncomingPhoneNumber" line="13" package="Library\Twilio\Api\Action\IncomingPhoneNumber">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/IncomingPhoneNumber/IncomingPhoneNumber.php" hash="3db58bf77e279744f9af556b7e53b901" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\IncomingPhoneNumber" line="13" package="Library\Twilio\Api\Action\IncomingPhoneNumber">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>IncomingPhoneNumber</name>
-      <full_name>\Library\Twilio\Api\Action\IncomingPhoneNumber\IncomingPhoneNumber</full_name>
+      <full_name>\Twilio\Api\Action\IncomingPhoneNumber\IncomingPhoneNumber</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio incoming phone number instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -659,15 +659,15 @@ information]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/IncomingPhoneNumber/IncomingPhoneNumber.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/IncomingPhoneNumber/IncomingPhoneNumber.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Account/Sandbox.php" hash="2a42ba2480de8a431d305915dc077d0b" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Account" line="13" package="Library\Twilio\Api\Action\Account">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Account/Sandbox.php" hash="16051b45786d7adffb5d92276d209968" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Account" line="13" package="Library\Twilio\Api\Action\Account">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Sandbox</name>
-      <full_name>\Library\Twilio\Api\Action\Account\Sandbox</full_name>
+      <full_name>\Twilio\Api\Action\Account\Sandbox</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio sandbox instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -677,16 +677,16 @@ information]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Account/Sandbox.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Account/Sandbox.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Account/Account.php" hash="a6d99005bbfc643b256baddaad92b749" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <namespace-alias name="Sandbox">Library\Twilio\Api\Action\Account\Sandbox</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Account" line="14" package="Library\Twilio\Api\Action\Account">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Account/Account.php" hash="1b9c3010aa95ed422d1b1a337b615487" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <namespace-alias name="Sandbox">Twilio\Api\Action\Account\Sandbox</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Account" line="14" package="Library\Twilio\Api\Action\Account">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Account</name>
-      <full_name>\Library\Twilio\Api\Action\Account\Account</full_name>
+      <full_name>\Twilio\Api\Action\Account\Account</full_name>
       <docblock line="7">
         <description><![CDATA[Twilio account instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -694,7 +694,7 @@ information]]></description>
         <tag line="7" name="subpackage" description="Twilio\Api\Action\Account"/>
         <tag line="7" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api\Action\Account" line="21" package="Library\Twilio\Api\Action\Account">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api\Action\Account" line="21" package="Library\Twilio\Api\Action\Account">
         <name>init</name>
         <full_name>init</full_name>
         <docblock line="16">
@@ -707,15 +707,15 @@ information]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Account/Account.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Account/Account.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Conference/Conference.php" hash="2952306a8f738aafebb4d51e872d86fd" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Conference" line="13" package="Library\Twilio\Api\Action\Conference">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Conference/Conference.php" hash="5efe2b2fbfe8a8d18460568114437e1b" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Conference" line="13" package="Library\Twilio\Api\Action\Conference">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Conference</name>
-      <full_name>\Library\Twilio\Api\Action\Conference\Conference</full_name>
+      <full_name>\Twilio\Api\Action\Conference\Conference</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio conference instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -723,7 +723,7 @@ information]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action\Conference"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api\Action\Conference" line="20" package="Library\Twilio\Api\Action\Conference">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api\Action\Conference" line="20" package="Library\Twilio\Api\Action\Conference">
         <name>init</name>
         <full_name>init</full_name>
         <docblock line="15">
@@ -736,15 +736,15 @@ information]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Conference/Conference.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Conference/Conference.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/AvailablePhoneNumber/Helper.php" hash="023587efb947aee55716b3c5ed832690" package="Default">
+  <file path="Api/Action/AvailablePhoneNumber/Helper.php" hash="6e7e87d294e98d893f4a1d4c2959bbdd" package="Default">
     <namespace-alias name="Exception">Exception</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\AvailablePhoneNumber" line="14" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\AvailablePhoneNumber" line="14" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
       <extends/>
       <name>Helper</name>
-      <full_name>\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</full_name>
+      <full_name>\Twilio\Api\Action\AvailablePhoneNumber\Helper</full_name>
       <docblock line="6">
         <description><![CDATA[Helper class to wrap an object with a modified interface created by
 a partial application of its existing methods.]]></description>
@@ -753,7 +753,7 @@ a partial application of its existing methods.]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action\AvailablePhoneNumber"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <property final="false" static="false" visibility="private" line="21" namespace="Library\Twilio\Api\Action\AvailablePhoneNumber" package="Default">
+      <property final="false" static="false" visibility="private" line="21" namespace="Twilio\Api\Action\AvailablePhoneNumber" package="Default">
         <name>$callbacks</name>
         <default><![CDATA[array()]]></default>
         <docblock line="16">
@@ -764,7 +764,7 @@ a partial application of its existing methods.]]></description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action\AvailablePhoneNumber" line="31" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action\AvailablePhoneNumber" line="31" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
         <name>set</name>
         <full_name>set</full_name>
         <docblock line="23">
@@ -800,7 +800,7 @@ a partial application of its existing methods.]]></description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action\AvailablePhoneNumber" line="50" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action\AvailablePhoneNumber" line="50" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
         <name>__call</name>
         <full_name>__call</full_name>
         <docblock line="41">
@@ -833,15 +833,15 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AvailablePhoneNumber/Helper.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/AvailablePhoneNumber/Helper.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/AvailablePhoneNumber/AvailablePhoneNumber.php" hash="8c3b1df3768f9c208eca719d43319876" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\AvailablePhoneNumber" line="13" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/AvailablePhoneNumber/AvailablePhoneNumber.php" hash="836f987ae73d2893659eee36bb9b46be" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\AvailablePhoneNumber" line="13" package="Library\Twilio\Api\Action\AvailablePhoneNumber">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>AvailablePhoneNumber</name>
-      <full_name>\Library\Twilio\Api\Action\AvailablePhoneNumber\AvailablePhoneNumber</full_name>
+      <full_name>\Twilio\Api\Action\AvailablePhoneNumber\AvailablePhoneNumber</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio available phone number instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -851,15 +851,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AvailablePhoneNumber/AvailablePhoneNumber.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/AvailablePhoneNumber/AvailablePhoneNumber.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Account.php" hash="ea7d996ee7de2092b863c75d7a2ca83c" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Account.php" hash="41f60d84053830331f7360ef03d8f8f8" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Account</name>
-      <full_name>\Library\Twilio\Api\Action\Account</full_name>
+      <full_name>\Twilio\Api\Action\Account</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio account resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -869,15 +869,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Account.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Account.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Application.php" hash="1ea6d442b93ed4d407cfdaffc36aa433" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Application.php" hash="6ba98815e7169d8cffae9ea07f1f8f21" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Application</name>
-      <full_name>\Library\Twilio\Api\Action\Application</full_name>
+      <full_name>\Twilio\Api\Action\Application</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio application resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -885,7 +885,7 @@ requested methods]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="22" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="22" package="Library\Twilio\Api\Action">
         <name>create</name>
         <full_name>create</full_name>
         <docblock line="15">
@@ -897,8 +897,8 @@ requested methods]]></description>
           <tag line="15" name="param" description="" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="15" name="return" description="" type="\Library\Twilio\Api\Action\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Action\Instance</type>
+          <tag line="15" name="return" description="" type="\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Twilio\Api\Action\Instance</type>
           </tag>
         </docblock>
         <argument line="22">
@@ -914,15 +914,15 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Application.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Application.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/AuthorizedConnectApp/AuthorizedConnectApp.php" hash="33cfb6890fcc5bca472e5d54cce4a32d" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\AuthorizedConnectApp" line="13" package="Library\Twilio\Api\Action\AuthorizedConnectApp">
-      <extends>\Library\Twilio\Resource\Instance</extends>
+  <file path="Api/Action/AuthorizedConnectApp/AuthorizedConnectApp.php" hash="b81f41da81813df2c9dd08dff87dd9f6" package="Default">
+    <namespace-alias name="Instance">Twilio\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\AuthorizedConnectApp" line="13" package="Library\Twilio\Api\Action\AuthorizedConnectApp">
+      <extends>\Twilio\Resource\Instance</extends>
       <name>AuthorizedConnectApp</name>
-      <full_name>\Library\Twilio\Api\Action\AuthorizedConnectApp\AuthorizedConnectApp</full_name>
+      <full_name>\Twilio\Api\Action\AuthorizedConnectApp\AuthorizedConnectApp</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio authorized connect application instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -932,16 +932,16 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AuthorizedConnectApp/AuthorizedConnectApp.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/AuthorizedConnectApp/AuthorizedConnectApp.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/AvailablePhoneNumber.php" hash="c4d5ff7a8f4638cd6cf650669959aeea" package="Default">
-    <namespace-alias name="Helper">Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</namespace-alias>
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="14" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/AvailablePhoneNumber.php" hash="dba34d0eccc707169ccb55840ad211a8" package="Default">
+    <namespace-alias name="Helper">Twilio\Api\Action\AvailablePhoneNumber\Helper</namespace-alias>
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="14" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>AvailablePhoneNumber</name>
-      <full_name>\Library\Twilio\Api\Action\AvailablePhoneNumber</full_name>
+      <full_name>\Twilio\Api\Action\AvailablePhoneNumber</full_name>
       <docblock line="7">
         <description><![CDATA[Twilio available phone number resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -949,7 +949,7 @@ requested methods]]></description>
         <tag line="7" name="subpackage" description="Twilio\Api\Action"/>
         <tag line="7" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <constant namespace="Library\Twilio\Api\Action" line="21" package="Library\Twilio\Api\Action">
+      <constant namespace="Twilio\Api\Action" line="21" package="Library\Twilio\Api\Action">
         <name>TYPE_LOCAL</name>
         <full_name>TYPE_LOCAL</full_name>
         <value><![CDATA['Local']]></value>
@@ -961,7 +961,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="Library\Twilio\Api\Action" line="28" package="Library\Twilio\Api\Action">
+      <constant namespace="Twilio\Api\Action" line="28" package="Library\Twilio\Api\Action">
         <name>TYPE_TOLL_FREE</name>
         <full_name>TYPE_TOLL_FREE</full_name>
         <value><![CDATA['TollFree']]></value>
@@ -973,7 +973,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="37" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="37" package="Library\Twilio\Api\Action">
         <name>getLocal</name>
         <full_name>getLocal</full_name>
         <docblock line="30">
@@ -982,8 +982,8 @@ requested methods]]></description>
           <tag line="30" name="param" description="country The 2-digit country code you'd like to search for numbers e.g. ('US', 'CA', 'GB')" type="string" variable="$country">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="30" name="return" description="" type="\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper">
-            <type by_reference="false">\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</type>
+          <tag line="30" name="return" description="" type="\Twilio\Api\Action\AvailablePhoneNumber\Helper">
+            <type by_reference="false">\Twilio\Api\Action\AvailablePhoneNumber\Helper</type>
           </tag>
         </docblock>
         <argument line="37">
@@ -992,7 +992,7 @@ requested methods]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="55" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="55" package="Library\Twilio\Api\Action">
         <name>getTollFree</name>
         <full_name>getTollFree</full_name>
         <docblock line="48">
@@ -1001,8 +1001,8 @@ requested methods]]></description>
           <tag line="48" name="param" description="country The 2-digit country code you'd like to search for numbers e.g. ('US', 'CA', 'GB')" type="string" variable="$country">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="48" name="return" description="" type="\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper">
-            <type by_reference="false">\Library\Twilio\Api\Action\AvailablePhoneNumber\Helper</type>
+          <tag line="48" name="return" description="" type="\Twilio\Api\Action\AvailablePhoneNumber\Helper">
+            <type by_reference="false">\Twilio\Api\Action\AvailablePhoneNumber\Helper</type>
           </tag>
         </docblock>
         <argument line="55">
@@ -1011,7 +1011,7 @@ requested methods]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="75" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="75" package="Library\Twilio\Api\Action">
         <name>getList</name>
         <full_name>getList</full_name>
         <docblock line="66">
@@ -1026,8 +1026,8 @@ requested methods]]></description>
           <tag line="66" name="param" description="" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="66" name="return" description="" type="\Library\Twilio\Api\Action\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Action\Instance</type>
+          <tag line="66" name="return" description="" type="\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Twilio\Api\Action\Instance</type>
           </tag>
         </docblock>
         <argument line="75">
@@ -1046,7 +1046,7 @@ requested methods]]></description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="85" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="85" package="Library\Twilio\Api\Action">
         <name>getResourceName</name>
         <full_name>getResourceName</full_name>
         <docblock line="80">
@@ -1059,15 +1059,15 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AvailablePhoneNumber.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/AvailablePhoneNumber.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Notification.php" hash="83c7245b8f015f22f3d64fc760795c8d" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Notification.php" hash="70328e3b3cae41b7be412b4de6905da5" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Notification</name>
-      <full_name>\Library\Twilio\Api\Action\Notification</full_name>
+      <full_name>\Twilio\Api\Action\Notification</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio notification resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1077,15 +1077,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Notification.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Notification.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Application/Application.php" hash="e3520ad55663290d7d3658fab4188320" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Application" line="13" package="Library\Twilio\Api\Action\Application">
-      <extends>\Library\Twilio\Resource\Instance</extends>
+  <file path="Api/Action/Application/Application.php" hash="00a1a135430228facc54a75f3bde53a2" package="Default">
+    <namespace-alias name="Instance">Twilio\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Application" line="13" package="Library\Twilio\Api\Action\Application">
+      <extends>\Twilio\Resource\Instance</extends>
       <name>Application</name>
-      <full_name>\Library\Twilio\Api\Action\Application\Application</full_name>
+      <full_name>\Twilio\Api\Action\Application\Application</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio application instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1095,15 +1095,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Application/Application.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Application/Application.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/ShortCode.php" hash="49bfa21cbe739f86d629ca3a18451328" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/ShortCode.php" hash="06af22032f6a9434efa0381f15f5ec63" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>ShortCode</name>
-      <full_name>\Library\Twilio\Api\Action\ShortCode</full_name>
+      <full_name>\Twilio\Api\Action\ShortCode</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio short code resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1113,15 +1113,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ShortCode.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/ShortCode.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Participant/Participant.php" hash="3be9f61e7aed056367951f3303febf27" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Participant" line="13" package="Library\Twilio\Api\Action\Participant">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Participant/Participant.php" hash="47df2636e924bf22be1dc8e3fcb491b1" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Participant" line="13" package="Library\Twilio\Api\Action\Participant">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Participant</name>
-      <full_name>\Library\Twilio\Api\Action\Participant\Participant</full_name>
+      <full_name>\Twilio\Api\Action\Participant\Participant</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio participant instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1129,7 +1129,7 @@ requested methods]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action\Participant"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action\Participant" line="20" package="Library\Twilio\Api\Action\Participant">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action\Participant" line="20" package="Library\Twilio\Api\Action\Participant">
         <name>mute</name>
         <full_name>mute</full_name>
         <docblock line="15">
@@ -1142,15 +1142,15 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Participant/Participant.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Participant/Participant.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/ConnectApp/ConnectApp.php" hash="34bb4dd2990839dc13319d50e21ce8c8" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\ConnectApp" line="13" package="Library\Twilio\Api\Action\ConnectApp">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/ConnectApp/ConnectApp.php" hash="ce9af94e75492a5444843fafa9e9115b" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\ConnectApp" line="13" package="Library\Twilio\Api\Action\ConnectApp">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>ConnectApp</name>
-      <full_name>\Library\Twilio\Api\Action\ConnectApp\ConnectApp</full_name>
+      <full_name>\Twilio\Api\Action\ConnectApp\ConnectApp</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio connect application instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1160,15 +1160,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ConnectApp/ConnectApp.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/ConnectApp/ConnectApp.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Call/Call.php" hash="08b32cabb30ceb1a28b02e412f49e09a" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\Call" line="13" package="Library\Twilio\Api\Action\Call">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/Call/Call.php" hash="9b7c28f4571fe4d7317c4122cd8c7e3e" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\Call" line="13" package="Library\Twilio\Api\Action\Call">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>Call</name>
-      <full_name>\Library\Twilio\Api\Action\Call\Call</full_name>
+      <full_name>\Twilio\Api\Action\Call\Call</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio call instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1176,7 +1176,7 @@ requested methods]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action\Call"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api\Action\Call" line="20" package="Library\Twilio\Api\Action\Call">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api\Action\Call" line="20" package="Library\Twilio\Api\Action\Call">
         <name>init</name>
         <full_name>init</full_name>
         <docblock line="15">
@@ -1187,7 +1187,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action\Call" line="33" package="Library\Twilio\Api\Action\Call">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action\Call" line="33" package="Library\Twilio\Api\Action\Call">
         <name>hangup</name>
         <full_name>hangup</full_name>
         <docblock line="28">
@@ -1198,7 +1198,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action\Call" line="44" package="Library\Twilio\Api\Action\Call">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action\Call" line="44" package="Library\Twilio\Api\Action\Call">
         <name>route</name>
         <full_name>route</full_name>
         <docblock line="38">
@@ -1219,15 +1219,15 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Call/Call.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Call/Call.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Call.php" hash="f390f3532eb8c158d3d492df1203fd30" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Call.php" hash="7aa9b8abcaedf875215f388f7b27de01" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Call</name>
-      <full_name>\Library\Twilio\Api\Action\Call</full_name>
+      <full_name>\Twilio\Api\Action\Call</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio call resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1235,14 +1235,14 @@ requested methods]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Api\Action" line="21" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Api\Action" line="21" package="Library\Twilio\Api\Action">
         <name>isApplicationSid</name>
         <full_name>isApplicationSid</full_name>
         <docblock line="15">
           <description><![CDATA[Check if application SID is valid]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="15" name="param" description="application serial identifier" type="\Library\Twilio\Api\Action\$id" variable="$id">
-            <type by_reference="false">\Library\Twilio\Api\Action\$id</type>
+          <tag line="15" name="param" description="application serial identifier" type="\Twilio\Api\Action\$id" variable="$id">
+            <type by_reference="false">\Twilio\Api\Action\$id</type>
           </tag>
           <tag line="15" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
@@ -1254,7 +1254,7 @@ requested methods]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="35" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="35" package="Library\Twilio\Api\Action">
         <name>create</name>
         <full_name>create</full_name>
         <docblock line="26">
@@ -1272,8 +1272,8 @@ requested methods]]></description>
           <tag line="26" name="param" description="" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="26" name="return" description="" type="\Library\Twilio\Api\Action\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Action\Instance</type>
+          <tag line="26" name="return" description="" type="\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Twilio\Api\Action\Instance</type>
           </tag>
         </docblock>
         <argument line="35">
@@ -1299,16 +1299,16 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Call.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Call.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/AuthorizedConnectApp.php" hash="2a6097d44747f79db39f9ad369cc8163" package="Default">
+  <file path="Api/Action/AuthorizedConnectApp.php" hash="f514751b2e252dca0e66cf15d1a8a2ac" package="Default">
     <namespace-alias name="BadMethodCallException">BadMethodCallException</namespace-alias>
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="14" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="14" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>AuthorizedConnectApp</name>
-      <full_name>\Library\Twilio\Api\Action\AuthorizedConnectApp</full_name>
+      <full_name>\Twilio\Api\Action\AuthorizedConnectApp</full_name>
       <docblock line="7">
         <description><![CDATA[Twilio authorized connect application resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1316,7 +1316,7 @@ requested methods]]></description>
         <tag line="7" name="subpackage" description="Twilio\Api\Action"/>
         <tag line="7" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="24" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="24" package="Library\Twilio\Api\Action">
         <name>create</name>
         <full_name>create</full_name>
         <docblock line="16">
@@ -1348,15 +1348,15 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/AuthorizedConnectApp.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/AuthorizedConnectApp.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Recording.php" hash="bd44f39bd759c98906cd2976f2887404" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Recording.php" hash="2b07725cacfc4ea0da979060a65c9695" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Recording</name>
-      <full_name>\Library\Twilio\Api\Action\Recording</full_name>
+      <full_name>\Twilio\Api\Action\Recording</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio recording resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1366,15 +1366,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Recording.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Recording.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/ShortCode/ShortCode.php" hash="209663a7aedab0f8e3741eff37c8a5f5" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\ShortCode" line="13" package="Library\Twilio\Api\Action\ShortCode">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/ShortCode/ShortCode.php" hash="fd8a32d1806111c3a0ce28413a317a64" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\ShortCode" line="13" package="Library\Twilio\Api\Action\ShortCode">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>ShortCode</name>
-      <full_name>\Library\Twilio\Api\Action\ShortCode\ShortCode</full_name>
+      <full_name>\Twilio\Api\Action\ShortCode\ShortCode</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio short code instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1384,15 +1384,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/ShortCode/ShortCode.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/ShortCode/ShortCode.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/OutgoingCallerId/OutgoingCallerId.php" hash="432dbffc1b5fb9aa74d61938a569e049" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\OutgoingCallerId" line="13" package="Library\Twilio\Api\Action\OutgoingCallerId">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/OutgoingCallerId/OutgoingCallerId.php" hash="d9916d1d070562912844e2604fa6e20e" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\OutgoingCallerId" line="13" package="Library\Twilio\Api\Action\OutgoingCallerId">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>OutgoingCallerId</name>
-      <full_name>\Library\Twilio\Api\Action\OutgoingCallerId\OutgoingCallerId</full_name>
+      <full_name>\Twilio\Api\Action\OutgoingCallerId\OutgoingCallerId</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio outgoing caller id instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1402,15 +1402,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/OutgoingCallerId/OutgoingCallerId.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/OutgoingCallerId/OutgoingCallerId.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/SmsMessage/SmsMessage.php" hash="a2d4c11ee48319a5dc0f5fb9d296c9f7" package="Default">
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action\SmsMessage" line="13" package="Library\Twilio\Api\Action\SmsMessage">
-      <extends>\Library\Twilio\Api\Resource\Instance</extends>
+  <file path="Api/Action/SmsMessage/SmsMessage.php" hash="80ec258c4605918373ed4f183bb40be4" package="Default">
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action\SmsMessage" line="13" package="Library\Twilio\Api\Action\SmsMessage">
+      <extends>\Twilio\Api\Resource\Instance</extends>
       <name>SmsMessage</name>
-      <full_name>\Library\Twilio\Api\Action\SmsMessage\SmsMessage</full_name>
+      <full_name>\Twilio\Api\Action\SmsMessage\SmsMessage</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio SMS message instance]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1420,15 +1420,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/SmsMessage/SmsMessage.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/SmsMessage/SmsMessage.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Transcription.php" hash="f95e3f3fc996421f6f58e635fd573cd3" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Transcription.php" hash="dc33ca3d6fd30e4c5d96f18160e97cd9" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Transcription</name>
-      <full_name>\Library\Twilio\Api\Action\Transcription</full_name>
+      <full_name>\Twilio\Api\Action\Transcription</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio transcription resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1438,15 +1438,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Transcription.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Transcription.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/OutgoingCallerId.php" hash="e5d7c949094c5fa8474400c48f08743f" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/OutgoingCallerId.php" hash="2f487123a52f919ffcc018e082ae78e4" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>OutgoingCallerId</name>
-      <full_name>\Library\Twilio\Api\Action\OutgoingCallerId</full_name>
+      <full_name>\Twilio\Api\Action\OutgoingCallerId</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio outgoing caller id resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1454,7 +1454,7 @@ requested methods]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Action"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Action" line="22" package="Library\Twilio\Api\Action">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Action" line="22" package="Library\Twilio\Api\Action">
         <name>create</name>
         <full_name>create</full_name>
         <docblock line="15">
@@ -1466,8 +1466,8 @@ requested methods]]></description>
           <tag line="15" name="param" description="" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="15" name="return" description="" type="\Library\Twilio\Api\Action\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Action\Instance</type>
+          <tag line="15" name="return" description="" type="\Twilio\Api\Action\Instance">
+            <type by_reference="false">\Twilio\Api\Action\Instance</type>
           </tag>
         </docblock>
         <argument line="22">
@@ -1483,15 +1483,15 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/OutgoingCallerId.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/OutgoingCallerId.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/Participant.php" hash="e6ad595ede31c583db51e8affefbf0a2" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/Participant.php" hash="80dd66b19502ad3c1bbb4467ae274b62" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>Participant</name>
-      <full_name>\Library\Twilio\Api\Action\Participant</full_name>
+      <full_name>\Twilio\Api\Action\Participant</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio participants resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1501,15 +1501,15 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/Participant.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/Participant.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Action/IncomingPhoneNumber.php" hash="96c94ee442c2492d56c7a5eebb622b2a" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
-      <extends>\Library\Twilio\Api\Resource\Listing</extends>
+  <file path="Api/Action/IncomingPhoneNumber.php" hash="ccd5c829a1cc6ad4c5b6a686a38a6641" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Action" line="13" package="Library\Twilio\Api\Action">
+      <extends>\Twilio\Api\Resource\Listing</extends>
       <name>IncomingPhoneNumber</name>
-      <full_name>\Library\Twilio\Api\Action\IncomingPhoneNumber</full_name>
+      <full_name>\Twilio\Api\Action\IncomingPhoneNumber</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio incoming phone number resource]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1519,16 +1519,16 @@ requested methods]]></description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Action/IncomingPhoneNumber.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Action/IncomingPhoneNumber.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Resource/Listing/Page.php" hash="6267646965c7143e49dac28a9dd50962" package="Default">
+  <file path="Api/Resource/Listing/Page.php" hash="31423929cb146963129dcbe81b761e28" package="Default">
     <namespace-alias name="IteratorAggregate">IteratorAggregate</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Resource\Listing" line="13" package="Library\Twilio\Api\Resource\Listing">
+    <class final="false" abstract="false" namespace="Twilio\Api\Resource\Listing" line="13" package="Library\Twilio\Api\Resource\Listing">
       <extends/>
       <implements>\IteratorAggregate</implements>
       <name>Page</name>
-      <full_name>\Library\Twilio\Api\Resource\Listing\Page</full_name>
+      <full_name>\Twilio\Api\Resource\Listing\Page</full_name>
       <docblock line="6">
         <description><![CDATA[Page containing items]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1536,7 +1536,7 @@ requested methods]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Resource\Listing"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="20" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="20" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$page</name>
         <default><![CDATA[]]></default>
         <docblock line="15">
@@ -1547,7 +1547,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="27" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="27" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$items</name>
         <default><![CDATA[]]></default>
         <docblock line="22">
@@ -1558,7 +1558,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="34" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="34" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$nextUri</name>
         <default><![CDATA[]]></default>
         <docblock line="29">
@@ -1569,7 +1569,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="44" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="44" package="Library\Twilio\Api\Resource\Listing">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="36">
@@ -1604,7 +1604,7 @@ requested methods]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="56" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="56" package="Library\Twilio\Api\Resource\Listing">
         <name>items</name>
         <full_name>items</full_name>
         <docblock line="51">
@@ -1615,7 +1615,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="67" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="67" package="Library\Twilio\Api\Resource\Listing">
         <name>__get</name>
         <full_name>__get</full_name>
         <docblock line="61">
@@ -1634,7 +1634,7 @@ requested methods]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="77" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="77" package="Library\Twilio\Api\Resource\Listing">
         <name>getIterator</name>
         <full_name>getIterator</full_name>
         <docblock line="72">
@@ -1647,18 +1647,18 @@ requested methods]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Listing/Page.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Resource/Listing/Page.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Resource/Listing/Paginator.php" hash="9adaf3fa155ce8c53b2e6ac1cc115982" package="Default">
+  <file path="Api/Resource/Listing/Paginator.php" hash="4c23723b7ed1795dbdc24f1f1161e292" package="Default">
     <namespace-alias name="Iterator">Iterator</namespace-alias>
     <namespace-alias name="BadMethodCallException">BadMethodCallException</namespace-alias>
-    <namespace-alias name="ResponseException">Library\Twilio\Api\Exception\Response</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Resource\Listing" line="15" package="Library\Twilio\Api\Resource\Listing">
+    <namespace-alias name="ResponseException">Twilio\Api\Exception\Response</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Resource\Listing" line="15" package="Library\Twilio\Api\Resource\Listing">
       <extends/>
       <implements>\Iterator</implements>
       <name>Paginator</name>
-      <full_name>\Library\Twilio\Api\Resource\Listing\Paginator</full_name>
+      <full_name>\Twilio\Api\Resource\Listing\Paginator</full_name>
       <docblock line="8">
         <description><![CDATA[Paginator for pages returned via API results]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1666,7 +1666,7 @@ requested methods]]></description>
         <tag line="8" name="subpackage" description="Twilio\Api\Resource\Listing"/>
         <tag line="8" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <constant namespace="Library\Twilio\Api\Resource\Listing" line="22" package="Library\Twilio\Api\Resource\Listing">
+      <constant namespace="Twilio\Api\Resource\Listing" line="22" package="Library\Twilio\Api\Resource\Listing">
         <name>DEFAULT_PAGE_SIZE</name>
         <full_name>DEFAULT_PAGE_SIZE</full_name>
         <value><![CDATA[50]]></value>
@@ -1678,7 +1678,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="protected" line="29" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="29" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$items</name>
         <default><![CDATA[array()]]></default>
         <docblock line="24">
@@ -1689,7 +1689,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="36" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="36" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$page</name>
         <default><![CDATA[]]></default>
         <docblock line="31">
@@ -1700,7 +1700,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="43" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="43" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$size</name>
         <default><![CDATA[]]></default>
         <docblock line="38">
@@ -1711,7 +1711,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="50" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="50" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$filters</name>
         <default><![CDATA[]]></default>
         <docblock line="45">
@@ -1722,7 +1722,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="57" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="57" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$generator</name>
         <default><![CDATA[]]></default>
         <docblock line="52">
@@ -1733,7 +1733,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="64" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="64" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$snapshot</name>
         <default><![CDATA[]]></default>
         <docblock line="59">
@@ -1744,7 +1744,7 @@ requested methods]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="72" namespace="Library\Twilio\Api\Resource\Listing" package="Default">
+      <property final="false" static="false" visibility="protected" line="72" namespace="Twilio\Api\Resource\Listing" package="Default">
         <name>$nextUri</name>
         <default><![CDATA[]]></default>
         <docblock line="66">
@@ -1756,7 +1756,7 @@ each iteration]]></description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="83" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="83" package="Library\Twilio\Api\Resource\Listing">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="74">
@@ -1799,7 +1799,7 @@ each iteration]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="103" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="103" package="Library\Twilio\Api\Resource\Listing">
         <name>current</name>
         <full_name>current</full_name>
         <docblock line="98">
@@ -1810,7 +1810,7 @@ each iteration]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="113" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="113" package="Library\Twilio\Api\Resource\Listing">
         <name>key</name>
         <full_name>key</full_name>
         <docblock line="108">
@@ -1821,7 +1821,7 @@ each iteration]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="124" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="124" package="Library\Twilio\Api\Resource\Listing">
         <name>next</name>
         <full_name>next</full_name>
         <docblock line="118">
@@ -1833,7 +1833,7 @@ page of resources if necessary.]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="136" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="136" package="Library\Twilio\Api\Resource\Listing">
         <name>rewind</name>
         <full_name>rewind</full_name>
         <docblock line="130">
@@ -1845,7 +1845,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="154" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="154" package="Library\Twilio\Api\Resource\Listing">
         <name>count</name>
         <full_name>count</full_name>
         <docblock line="148">
@@ -1859,7 +1859,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource\Listing" line="164" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource\Listing" line="164" package="Library\Twilio\Api\Resource\Listing">
         <name>valid</name>
         <full_name>valid</full_name>
         <docblock line="159">
@@ -1870,7 +1870,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api\Resource\Listing" line="178" package="Library\Twilio\Api\Resource\Listing">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api\Resource\Listing" line="178" package="Library\Twilio\Api\Resource\Listing">
         <name>loadIfNecessary</name>
         <full_name>loadIfNecessary</full_name>
         <docblock line="173">
@@ -1883,20 +1883,20 @@ called at the beginning of any foreach() loop</p>]]></long-description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Listing/Paginator.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Resource/Listing/Paginator.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Resource/Listing.php" hash="a83c7d44c040a296f201a024b55ede27" package="Default">
+  <file path="Api/Resource/Listing.php" hash="72db0b0651c85bb98b48e40b5b0d642c" package="Default">
     <namespace-alias name="IteratorAggregate">IteratorAggregate</namespace-alias>
-    <namespace-alias name="Resource">Library\Twilio\Api\Resource</namespace-alias>
-    <namespace-alias name="Instance">Library\Twilio\Api\Resource\Instance</namespace-alias>
-    <namespace-alias name="Page">Library\Twilio\Api\Resource\Listing\Page</namespace-alias>
-    <namespace-alias name="Paginator">Library\Twilio\Api\Resource\Listing\Paginator</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Resource" line="17" package="Library\Twilio\Api\Resource">
-      <extends>\Library\Twilio\Api\Resource</extends>
+    <namespace-alias name="Resource">Twilio\Api\Resource</namespace-alias>
+    <namespace-alias name="Instance">Twilio\Api\Resource\Instance</namespace-alias>
+    <namespace-alias name="Page">Twilio\Api\Resource\Listing\Page</namespace-alias>
+    <namespace-alias name="Paginator">Twilio\Api\Resource\Listing\Paginator</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Resource" line="17" package="Library\Twilio\Api\Resource">
+      <extends>\Twilio\Api\Resource</extends>
       <implements>\IteratorAggregate</implements>
       <name>Listing</name>
-      <full_name>\Library\Twilio\Api\Resource\Listing</full_name>
+      <full_name>\Twilio\Api\Resource\Listing</full_name>
       <docblock line="10">
         <description><![CDATA[Abstrresource of a list resource from the Twilio API]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -1904,7 +1904,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
         <tag line="10" name="subpackage" description="Twilio\Api\Resource"/>
         <tag line="10" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="24" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="24" package="Library\Twilio\Api\Resource">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="19">
@@ -1915,7 +1915,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="39" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="39" package="Library\Twilio\Api\Resource">
         <name>get</name>
         <full_name>get</full_name>
         <docblock line="33">
@@ -1924,8 +1924,8 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           <tag line="33" name="param" description="resource identifier" type="string" variable="$identifier">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="33" name="return" description="" type="\Library\Twilio\Api\Resource\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Resource\Instance</type>
+          <tag line="33" name="return" description="" type="\Twilio\Api\Resource\Instance">
+            <type by_reference="false">\Twilio\Api\Resource\Instance</type>
           </tag>
         </docblock>
         <argument line="39">
@@ -1934,7 +1934,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="53" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="53" package="Library\Twilio\Api\Resource">
         <name>getObjectFromJson</name>
         <full_name>getObjectFromJson</full_name>
         <docblock line="47">
@@ -1943,8 +1943,8 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           <tag line="47" name="param" description="usually a JSON HTTP response from the API" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="47" name="return" description="" type="\Library\Twilio\Api\Resource\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Resource\Instance</type>
+          <tag line="47" name="return" description="" type="\Twilio\Api\Resource\Instance">
+            <type by_reference="false">\Twilio\Api\Resource\Instance</type>
           </tag>
         </docblock>
         <argument line="53">
@@ -1953,7 +1953,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="73" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="73" package="Library\Twilio\Api\Resource">
         <name>delete</name>
         <full_name>delete</full_name>
         <docblock line="66">
@@ -1980,7 +1980,7 @@ called at the beginning of any foreach() loop</p>]]></long-description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api\Resource" line="85" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api\Resource" line="85" package="Library\Twilio\Api\Resource">
         <name>create</name>
         <full_name>create</full_name>
         <docblock line="78">
@@ -1990,8 +1990,8 @@ InstanceResource.]]></description>
           <tag line="78" name="param" description="The parameters with which to create the resource" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="78" name="return" description="" type="\Library\Twilio\Api\Resource\Instance">
-            <type by_reference="false">\Library\Twilio\Api\Resource\Instance</type>
+          <tag line="78" name="return" description="" type="\Twilio\Api\Resource\Instance">
+            <type by_reference="false">\Twilio\Api\Resource\Instance</type>
           </tag>
         </docblock>
         <argument line="85">
@@ -2000,7 +2000,7 @@ InstanceResource.]]></description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="109" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="109" package="Library\Twilio\Api\Resource">
         <name>getPage</name>
         <full_name>getPage</full_name>
         <docblock line="99">
@@ -2018,8 +2018,8 @@ InstanceResource.]]></description>
           <tag line="99" name="param" description="if provided, the $page and $size parameters will be ignored and this URI will be requested directly." type="string" variable="$pagingUri">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="99" name="return" description="" type="\Library\Twilio\Api\Resource\Listing\Page">
-            <type by_reference="false">\Library\Twilio\Api\Resource\Listing\Page</type>
+          <tag line="99" name="return" description="" type="\Twilio\Api\Resource\Listing\Page">
+            <type by_reference="false">\Twilio\Api\Resource\Listing\Page</type>
           </tag>
         </docblock>
         <argument line="109">
@@ -2029,7 +2029,7 @@ InstanceResource.]]></description>
         </argument>
         <argument line="109">
           <name>$size</name>
-          <default><![CDATA[\Library\Twilio\Api\Resource\Listing\Paginator::DEFAULT_PAGE_SIZE]]></default>
+          <default><![CDATA[\Twilio\Api\Resource\Listing\Paginator::DEFAULT_PAGE_SIZE]]></default>
           <type/>
         </argument>
         <argument line="109">
@@ -2043,7 +2043,7 @@ InstanceResource.]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="158" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="158" package="Library\Twilio\Api\Resource">
         <name>paginator</name>
         <full_name>paginator</full_name>
         <docblock line="141">
@@ -2058,8 +2058,8 @@ InstanceResource.]]></description>
           <tag line="141" name="param" description="optional filters The filter array can accept full datetimes when StartTime or DateCreated are used. Inequalities should be within the key portion of the array and multiple filter parameters can be combined for more specific searches. eg. array('DateCreated&gt;' =&gt; '2011-07-05 08:00:00', 'DateCreated&lt;' =&gt; '2011-08-01') or array('StartTime&lt;' =&gt; '2011-07-05 08:00:00')" type="array" variable="$filters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="141" name="return" description="" type="\Library\Twilio\Api\Resource\Listing\Paginator">
-            <type by_reference="false">\Library\Twilio\Api\Resource\Listing\Paginator</type>
+          <tag line="141" name="return" description="" type="\Twilio\Api\Resource\Listing\Paginator">
+            <type by_reference="false">\Twilio\Api\Resource\Listing\Paginator</type>
           </tag>
         </docblock>
         <argument line="158">
@@ -2069,7 +2069,7 @@ InstanceResource.]]></description>
         </argument>
         <argument line="158">
           <name>$size</name>
-          <default><![CDATA[\Library\Twilio\Api\Resource\Listing\Paginator::DEFAULT_PAGE_SIZE]]></default>
+          <default><![CDATA[\Twilio\Api\Resource\Listing\Paginator::DEFAULT_PAGE_SIZE]]></default>
           <type/>
         </argument>
         <argument line="158">
@@ -2078,29 +2078,29 @@ InstanceResource.]]></description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="174" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="174" package="Library\Twilio\Api\Resource">
         <name>getIterator</name>
         <full_name>getIterator</full_name>
         <docblock line="168">
           <description><![CDATA[Implementing placeholder method for IteratorAggregate]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="168" name="see" description="\IteratorAggregate" refers="\IteratorAggregate"/>
-          <tag line="168" name="return" description="" type="\Library\Twilio\Api\Resource\Listing\Paginator">
-            <type by_reference="false">\Library\Twilio\Api\Resource\Listing\Paginator</type>
+          <tag line="168" name="return" description="" type="\Twilio\Api\Resource\Listing\Paginator">
+            <type by_reference="false">\Twilio\Api\Resource\Listing\Paginator</type>
           </tag>
         </docblock>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Listing.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Resource/Listing.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Resource/Instance.php" hash="ffbf2b165ae0eda01fce7fa1253334e6" package="Default">
-    <namespace-alias name="Resource">Library\Twilio\Api\Resource</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api\Resource" line="13" package="Library\Twilio\Api\Resource">
-      <extends>\Library\Twilio\Api\Resource</extends>
+  <file path="Api/Resource/Instance.php" hash="a9c178b9fc988f2778f1c58dc7da9704" package="Default">
+    <namespace-alias name="Resource">Twilio\Api\Resource</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api\Resource" line="13" package="Library\Twilio\Api\Resource">
+      <extends>\Twilio\Api\Resource</extends>
       <name>Instance</name>
-      <full_name>\Library\Twilio\Api\Resource\Instance</full_name>
+      <full_name>\Twilio\Api\Resource\Instance</full_name>
       <docblock line="6">
         <description><![CDATA[Abstraction of an instance resource from the Twilio API.]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -2108,7 +2108,7 @@ InstanceResource.]]></description>
         <tag line="6" name="subpackage" description="Twilio\Api\Resource"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="20" namespace="Library\Twilio\Api\Resource" package="Default">
+      <property final="false" static="false" visibility="protected" line="20" namespace="Twilio\Api\Resource" package="Default">
         <name>$isInitialized</name>
         <default><![CDATA[false]]></default>
         <docblock line="15">
@@ -2119,7 +2119,7 @@ InstanceResource.]]></description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="29" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="29" package="Library\Twilio\Api\Resource">
         <name>update</name>
         <full_name>update</full_name>
         <docblock line="22">
@@ -2146,7 +2146,7 @@ InstanceResource.]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="45" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="45" package="Library\Twilio\Api\Resource">
         <name>updateAttributes</name>
         <full_name>updateAttributes</full_name>
         <docblock line="38">
@@ -2166,7 +2166,7 @@ properties on this instance resource]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api\Resource" line="65" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api\Resource" line="65" package="Library\Twilio\Api\Resource">
         <name>__get</name>
         <full_name>__get</full_name>
         <docblock line="54">
@@ -2188,7 +2188,7 @@ resource.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api\Resource" line="91" package="Library\Twilio\Api\Resource">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api\Resource" line="91" package="Library\Twilio\Api\Resource">
         <name>initialize</name>
         <full_name>initialize</full_name>
         <docblock line="86">
@@ -2201,15 +2201,15 @@ resource.</p>]]></long-description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource/Instance.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Resource/Instance.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Api/Resource.php" hash="3f361621e6a12ad064ca6750820fe492" package="Default">
-    <namespace-alias name="Listing">Library\Twilio\Api\Resource\Listing</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Api" line="13" package="Library\Twilio\Api">
+  <file path="Api/Resource.php" hash="c57e8591035aff2971184de90842c282" package="Default">
+    <namespace-alias name="Listing">Twilio\Api\Resource\Listing</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Api" line="13" package="Library\Twilio\Api">
       <extends/>
       <name>Resource</name>
-      <full_name>\Library\Twilio\Api\Resource</full_name>
+      <full_name>\Twilio\Api\Resource</full_name>
       <docblock line="6">
         <description><![CDATA[Twilio API resource handler]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -2217,18 +2217,18 @@ resource.</p>]]></long-description>
         <tag line="6" name="subpackage" description="Twilio\Api"/>
         <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <property final="false" static="true" visibility="protected" line="20" namespace="Library\Twilio\Api" package="Default">
+      <property final="false" static="true" visibility="protected" line="20" namespace="Twilio\Api" package="Default">
         <name>$client</name>
         <default><![CDATA[]]></default>
         <docblock line="15">
           <description><![CDATA[Instance of client]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="15" name="var" description="" type="\Library\Twilio\Api\Client">
-            <type by_reference="false">\Library\Twilio\Api\Client</type>
+          <tag line="15" name="var" description="" type="\Twilio\Api\Client">
+            <type by_reference="false">\Twilio\Api\Client</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="27" namespace="Library\Twilio\Api" package="Default">
+      <property final="false" static="false" visibility="protected" line="27" namespace="Twilio\Api" package="Default">
         <name>$resource</name>
         <default><![CDATA[]]></default>
         <docblock line="22">
@@ -2239,7 +2239,7 @@ resource.</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="34" namespace="Library\Twilio\Api" package="Default">
+      <property final="false" static="false" visibility="protected" line="34" namespace="Twilio\Api" package="Default">
         <name>$actions</name>
         <default><![CDATA[array()]]></default>
         <docblock line="29">
@@ -2250,7 +2250,7 @@ resource.</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="41" namespace="Library\Twilio\Api" package="Default">
+      <property final="false" static="false" visibility="protected" line="41" namespace="Twilio\Api" package="Default">
         <name>$uri</name>
         <default><![CDATA[]]></default>
         <docblock line="36">
@@ -2261,7 +2261,7 @@ resource.</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api" line="49" package="Library\Twilio\Api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api" line="49" package="Library\Twilio\Api">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="43">
@@ -2280,7 +2280,7 @@ resource.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api" line="63" package="Library\Twilio\Api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api" line="63" package="Library\Twilio\Api">
         <name>uri</name>
         <full_name>uri</full_name>
         <docblock line="58">
@@ -2291,7 +2291,7 @@ resource.</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api" line="75" package="Library\Twilio\Api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api" line="75" package="Library\Twilio\Api">
         <name>setUri</name>
         <full_name>setUri</full_name>
         <docblock line="68">
@@ -2319,18 +2319,18 @@ resource.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Api" line="88" package="Library\Twilio\Api">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Api" line="88" package="Library\Twilio\Api">
         <name>client</name>
         <full_name>client</full_name>
         <docblock line="83">
           <description><![CDATA[Retrieve instance of a client]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="83" name="return" description="" type="\Library\Twilio\Api\Client">
-            <type by_reference="false">\Library\Twilio\Api\Client</type>
+          <tag line="83" name="return" description="" type="\Twilio\Api\Client">
+            <type by_reference="false">\Twilio\Api\Client</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Api" line="99" package="Library\Twilio\Api">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Api" line="99" package="Library\Twilio\Api">
         <name>setClient</name>
         <full_name>setClient</full_name>
         <docblock line="93">
@@ -2349,7 +2349,7 @@ resource.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Api" line="110" package="Library\Twilio\Api">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Api" line="110" package="Library\Twilio\Api">
         <name>getActions</name>
         <full_name>getActions</full_name>
         <docblock line="104">
@@ -2368,7 +2368,7 @@ resource.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Api" line="126" package="Library\Twilio\Api">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Api" line="126" package="Library\Twilio\Api">
         <name>setupActions</name>
         <full_name>setupActions</full_name>
         <docblock line="121">
@@ -2381,15 +2381,15 @@ resource.</p>]]></long-description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Api/Resource.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Api/Resource.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Client/Exception/TinyHttp.php" hash="382a902ed0a396ed6042126b238fd921" package="Default">
+  <file path="Client/Exception/TinyHttp.php" hash="75f5d9f7a065316901bd6f5d426f262b" package="Default">
     <namespace-alias name="ErrorException">ErrorException</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Client\Exception" line="13" package="Library\Twilio\Client\Exception">
+    <class final="false" abstract="false" namespace="Twilio\Client\Exception" line="13" package="Library\Twilio\Client\Exception">
       <extends>\ErrorException</extends>
       <name>TinyHttp</name>
-      <full_name>\Library\Twilio\Client\Exception\TinyHttp</full_name>
+      <full_name>\Twilio\Client\Exception\TinyHttp</full_name>
       <docblock line="6">
         <description><![CDATA[Exception handler for TinyHttp client]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -2399,108 +2399,108 @@ resource.</p>]]></long-description>
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Client/Exception/TinyHttp.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Client/Exception/TinyHttp.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Client/TinyHttp.php" hash="a41ab4d98844c60196a17513f6600596" package="Default">
-    <namespace-alias name="TinyHttpException">Library\Twilio\Client\Exception\TinyHttp</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Client" line="13" package="Library\Twilio\Client">
-      <extends>\Library\Twilio\Client\Client</extends>
+  <file path="Client/TinyHttp.php" hash="72d12e2895a6a1e55a016d37a2c7ea23" package="Default">
+    <namespace-alias name="TinyHttpException">Twilio\Client\Exception\TinyHttp</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Client" line="14" package="Library\Twilio\Client">
+      <extends>\Twilio\Client\Client</extends>
       <name>TinyHttp</name>
-      <full_name>\Library\Twilio\Client\TinyHttp</full_name>
-      <docblock line="6">
+      <full_name>\Twilio\Client\TinyHttp</full_name>
+      <docblock line="7">
         <description><![CDATA[TinyHttp client]]></description>
         <long-description><![CDATA[]]></long-description>
-        <tag line="6" name="package" description="Library"/>
-        <tag line="6" name="subpackage" description="Twilio\Client"/>
-        <tag line="6" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
+        <tag line="7" name="package" description="Library"/>
+        <tag line="7" name="subpackage" description="Twilio\Client"/>
+        <tag line="7" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <property final="false" static="false" visibility="public" line="20" namespace="Library\Twilio\Client" package="Default">
+      <property final="false" static="false" visibility="public" line="21" namespace="Twilio\Client" package="Default">
         <name>$scheme</name>
         <default><![CDATA[]]></default>
-        <docblock line="15">
+        <docblock line="16">
           <description><![CDATA[URI Scheme (http/https/ftp/etc)]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="15" name="var" description="" type="string">
+          <tag line="16" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="27" namespace="Library\Twilio\Client" package="Default">
+      <property final="false" static="false" visibility="public" line="28" namespace="Twilio\Client" package="Default">
         <name>$host</name>
         <default><![CDATA[]]></default>
-        <docblock line="22">
+        <docblock line="23">
           <description><![CDATA[Host of the remote server we are attempting to send request to]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="22" name="var" description="" type="string">
+          <tag line="23" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="34" namespace="Library\Twilio\Client" package="Default">
+      <property final="false" static="false" visibility="public" line="35" namespace="Twilio\Client" package="Default">
         <name>$port</name>
         <default><![CDATA[]]></default>
-        <docblock line="29">
+        <docblock line="30">
           <description><![CDATA[Port of the remote server we are attempting to send request to]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="29" name="var" description="" type="int">
+          <tag line="30" name="var" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Client" line="43" package="Library\Twilio\Client">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Client" line="44" package="Library\Twilio\Client">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="36">
+        <docblock line="37">
           <description><![CDATA[Constructor that setups basic options]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="36" name="param" description="" type="string|bool" variable="$uri">
+          <tag line="37" name="param" description="" type="string|bool" variable="$uri">
             <type by_reference="false">string</type>
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="36" name="param" description="" type="array" variable="$parameters">
+          <tag line="37" name="param" description="" type="array" variable="$parameters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="36" name="return" description="" type="void">
+          <tag line="37" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="43">
+        <argument line="44">
           <name>$uri</name>
           <default><![CDATA[false]]></default>
           <type/>
         </argument>
-        <argument line="43">
+        <argument line="44">
           <name>$parameters</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Client" line="79" package="Library\Twilio\Client">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Client" line="80" package="Library\Twilio\Client">
         <name>__call</name>
         <full_name>__call</full_name>
-        <docblock line="71">
+        <docblock line="72">
           <description><![CDATA[Magic call method]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="71" name="throws" description="" type="\Library\Twilio\Client\TinyHttp_Exception">
-            <type by_reference="false">\Library\Twilio\Client\TinyHttp_Exception</type>
+          <tag line="72" name="throws" description="" type="\Twilio\Client\TinyHttp_Exception">
+            <type by_reference="false">\Twilio\Client\TinyHttp_Exception</type>
           </tag>
-          <tag line="71" name="param" description="" type="string" variable="$method">
+          <tag line="72" name="param" description="" type="string" variable="$method">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="71" name="param" description="" type="array" variable="$arguments">
+          <tag line="72" name="param" description="" type="array" variable="$arguments">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="71" name="return" description="" type="array">
+          <tag line="72" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="79">
+        <argument line="80">
           <name>$method</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="79">
+        <argument line="80">
           <name>$arguments</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -2508,14 +2508,14 @@ resource.</p>]]></long-description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Client/TinyHttp.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Client/TinyHttp.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Client/Client.php" hash="d4f8ccff55e5cd9cacbcdbc78eb57804" package="Default">
-    <class final="false" abstract="false" namespace="Library\Twilio\Client" line="11" package="Library\Twilio\Client">
+  <file path="Client/Client.php" hash="83b39dbad14803f00517e0b317480c23" package="Default">
+    <class final="false" abstract="false" namespace="Twilio\Client" line="11" package="Library\Twilio\Client">
       <extends/>
       <name>Client</name>
-      <full_name>\Library\Twilio\Client\Client</full_name>
+      <full_name>\Twilio\Client\Client</full_name>
       <docblock line="4">
         <description><![CDATA[Abstract client class]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -2523,7 +2523,7 @@ resource.</p>]]></long-description>
         <tag line="4" name="subpackage" description="Twilio\Client"/>
         <tag line="4" name="author" description="Aleksey Korzun &lt;al.ko@webfoundation.net&gt;"/>
       </docblock>
-      <constant namespace="Library\Twilio\Client" line="19" package="Library\Twilio\Client">
+      <constant namespace="Twilio\Client" line="19" package="Library\Twilio\Client">
         <name>TIMEOUT</name>
         <full_name>TIMEOUT</full_name>
         <value><![CDATA[60]]></value>
@@ -2536,7 +2536,7 @@ to a local network or have a slow up-link]]></description>
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="protected" line="26" namespace="Library\Twilio\Client" package="Default">
+      <property final="false" static="false" visibility="protected" line="26" namespace="Twilio\Client" package="Default">
         <name>$identifier</name>
         <default><![CDATA[]]></default>
         <docblock line="21">
@@ -2547,7 +2547,7 @@ to a local network or have a slow up-link]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="33" namespace="Library\Twilio\Client" package="Default">
+      <property final="false" static="false" visibility="protected" line="33" namespace="Twilio\Client" package="Default">
         <name>$token</name>
         <default><![CDATA[]]></default>
         <docblock line="28">
@@ -2558,7 +2558,7 @@ to a local network or have a slow up-link]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="40" namespace="Library\Twilio\Client" package="Default">
+      <property final="false" static="false" visibility="protected" line="40" namespace="Twilio\Client" package="Default">
         <name>$options</name>
         <default><![CDATA[array()]]></default>
         <docblock line="35">
@@ -2569,7 +2569,7 @@ to a local network or have a slow up-link]]></description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="47" namespace="Library\Twilio\Client" package="Default">
+      <property final="false" static="false" visibility="protected" line="47" namespace="Twilio\Client" package="Default">
         <name>$isDebug</name>
         <default><![CDATA[false]]></default>
         <docblock line="42">
@@ -2580,7 +2580,7 @@ to a local network or have a slow up-link]]></description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="Library\Twilio\Client" line="56" package="Library\Twilio\Client">
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Twilio\Client" line="56" package="Library\Twilio\Client">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="49">
@@ -2608,14 +2608,14 @@ to a local network or have a slow up-link]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="Library\Twilio\Client" line="66" package="Library\Twilio\Client">
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Twilio\Client" line="66" package="Library\Twilio\Client">
         <name>__call</name>
         <full_name>__call</full_name>
         <docblock line="58">
           <description><![CDATA[Magic call method]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="58" name="throws" description="" type="\Library\Twilio\Client\TinyHttp_Exception">
-            <type by_reference="false">\Library\Twilio\Client\TinyHttp_Exception</type>
+          <tag line="58" name="throws" description="" type="\Twilio\Client\TinyHttp_Exception">
+            <type by_reference="false">\Twilio\Client\TinyHttp_Exception</type>
           </tag>
           <tag line="58" name="param" description="" type="string" variable="$method">
             <type by_reference="false">string</type>
@@ -2638,7 +2638,7 @@ to a local network or have a slow up-link]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Client" line="73" package="Library\Twilio\Client">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Client" line="73" package="Library\Twilio\Client">
         <name>identifier</name>
         <full_name>identifier</full_name>
         <docblock line="68">
@@ -2649,7 +2649,7 @@ to a local network or have a slow up-link]]></description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Client" line="84" package="Library\Twilio\Client">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Client" line="84" package="Library\Twilio\Client">
         <name>setIdentifier</name>
         <full_name>setIdentifier</full_name>
         <docblock line="78">
@@ -2668,7 +2668,7 @@ to a local network or have a slow up-link]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Client" line="95" package="Library\Twilio\Client">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Client" line="95" package="Library\Twilio\Client">
         <name>setToken</name>
         <full_name>setToken</full_name>
         <docblock line="89">
@@ -2689,15 +2689,15 @@ to a local network or have a slow up-link]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Client/Client.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Client/Client.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Utility/Capability/Scope.php" hash="e96f9691d8cc75ec017d81e84950356d" package="Default">
+  <file path="Utility/Capability/Scope.php" hash="33d32837acce1fe0c356ba93abf7b5f5" package="Default">
     <namespace-alias name="UnexpectedValueException">UnexpectedValueException</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Utility\Capability" line="21" package="Library\Twilio\Utility\Capability">
+    <class final="false" abstract="false" namespace="Twilio\Utility\Capability" line="21" package="Library\Twilio\Utility\Capability">
       <extends/>
       <name>Scope</name>
-      <full_name>\Library\Twilio\Utility\Capability\Scope</full_name>
+      <full_name>\Twilio\Utility\Capability\Scope</full_name>
       <docblock line="6">
         <description><![CDATA[Scope URI implementation]]></description>
         <long-description><![CDATA[<p>Simple way to represent configurable privileges in an OAuth
@@ -2711,7 +2711,7 @@ scope:client:incoming?name=jonas</p>]]></long-description>
         <tag line="6" name="package" description="Library"/>
         <tag line="6" name="subpackage" description="Twilio\Utility\Capability"/>
       </docblock>
-      <property final="false" static="false" visibility="public" line="28" namespace="Library\Twilio\Utility\Capability" package="Default">
+      <property final="false" static="false" visibility="public" line="28" namespace="Twilio\Utility\Capability" package="Default">
         <name>$service</name>
         <default><![CDATA[]]></default>
         <docblock line="23">
@@ -2722,7 +2722,7 @@ scope:client:incoming?name=jonas</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="35" namespace="Library\Twilio\Utility\Capability" package="Default">
+      <property final="false" static="false" visibility="public" line="35" namespace="Twilio\Utility\Capability" package="Default">
         <name>$privilege</name>
         <default><![CDATA[]]></default>
         <docblock line="30">
@@ -2733,7 +2733,7 @@ scope:client:incoming?name=jonas</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="42" namespace="Library\Twilio\Utility\Capability" package="Default">
+      <property final="false" static="false" visibility="public" line="42" namespace="Twilio\Utility\Capability" package="Default">
         <name>$parameters</name>
         <default><![CDATA[]]></default>
         <docblock line="37">
@@ -2744,7 +2744,7 @@ scope:client:incoming?name=jonas</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility\Capability" line="51" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility\Capability" line="51" package="Library\Twilio\Utility\Capability">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="44">
@@ -2776,7 +2776,7 @@ scope:client:incoming?name=jonas</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility\Capability" line="63" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility\Capability" line="63" package="Library\Twilio\Utility\Capability">
         <name>toString</name>
         <full_name>toString</full_name>
         <docblock line="58">
@@ -2787,7 +2787,7 @@ scope:client:incoming?name=jonas</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="79" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="79" package="Library\Twilio\Utility\Capability">
         <name>parse</name>
         <full_name>parse</full_name>
         <docblock line="72">
@@ -2799,8 +2799,8 @@ scope:client:incoming?name=jonas</p>]]></long-description>
           <tag line="72" name="param" description="the scope URI" type="string" variable="$uri">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="72" name="return" description="the parsed scope uri" type="\Library\Twilio\Utility\Capability\Scope">
-            <type by_reference="false">\Library\Twilio\Utility\Capability\Scope</type>
+          <tag line="72" name="return" description="the parsed scope uri" type="\Twilio\Utility\Capability\Scope">
+            <type by_reference="false">\Twilio\Utility\Capability\Scope</type>
           </tag>
         </docblock>
         <argument line="79">
@@ -2811,16 +2811,16 @@ scope:client:incoming?name=jonas</p>]]></long-description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Capability/Scope.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Utility/Capability/Scope.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Utility/Capability/Jwt.php" hash="0acfa0a8aaea92f312db4945e06bed3e" package="Default">
+  <file path="Utility/Capability/Jwt.php" hash="318476a2ac0a620a89695d58b4ac8fe7" package="Default">
     <namespace-alias name="DomainException">DomainException</namespace-alias>
     <namespace-alias name="UnexpectedValueException">UnexpectedValueException</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Utility\Capability" line="17" package="Library\Twilio\Utility\Capability">
+    <class final="false" abstract="false" namespace="Twilio\Utility\Capability" line="17" package="Library\Twilio\Utility\Capability">
       <extends/>
       <name>Jwt</name>
-      <full_name>\Library\Twilio\Utility\Capability\Jwt</full_name>
+      <full_name>\Twilio\Utility\Capability\Jwt</full_name>
       <docblock line="7">
         <description><![CDATA[JSON Web Token implementation]]></description>
         <long-description><![CDATA[<p>Minimum implementation used by Realtime auth, based on this spec:
@@ -2829,7 +2829,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
         <tag line="7" name="package" description="Library"/>
         <tag line="7" name="subpackage" description="Twilio\Utility\Capability"/>
       </docblock>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="29" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="29" package="Library\Twilio\Utility\Capability">
         <name>decode</name>
         <full_name>decode</full_name>
         <docblock line="19">
@@ -2871,7 +2871,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="64" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="64" package="Library\Twilio\Utility\Capability">
         <name>encode</name>
         <full_name>encode</full_name>
         <docblock line="56">
@@ -2907,7 +2907,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="88" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="88" package="Library\Twilio\Utility\Capability">
         <name>sign</name>
         <full_name>sign</full_name>
         <docblock line="80">
@@ -2942,7 +2942,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="110" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="110" package="Library\Twilio\Utility\Capability">
         <name>jsonDecode</name>
         <full_name>jsonDecode</full_name>
         <docblock line="103">
@@ -2965,7 +2965,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="131" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="131" package="Library\Twilio\Utility\Capability">
         <name>jsonEncode</name>
         <full_name>jsonEncode</full_name>
         <docblock line="124">
@@ -2988,7 +2988,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="151" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="151" package="Library\Twilio\Utility\Capability">
         <name>urlsafeB64Decode</name>
         <full_name>urlsafeB64Decode</full_name>
         <docblock line="145">
@@ -3007,7 +3007,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Library\Twilio\Utility\Capability" line="164" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Twilio\Utility\Capability" line="164" package="Library\Twilio\Utility\Capability">
         <name>urlsafeB64Encode</name>
         <full_name>urlsafeB64Encode</full_name>
         <docblock line="158">
@@ -3026,7 +3026,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="Library\Twilio\Utility\Capability" line="176" package="Library\Twilio\Utility\Capability">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="Twilio\Utility\Capability" line="176" package="Library\Twilio\Utility\Capability">
         <name>handleJsonError</name>
         <full_name>handleJsonError</full_name>
         <docblock line="169">
@@ -3050,15 +3050,15 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Capability/Jwt.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Utility/Capability/Jwt.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Utility/Exception/Twiml.php" hash="571440041fd99e6d7634c3a2f868368a" package="Default">
+  <file path="Utility/Exception/Twiml.php" hash="2d9f615fc838e4f5d57f474e7ced5048" package="Default">
     <namespace-alias name="Exception">Exception</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Utility\Exception" line="13" package="Library\Twilio\Utility\Exception">
+    <class final="false" abstract="false" namespace="Twilio\Utility\Exception" line="13" package="Library\Twilio\Utility\Exception">
       <extends>\Exception</extends>
       <name>Twiml</name>
-      <full_name>\Library\Twilio\Utility\Exception\Twiml</full_name>
+      <full_name>\Twilio\Utility\Exception\Twiml</full_name>
       <docblock line="6">
         <description><![CDATA[Twiml response generator exception]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -3068,16 +3068,16 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
       </docblock>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Exception/Twiml.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Utility/Exception/Twiml.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Utility/Twiml.php" hash="f434795b141c170e4d38c74b5e812672" package="Default">
+  <file path="Utility/Twiml.php" hash="010655fccdd1a1a063170d574b0d89b6" package="Default">
     <namespace-alias name="SimpleXmlElement">SimpleXmlElement</namespace-alias>
-    <namespace-alias name="TwimlException">Library\Twilio\Utility\Exception\Twiml</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Utility" line="14" package="Library\Twilio\Utility">
+    <namespace-alias name="TwimlException">Twilio\Utility\Exception\Twiml</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Utility" line="14" package="Library\Twilio\Utility">
       <extends/>
       <name>Twiml</name>
-      <full_name>\Library\Twilio\Utility\Twiml</full_name>
+      <full_name>\Twilio\Utility\Twiml</full_name>
       <docblock line="7">
         <description><![CDATA[Twilio capability token generator]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -3085,7 +3085,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
         <tag line="7" name="package" description="Library"/>
         <tag line="7" name="subpackage" description="Twilio\Utility"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="21" namespace="Library\Twilio\Utility" package="Default">
+      <property final="false" static="false" visibility="protected" line="21" namespace="Twilio\Utility" package="Default">
         <name>$element</name>
         <default><![CDATA[]]></default>
         <docblock line="16">
@@ -3096,14 +3096,14 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="32" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="32" package="Library\Twilio\Utility">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="23">
           <description><![CDATA[Constructs a Twiml response]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="23" name="throws" description="" type="\Library\Twilio\Utility\Exception\Twiml">
-            <type by_reference="false">\Library\Twilio\Utility\Exception\Twiml</type>
+          <tag line="23" name="throws" description="" type="\Twilio\Utility\Exception\Twiml">
+            <type by_reference="false">\Twilio\Utility\Exception\Twiml</type>
           </tag>
           <tag line="23" name="param" description="the element to wrap/attributes to add to the element. If nothing is passed we will initialize an empty element named 'Response'." type="\SimpleXmlElement|array" variable="$argument">
             <type by_reference="false">\SimpleXmlElement</type>
@@ -3119,7 +3119,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="74" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="74" package="Library\Twilio\Utility">
         <name>__call</name>
         <full_name>__call</full_name>
         <docblock line="52">
@@ -3163,7 +3163,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="133" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="133" package="Library\Twilio\Utility">
         <name>__toString</name>
         <full_name>__toString</full_name>
         <docblock line="128">
@@ -3176,17 +3176,17 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Twiml.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Utility/Twiml.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Utility/Capability.php" hash="e802eade4cf36ff98e136bd4d33d82cd" package="Default">
+  <file path="Utility/Capability.php" hash="6690b7a0a92246dc84fa1bc116ab6afa" package="Default">
     <namespace-alias name="InvalidArgumentException">InvalidArgumentException</namespace-alias>
-    <namespace-alias name="Scope">Library\Twilio\Utility\Capability\Scope</namespace-alias>
-    <namespace-alias name="Jwt">Library\Twilio\Utility\Capability\Jwt</namespace-alias>
-    <class final="false" abstract="false" namespace="Library\Twilio\Utility" line="15" package="Library\Twilio\Utility">
+    <namespace-alias name="Scope">Twilio\Utility\Capability\Scope</namespace-alias>
+    <namespace-alias name="Jwt">Twilio\Utility\Capability\Jwt</namespace-alias>
+    <class final="false" abstract="false" namespace="Twilio\Utility" line="15" package="Library\Twilio\Utility">
       <extends/>
       <name>Capability</name>
-      <full_name>\Library\Twilio\Utility\Capability</full_name>
+      <full_name>\Twilio\Utility\Capability</full_name>
       <docblock line="8">
         <description><![CDATA[Twilio capability token generator]]></description>
         <long-description><![CDATA[]]></long-description>
@@ -3194,7 +3194,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
         <tag line="8" name="package" description="Library"/>
         <tag line="8" name="subpackage" description="Twilio\Utility"/>
       </docblock>
-      <constant namespace="Library\Twilio\Utility" line="22" package="Library\Twilio\Utility">
+      <constant namespace="Twilio\Utility" line="22" package="Library\Twilio\Utility">
         <name>DEFAULT_TTL</name>
         <full_name>DEFAULT_TTL</full_name>
         <value><![CDATA[3600]]></value>
@@ -3206,7 +3206,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="public" line="29" namespace="Library\Twilio\Utility" package="Default">
+      <property final="false" static="false" visibility="public" line="29" namespace="Twilio\Utility" package="Default">
         <name>$identifier</name>
         <default><![CDATA[]]></default>
         <docblock line="24">
@@ -3217,7 +3217,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="36" namespace="Library\Twilio\Utility" package="Default">
+      <property final="false" static="false" visibility="public" line="36" namespace="Twilio\Utility" package="Default">
         <name>$token</name>
         <default><![CDATA[]]></default>
         <docblock line="31">
@@ -3228,7 +3228,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="43" namespace="Library\Twilio\Utility" package="Default">
+      <property final="false" static="false" visibility="public" line="43" namespace="Twilio\Utility" package="Default">
         <name>$scopes</name>
         <default><![CDATA[]]></default>
         <docblock line="38">
@@ -3239,7 +3239,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="50" namespace="Library\Twilio\Utility" package="Default">
+      <property final="false" static="false" visibility="public" line="50" namespace="Twilio\Utility" package="Default">
         <name>$clientName</name>
         <default><![CDATA[]]></default>
         <docblock line="45">
@@ -3250,7 +3250,7 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p>]]></long-de
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="61" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="61" package="Library\Twilio\Utility">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="52">
@@ -3279,7 +3279,7 @@ functions allowXXXX.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="76" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="76" package="Library\Twilio\Utility">
         <name>allowClientIncoming</name>
         <full_name>allowClientIncoming</full_name>
         <docblock line="67">
@@ -3303,7 +3303,7 @@ specify the client name.]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="107" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="107" package="Library\Twilio\Utility">
         <name>allowClientOutgoing</name>
         <full_name>allowClientOutgoing</full_name>
         <docblock line="99">
@@ -3330,7 +3330,7 @@ specify the client name.]]></description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="124" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="124" package="Library\Twilio\Utility">
         <name>allowEventStream</name>
         <full_name>allowEventStream</full_name>
         <docblock line="118">
@@ -3349,7 +3349,7 @@ specify the client name.]]></description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="143" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="143" package="Library\Twilio\Utility">
         <name>generateToken</name>
         <full_name>generateToken</full_name>
         <docblock line="135">
@@ -3369,7 +3369,7 @@ previously has been granted to this token.]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Library\Twilio\Utility" line="175" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Twilio\Utility" line="175" package="Library\Twilio\Utility">
         <name>allow</name>
         <full_name>allow</full_name>
         <docblock line="167">
@@ -3406,14 +3406,14 @@ previously has been granted to this token.]]></description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/Capability.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Utility/Capability.php</error>
     </parse_markers>
   </file>
-  <file path="Twilio/Utility/RequestValidator.php" hash="064fd5697a91ba16e82bc1ad537f55c7" package="Default">
-    <class final="false" abstract="false" namespace="Library\Twilio\Utility" line="26" package="Library\Twilio\Utility">
+  <file path="Utility/RequestValidator.php" hash="6759bafcdef185b9ada073b1cca6309f" package="Default">
+    <class final="false" abstract="false" namespace="Twilio\Utility" line="26" package="Library\Twilio\Utility">
       <extends/>
       <name>RequestValidator</name>
-      <full_name>\Library\Twilio\Utility\RequestValidator</full_name>
+      <full_name>\Twilio\Utility\RequestValidator</full_name>
       <docblock line="4">
         <description><![CDATA[An important part of any secure Twilio application is correctly performing
 request validation.]]></description>
@@ -3434,7 +3434,7 @@ the request.</p>]]></long-description>
         <tag line="4" name="subpackage" description="Twilio\Utility"/>
         <tag line="4" name="link" description="http://www.twilio.com/docs/security#validating-requests" link="http://www.twilio.com/docs/security#validating-requests"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="33" namespace="Library\Twilio\Utility" package="Default">
+      <property final="false" static="false" visibility="protected" line="33" namespace="Twilio\Utility" package="Default">
         <name>$token</name>
         <default><![CDATA[]]></default>
         <docblock line="28">
@@ -3445,7 +3445,7 @@ the request.</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="41" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="41" package="Library\Twilio\Utility">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="35">
@@ -3464,7 +3464,7 @@ the request.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="53" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="53" package="Library\Twilio\Utility">
         <name>computeSignature</name>
         <full_name>computeSignature</full_name>
         <docblock line="46">
@@ -3491,7 +3491,7 @@ the request.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Library\Twilio\Utility" line="76" package="Library\Twilio\Utility">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Twilio\Utility" line="76" package="Library\Twilio\Utility">
         <name>validate</name>
         <full_name>validate</full_name>
         <docblock line="68">
@@ -3528,7 +3528,7 @@ the request.</p>]]></long-description>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file Twilio/Utility/RequestValidator.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file Utility/RequestValidator.php</error>
     </parse_markers>
   </file>
   <package name="Default" full_name="Default"/>
@@ -3566,38 +3566,36 @@ the request.</p>]]></long-description>
       </package>
     </package>
   </package>
-  <namespace name="Library" full_name="Library">
-    <namespace name="Twilio" full_name="Library\Twilio">
-      <namespace name="Api" full_name="Library\Twilio\Api">
-        <namespace name="Action" full_name="Library\Twilio\Api\Action">
-          <namespace name="Account" full_name="Library\Twilio\Api\Action\Account"/>
-          <namespace name="Application" full_name="Library\Twilio\Api\Action\Application"/>
-          <namespace name="AuthorizedConnectApp" full_name="Library\Twilio\Api\Action\AuthorizedConnectApp"/>
-          <namespace name="AvailablePhoneNumber" full_name="Library\Twilio\Api\Action\AvailablePhoneNumber"/>
-          <namespace name="Call" full_name="Library\Twilio\Api\Action\Call"/>
-          <namespace name="Conference" full_name="Library\Twilio\Api\Action\Conference"/>
-          <namespace name="ConnectApp" full_name="Library\Twilio\Api\Action\ConnectApp"/>
-          <namespace name="IncomingPhoneNumber" full_name="Library\Twilio\Api\Action\IncomingPhoneNumber"/>
-          <namespace name="Notification" full_name="Library\Twilio\Api\Action\Notification"/>
-          <namespace name="OutgoingCallerId" full_name="Library\Twilio\Api\Action\OutgoingCallerId"/>
-          <namespace name="Participant" full_name="Library\Twilio\Api\Action\Participant"/>
-          <namespace name="Recording" full_name="Library\Twilio\Api\Action\Recording"/>
-          <namespace name="ShortCode" full_name="Library\Twilio\Api\Action\ShortCode"/>
-          <namespace name="SmsMessage" full_name="Library\Twilio\Api\Action\SmsMessage"/>
-          <namespace name="Transcription" full_name="Library\Twilio\Api\Action\Transcription"/>
-        </namespace>
-        <namespace name="Exception" full_name="Library\Twilio\Api\Exception"/>
-        <namespace name="Resource" full_name="Library\Twilio\Api\Resource">
-          <namespace name="Listing" full_name="Library\Twilio\Api\Resource\Listing"/>
-        </namespace>
+  <namespace name="Twilio" full_name="Twilio">
+    <namespace name="Api" full_name="Twilio\Api">
+      <namespace name="Action" full_name="Twilio\Api\Action">
+        <namespace name="Account" full_name="Twilio\Api\Action\Account"/>
+        <namespace name="Application" full_name="Twilio\Api\Action\Application"/>
+        <namespace name="AuthorizedConnectApp" full_name="Twilio\Api\Action\AuthorizedConnectApp"/>
+        <namespace name="AvailablePhoneNumber" full_name="Twilio\Api\Action\AvailablePhoneNumber"/>
+        <namespace name="Call" full_name="Twilio\Api\Action\Call"/>
+        <namespace name="Conference" full_name="Twilio\Api\Action\Conference"/>
+        <namespace name="ConnectApp" full_name="Twilio\Api\Action\ConnectApp"/>
+        <namespace name="IncomingPhoneNumber" full_name="Twilio\Api\Action\IncomingPhoneNumber"/>
+        <namespace name="Notification" full_name="Twilio\Api\Action\Notification"/>
+        <namespace name="OutgoingCallerId" full_name="Twilio\Api\Action\OutgoingCallerId"/>
+        <namespace name="Participant" full_name="Twilio\Api\Action\Participant"/>
+        <namespace name="Recording" full_name="Twilio\Api\Action\Recording"/>
+        <namespace name="ShortCode" full_name="Twilio\Api\Action\ShortCode"/>
+        <namespace name="SmsMessage" full_name="Twilio\Api\Action\SmsMessage"/>
+        <namespace name="Transcription" full_name="Twilio\Api\Action\Transcription"/>
       </namespace>
-      <namespace name="Client" full_name="Library\Twilio\Client">
-        <namespace name="Exception" full_name="Library\Twilio\Client\Exception"/>
+      <namespace name="Exception" full_name="Twilio\Api\Exception"/>
+      <namespace name="Resource" full_name="Twilio\Api\Resource">
+        <namespace name="Listing" full_name="Twilio\Api\Resource\Listing"/>
       </namespace>
-      <namespace name="Utility" full_name="Library\Twilio\Utility">
-        <namespace name="Capability" full_name="Library\Twilio\Utility\Capability"/>
-        <namespace name="Exception" full_name="Library\Twilio\Utility\Exception"/>
-      </namespace>
+    </namespace>
+    <namespace name="Client" full_name="Twilio\Client">
+      <namespace name="Exception" full_name="Twilio\Client\Exception"/>
+    </namespace>
+    <namespace name="Utility" full_name="Twilio\Utility">
+      <namespace name="Capability" full_name="Twilio\Utility\Capability"/>
+      <namespace name="Exception" full_name="Twilio\Utility\Exception"/>
     </namespace>
   </namespace>
   <marker count="0">todo</marker>

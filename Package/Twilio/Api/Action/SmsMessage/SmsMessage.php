@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\SmsMessage;
+namespace Twilio\Api\Action\SmsMessage;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio SMS message instance

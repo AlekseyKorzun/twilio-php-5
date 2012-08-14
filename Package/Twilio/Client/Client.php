@@ -1,5 +1,5 @@
 <?php
-namespace Library\Twilio\Client;
+namespace Twilio\Client;
 
 /**
  * Abstract client class

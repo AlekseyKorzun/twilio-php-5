@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\Account;
+namespace Twilio\Api\Action\Account;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio sandbox instance

@@ -14,12 +14,11 @@ then
 	exit
 fi
 
-
 for file in `find Package/ |grep '.php'`; do
 	echo "Processing: $file"
-	sed -i 's/ \Library\\/ '${namespace//\\/\\\\}'\\/g' $file
-	sed -i 's/ Library\\/ '${namespace//\\/\\\\}'\\/g' $file
-        sed -i 's/ Library;/ '${namespace//\\/\\\\}';/g' $file
+	sed -i 's/ \Twilio\\/ '${namespace//\\/\\\\}'\\/g' $file
+	sed -i 's/ Twilio\\/ '${namespace//\\/\\\\}'\\/g' $file
+	sed -i 's/ Twilio;/ '${namespace//\\/\\\\}';/g' $file
 done
 
 echo ""

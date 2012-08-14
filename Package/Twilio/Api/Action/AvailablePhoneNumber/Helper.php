@@ -1,5 +1,5 @@
 <?php
-namespace Library\Twilio\Api\Action\AvailablePhoneNumber;
+namespace Twilio\Api\Action\AvailablePhoneNumber;
 
 use \Exception;
 

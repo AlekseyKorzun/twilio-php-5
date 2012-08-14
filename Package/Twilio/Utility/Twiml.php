@@ -1,8 +1,8 @@
 <?php
-namespace Library\Twilio\Utility;
+namespace Twilio\Utility;
 
 use \SimpleXmlElement;
-use Library\Twilio\Utility\Exception\Twiml as TwimlException;
+use Twilio\Utility\Exception\Twiml as TwimlException;
 
 /**
  * Twilio capability token generator

@@ -1,9 +1,9 @@
 <?php
-namespace Library\Twilio\Utility;
+namespace Twilio\Utility;
 
 use \InvalidArgumentException;
-use Library\Twilio\Utility\Capability\Scope;
-use Library\Twilio\Utility\Capability\Jwt;
+use Twilio\Utility\Capability\Scope;
+use Twilio\Utility\Capability\Jwt;
 
 /**
  * Twilio capability token generator

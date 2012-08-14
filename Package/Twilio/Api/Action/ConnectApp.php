@@ -1,8 +1,8 @@
 <?php
-namespace Library\Twilio\Api\Action;
+namespace Twilio\Api\Action;
 
 use \BadMethodCallException;
-use Library\Twilio\Api\Resource\Listing;
+use Twilio\Api\Resource\Listing;
 
 /**
  * Twilio connect app resource

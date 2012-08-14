@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\AuthorizedConnectApp;
+namespace Twilio\Api\Action\AuthorizedConnectApp;
 
-use Library\Twilio\Resource\Instance;
+use Twilio\Resource\Instance;
 
 /**
  * Twilio authorized connect application instance

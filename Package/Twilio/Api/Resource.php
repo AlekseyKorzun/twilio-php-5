@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api;
+namespace Twilio\Api;
 
-use Library\Twilio\Api\Resource\Listing;
+use Twilio\Api\Resource\Listing;
 
 /**
  * Twilio API resource handler

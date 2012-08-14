@@ -1,8 +1,8 @@
 <?php
-namespace Library\Twilio\Api\Action;
+namespace Twilio\Api\Action;
 
-use Library\Twilio\Api\Action\AvailablePhoneNumber\Helper;
-use Library\Twilio\Api\Resource\Listing;
+use Twilio\Api\Action\AvailablePhoneNumber\Helper;
+use Twilio\Api\Resource\Listing;
 
 /**
  * Twilio available phone number resource

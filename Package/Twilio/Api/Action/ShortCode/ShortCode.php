@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\ShortCode;
+namespace Twilio\Api\Action\ShortCode;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio short code instance

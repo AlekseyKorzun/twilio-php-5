@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\Participant;
+namespace Twilio\Api\Action\Participant;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio participant instance

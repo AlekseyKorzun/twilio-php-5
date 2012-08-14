@@ -1,9 +1,9 @@
 <?php
-namespace Library\Twilio\Api\Resource\Listing;
+namespace Twilio\Api\Resource\Listing;
 
 use \Iterator;
 use \BadMethodCallException;
-use Library\Twilio\Api\Exception\Response as ResponseException;
+use Twilio\Api\Exception\Response as ResponseException;
 
 /**
  * Paginator for pages returned via API results

@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action;
+namespace Twilio\Api\Action;
 
-use Library\Twilio\Api\Resource\Listing;
+use Twilio\Api\Resource\Listing;
 
 /**
  * Twilio SMS message resource
@@ -38,7 +38,7 @@ class SmsMessage extends Listing
 					'From' => $from,
 					'To' => $to,
 					'Body' => $body
-				 ) + $parameters
+				) + $parameters
 		);
 	}
 }

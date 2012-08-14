@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\Conference;
+namespace Twilio\Api\Action\Conference;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio conference instance

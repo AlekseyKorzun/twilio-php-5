@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\Transcription;
+namespace Twilio\Api\Action\Transcription;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio transcription instance

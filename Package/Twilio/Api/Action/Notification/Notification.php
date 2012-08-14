@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\Notification;
+namespace Twilio\Api\Action\Notification;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio notification instance

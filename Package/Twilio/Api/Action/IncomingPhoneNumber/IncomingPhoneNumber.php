@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\IncomingPhoneNumber;
+namespace Twilio\Api\Action\IncomingPhoneNumber;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio incoming phone number instance

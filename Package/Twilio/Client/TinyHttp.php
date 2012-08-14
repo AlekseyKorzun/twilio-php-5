@@ -1,7 +1,8 @@
 <?php
-namespace Library\Twilio\Client;
+namespace Twilio\Client;
 
-use Library\Twilio\Client\Exception\TinyHttp as TinyHttpException;
+use Twilio\Client\Exception\TinyHttp as TinyHttpException;
+
 
 /**
  * TinyHttp client

@@ -1,5 +1,5 @@
 <?php
-namespace Library\Twilio\Utility\Capability;
+namespace Twilio\Utility\Capability;
 
 use \DomainException;
 use \UnexpectedValueException;

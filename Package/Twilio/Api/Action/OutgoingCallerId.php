@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action;
+namespace Twilio\Api\Action;
 
-use Library\Twilio\Api\Resource\Listing;
+use Twilio\Api\Resource\Listing;
 
 /**
  * Twilio outgoing caller id resource
@@ -24,7 +24,7 @@ class OutgoingCallerId extends Listing
 		return parent::create(
 			array(
 					'PhoneNumber' => $phoneNumber,
-				 ) + $parameters
+				) + $parameters
 		);
 	}
 }

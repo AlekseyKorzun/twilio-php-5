@@ -1,5 +1,5 @@
 <?php
-namespace Library\Twilio\Utility\Exception;
+namespace Twilio\Utility\Exception;
 
 use \Exception;
 

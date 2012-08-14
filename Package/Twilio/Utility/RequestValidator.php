@@ -1,5 +1,5 @@
 <?php
-namespace Library\Twilio\Utility;
+namespace Twilio\Utility;
 
 /**
  * An important part of any secure Twilio application is correctly performing

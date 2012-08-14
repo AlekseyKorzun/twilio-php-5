@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\AvailablePhoneNumber;
+namespace Twilio\Api\Action\AvailablePhoneNumber;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio available phone number instance

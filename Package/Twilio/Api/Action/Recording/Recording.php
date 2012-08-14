@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\Recording;
+namespace Twilio\Api\Action\Recording;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio recoding instance

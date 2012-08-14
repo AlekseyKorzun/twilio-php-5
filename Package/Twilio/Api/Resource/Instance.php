@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Resource;
+namespace Twilio\Api\Resource;
 
-use Library\Twilio\Api\Resource as Resource;
+use Twilio\Api\Resource as Resource;
 
 /**
  * Abstraction of an instance resource from the Twilio API.

@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\ConnectApp;
+namespace Twilio\Api\Action\ConnectApp;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio connect application instance

@@ -1,7 +1,7 @@
 <?php
-namespace Library\Twilio\Api\Action\OutgoingCallerId;
+namespace Twilio\Api\Action\OutgoingCallerId;
 
-use Library\Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Instance;
 
 /**
  * Twilio outgoing caller id instance

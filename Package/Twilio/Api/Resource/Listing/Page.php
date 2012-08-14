@@ -1,5 +1,5 @@
 <?php
-namespace Library\Twilio\Api\Resource\Listing;
+namespace Twilio\Api\Resource\Listing;
 
 use \IteratorAggregate;
 

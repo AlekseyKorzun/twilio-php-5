@@ -1,11 +1,11 @@
 <?php
-namespace Library\Twilio\Api\Resource;
+namespace Twilio\Api\Resource;
 
 use \IteratorAggregate;
-use Library\Twilio\Api\Resource;
-use Library\Twilio\Api\Resource\Instance;
-use Library\Twilio\Api\Resource\Listing\Page;
-use Library\Twilio\Api\Resource\Listing\Paginator;
+use Twilio\Api\Resource;
+use Twilio\Api\Resource\Instance;
+use Twilio\Api\Resource\Listing\Page;
+use Twilio\Api\Resource\Listing\Paginator;
 
 /**
  * Abstrresource of a list resource from the Twilio API
@@ -116,7 +116,7 @@ abstract class Listing extends Resource implements IteratorAggregate
 				array(
 						'Page' => $page,
 						'PageSize' => $size,
-					   ) + $filters
+					) + $filters
 			);
 		}
 

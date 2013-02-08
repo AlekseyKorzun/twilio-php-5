@@ -69,6 +69,9 @@ class Twilio
 	 */
 	public function __construct($identifier, $token, $version = null, Client $client = null)
 	{
+		// Switch strict reporting off
+		error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+
 		// Throw an error on empty identifier/token
 		if (!$identifier || !$token) {
 			throw new Exception('You must pass identifier (SID) and token provided to you by Twilio!');

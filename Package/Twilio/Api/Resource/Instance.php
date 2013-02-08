@@ -65,7 +65,7 @@ abstract class Instance extends Resource
 	public function __get($name)
 	{
 		// If we did not initialize, do so now
-		if (!$isInitialized) {
+		if (!$this->isInitialized) {
 			$this->initialize();
 		}
 

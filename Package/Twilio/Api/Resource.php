@@ -50,7 +50,7 @@ abstract class Resource
 	{
 		if ($parameters) {
 			foreach ($parameters as $name => $parameter) {
-				$this->$name = $param;
+				$this->$name = $parameter;
 			}
 		}
 	}

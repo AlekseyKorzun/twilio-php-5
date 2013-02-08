@@ -24,7 +24,8 @@ abstract class Listing extends Resource implements IteratorAggregate
 	public function __construct()
 	{
 		if (!isset($this->resource)) {
-			$this->resource = get_class($this) . '\\' . array_pop(explode('\\', get_class($this)));
+            $paths = explode('\\', get_class($this));
+			$this->resource = get_class($this) . '\\' . array_pop($paths);
 		}
 
 		parent::__construct();
@@ -121,8 +122,8 @@ abstract class Listing extends Resource implements IteratorAggregate
 		}
 
 		// Retrieve resource alias
-		$resource = (array) $page;
-		$resource = array_shift(array_keys($resource));
+        $resource = array_keys((array) $page);
+        $resource = array_shift($resource);
 
 		// Create a new PHP object for each JSON object in the API response
 		$page->$resource = array_map(

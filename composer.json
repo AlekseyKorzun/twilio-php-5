@@ -2,7 +2,7 @@
     "name": "alekseykorzun/twilio-php-5",
     "type": "library",
     "description": "Refactored Twilio PHP 5 package",
-    "keywords": ["twilio", "sms", "cloud", "voip", "php"],
+    "keywords": ["twilio", "communication", "api", "plug-in", "voice", "phone", "sms", "cloud", "voip", "php", "php5"],
     "homepage": "https://github.com/AlekseyKorzun/Twilio-PHP-5",
     "license": "MIT",
     "authors": [

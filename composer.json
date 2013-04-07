@@ -1,5 +1,5 @@
 {
-    "name": "alekseykorzun/twilio-php-5",
+    "name": "alekseykorzun/twilio-php",
     "type": "library",
     "description": "Refactored Twilio PHP 5 package",
     "keywords": ["twilio", "communication", "api", "plug-in", "voice", "phone", "sms", "cloud", "voip", "php", "php5"],

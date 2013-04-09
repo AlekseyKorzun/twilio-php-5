@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
@@ -56,35 +56,43 @@
 </div>
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
-<i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#decode" title="decode :: Decode payload"><span class="description">Decode payload</span><pre>decode()</pre></a></li>
-<li class="method public "><a href="#encode" title="encode :: Encode payload"><span class="description">Encode payload</span><pre>encode()</pre></a></li>
-<li class="method public "><a href="#jsonDecode" title="jsonDecode :: Decode previously encoded JSON"><span class="description">Decode previously encoded JSON</span><pre>jsonDecode()</pre></a></li>
-<li class="method public "><a href="#jsonEncode" title="jsonEncode :: Encode input in JSON"><span class="description">Encode input in JSON</span><pre>jsonEncode()</pre></a></li>
-<li class="method public "><a href="#sign" title="sign :: Securily sign a message"><span class="description">Securily sign a message</span><pre>sign()</pre></a></li>
-<li class="method public "><a href="#urlsafeB64Decode" title="urlsafeB64Decode :: Decode previously encoded input"><span class="description">Decode previously encoded input</span><pre>urlsafeB64Decode()</pre></a></li>
-<li class="method public "><a href="#urlsafeB64Encode" title="urlsafeB64Encode :: Base64 encode URL's"><span class="description">Base64 encode URL's</span><pre>urlsafeB64Encode()</pre></a></li>
-<li class="nav-header private">» Private</li>
-<li class="method private "><a href="#handleJsonError" title="handleJsonError :: Handle JSON error"><span class="description">Handle JSON error</span><pre>handleJsonError()</pre></a></li>
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_decode" title="decode :: Decode payload"><span class="description">Decode payload</span><pre>decode()</pre></a></li>
+<li class="method public "><a href="#method_encode" title="encode :: Encode payload"><span class="description">Encode payload</span><pre>encode()</pre></a></li>
+<li class="method public "><a href="#method_jsonDecode" title="jsonDecode :: Decode previously encoded JSON"><span class="description">Decode previously encoded JSON</span><pre>jsonDecode()</pre></a></li>
+<li class="method public "><a href="#method_jsonEncode" title="jsonEncode :: Encode input in JSON"><span class="description">Encode input in JSON</span><pre>jsonEncode()</pre></a></li>
+<li class="method public "><a href="#method_sign" title="sign :: Securily sign a message"><span class="description">Securily sign a message</span><pre>sign()</pre></a></li>
+<li class="method public "><a href="#method_urlsafeB64Decode" title="urlsafeB64Decode :: Decode previously encoded input"><span class="description">Decode previously encoded input</span><pre>urlsafeB64Decode()</pre></a></li>
+<li class="method public "><a href="#method_urlsafeB64Encode" title="urlsafeB64Encode :: Base64 encode URL's"><span class="description">Base64 encode URL's</span><pre>urlsafeB64Encode()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method_handleJsonError" title="handleJsonError :: Handle JSON error"><span class="description">Handle JSON error</span><pre>handleJsonError()</pre></a></li></ul>
+</li>
 </ul>
 </div>
 <div class="span8">
-<a name="%5CTwilio%5CUtility%5CCapability%5CJwt" id="\Twilio\Utility\Capability\Jwt"></a><ul class="breadcrumb">
+<a id="\Twilio\Utility\Capability\Jwt"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/Twilio.html">Twilio</a></li>
-<span class="divider">\</span><li><a href="../namespaces/Twilio.Utility.html">Utility</a></li>
-<span class="divider">\</span><li><a href="../namespaces/Twilio.Utility.Capability.html">Capability</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Twilio.Utility.html">Utility</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Twilio.Utility.Capability.html">Capability</a>
+</li>
 <li class="active">
 <span class="divider">\</span><a href="../classes/Twilio.Utility.Capability.Jwt.html">Jwt</a>
 </li>
 </ul>
-<div href="../classes/Twilio.Utility.Capability.Jwt.html" class="element class">
+<div class="element class">
 <p class="short_description">JSON Web Token implementation</p>
 <div class="details">
-<p class="long_description"><p>Minimum implementation used by Realtime auth, based on this spec:
-http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
+<div class="long_description"><p>Minimum implementation used by Realtime auth, based on this spec:
+http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -101,19 +109,19 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a name="decode" id="decode"></a><div class="element clickable method public decode" data-toggle="collapse" data-target=".decode .collapse">
+<a id="method_decode"></a><div class="element clickable method public method_decode" data-toggle="collapse" data-target=".method_decode .collapse">
 <h2>Decode payload</h2>
 <pre>decode(string $jwt, string | null $key, bool $verify) : object</pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$jwt</h4>
 <code>string</code><p>the JWT</p></div>
 <div class="subelement argument">
 <h4>$key</h4>
-<code>stringnull</code><p>the secret key</p></div>
+<code>string</code><code>null</code><p>the secret key</p></div>
 <div class="subelement argument">
 <h4>$verify</h4>
 <code>bool</code><p>don't skip verification process</p>
@@ -134,16 +142,16 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 <code>object</code>JSON Web Token implementation as PHP object</div>
 </div></div>
 </div>
-<a name="encode" id="encode"></a><div class="element clickable method public encode" data-toggle="collapse" data-target=".encode .collapse">
+<a id="method_encode"></a><div class="element clickable method public method_encode" data-toggle="collapse" data-target=".method_encode .collapse">
 <h2>Encode payload</h2>
 <pre>encode(object | array $payload, string $key, string $algorithm) : string</pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$payload</h4>
-<code>objectarray</code><p>PHP object or array</p></div>
+<code>object</code><code>array</code><p>PHP object or array</p></div>
 <div class="subelement argument">
 <h4>$key</h4>
 <code>string</code><p>the secret key</p></div>
@@ -155,12 +163,12 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 <code>string</code>JSON Web Token implementation</div>
 </div></div>
 </div>
-<a name="jsonDecode" id="jsonDecode"></a><div class="element clickable method public jsonDecode" data-toggle="collapse" data-target=".jsonDecode .collapse">
+<a id="method_jsonDecode"></a><div class="element clickable method public method_jsonDecode" data-toggle="collapse" data-target=".method_jsonDecode .collapse">
 <h2>Decode previously encoded JSON</h2>
-<pre>jsonDecode(string $input) : object | array</pre>
-<div class="labels"></div>
+<pre>jsonDecode(string $input) : object | string[]</pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$input</h4>
@@ -172,19 +180,19 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>object</code><code>array</code>object representation of JSON string</div>
+<code>object</code><code>string[]</code>object representation of JSON string</div>
 </div></div>
 </div>
-<a name="jsonEncode" id="jsonEncode"></a><div class="element clickable method public jsonEncode" data-toggle="collapse" data-target=".jsonEncode .collapse">
+<a id="method_jsonEncode"></a><div class="element clickable method public method_jsonEncode" data-toggle="collapse" data-target=".method_jsonEncode .collapse">
 <h2>Encode input in JSON</h2>
-<pre>jsonEncode(object | array $input) : string</pre>
-<div class="labels"></div>
+<pre>jsonEncode(object | string[] $input) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$input</h4>
-<code>objectarray</code><p>a PHP object or array</p></div>
+<code>object</code><code>string[]</code><p>a PHP object or array</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="http://php.net/manual/en/class.domainexception.php">\DomainException</a></code></th>
@@ -195,12 +203,12 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 <code>string</code>JSON representation of the PHP object or array</div>
 </div></div>
 </div>
-<a name="sign" id="sign"></a><div class="element clickable method public sign" data-toggle="collapse" data-target=".sign .collapse">
+<a id="method_sign"></a><div class="element clickable method public method_sign" data-toggle="collapse" data-target=".method_sign .collapse">
 <h2>Securily sign a message</h2>
 <pre>sign(string $message, string $key, string $method) : string</pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$message</h4>
@@ -216,12 +224,12 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 <code>string</code>an encrypted message</div>
 </div></div>
 </div>
-<a name="urlsafeB64Decode" id="urlsafeB64Decode"></a><div class="element clickable method public urlsafeB64Decode" data-toggle="collapse" data-target=".urlsafeB64Decode .collapse">
+<a id="method_urlsafeB64Decode"></a><div class="element clickable method public method_urlsafeB64Decode" data-toggle="collapse" data-target=".method_urlsafeB64Decode .collapse">
 <h2>Decode previously encoded input</h2>
 <pre>urlsafeB64Decode(string $input) : string</pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$input</h4>
@@ -231,12 +239,12 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 <code>string</code>a decoded string</div>
 </div></div>
 </div>
-<a name="urlsafeB64Encode" id="urlsafeB64Encode"></a><div class="element clickable method public urlsafeB64Encode" data-toggle="collapse" data-target=".urlsafeB64Encode .collapse">
+<a id="method_urlsafeB64Encode"></a><div class="element clickable method public method_urlsafeB64Encode" data-toggle="collapse" data-target=".method_urlsafeB64Encode .collapse">
 <h2>Base64 encode URL's</h2>
 <pre>urlsafeB64Encode(string $input) : string</pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$input</h4>
@@ -246,12 +254,12 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 <code>string</code>the base64 encode of what you passed in</div>
 </div></div>
 </div>
-<a name="handleJsonError" id="handleJsonError"></a><div class="element clickable method private handleJsonError" data-toggle="collapse" data-target=".handleJsonError .collapse">
+<a id="method_handleJsonError"></a><div class="element clickable method private method_handleJsonError" data-toggle="collapse" data-target=".method_handleJsonError .collapse">
 <h2>Handle JSON error</h2>
-<pre>handleJsonError(int $error) : void</pre>
-<div class="labels"></div>
+<pre>handleJsonError(int $error) </pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$error</h4>
@@ -270,8 +278,8 @@ http://self-issued.info/docs/draft-jones-json-web-token-01.html.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
-            generated on 2012-08-14T08:05:47-04:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a13</a> and<br>
+            generated on 2013-04-08T20:57:57-04:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -12,38 +12,33 @@ use Twilio\Api\Resource\Instance;
  */
 class Call extends Instance
 {
-	/**
-	 * Initializer
-	 *
-	 * @return void
-	 */
-	protected function init()
-	{
-		$this->setupActions(
-			'notifications',
-			'recordings'
-		);
-	}
+    /**
+     * Initializer
+     */
+    protected function init()
+    {
+        $this->setupActions(
+            'notifications',
+            'recordings'
+        );
+    }
 
-	/**
-	 * Hang up the call
-	 *
-	 * @return void
-	 */
-	public function hangup()
-	{
-		$this->update('Status', 'completed');
-	}
+    /**
+     * Hang up the call
+     */
+    public function hangup()
+    {
+        $this->update('Status', 'completed');
+    }
 
-	/**
-	 * Route call
-	 *
-	 * @param string $url
-	 * @return void
-	 */
-	public function route($url)
-	{
-		$this->update('Url', $url);
-	}
+    /**
+     * Route call
+     *
+     * @param string $url
+     */
+    public function route($url)
+    {
+        $this->update('Url', $url);
+    }
 }
 

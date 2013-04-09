@@ -12,14 +12,12 @@ use Twilio\Api\Resource\Instance;
  */
 class Conference extends Instance
 {
-	/**
-	 * Initializer
-	 *
-	 * @return void
-	 */
-	protected function init()
-	{
-		$this->setupActions('participants');
-	}
+    /**
+     * Initializer
+     */
+    protected function init()
+    {
+        $this->setupActions('participants');
+    }
 }
 

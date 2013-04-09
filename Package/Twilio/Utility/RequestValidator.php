@@ -25,57 +25,56 @@ namespace Twilio\Utility;
  */
 class RequestValidator
 {
-	/**
-	 * Storage for token
-	 *
-	 * @var string
-	 */
-	protected $token;
+    /**
+     * Storage for token
+     *
+     * @var string
+     */
+    protected $token;
 
-	/**
-	 * Class constructor
-	 *
-	 * @param string $token the secret key used to sign the token.
-	 * @return void
-	 */
-	public function __construct($token)
-	{
-		$this->token = $token;
-	}
+    /**
+     * Class constructor
+     *
+     * @param string $token the secret key used to sign the token.
+     */
+    public function __construct($token)
+    {
+        $this->token = $token;
+    }
 
-	/**
-	 * Compute signature
-	 *
-	 * @param string $url
-	 * @param array $data
-	 * @return string
-	 */
-	public function computeSignature($url, $data = array())
-	{
-		// Sort the array by keys
-		ksort($data);
+    /**
+     * Compute signature
+     *
+     * @param string $url
+     * @param string[] $data
+     * @return string
+     */
+    public function computeSignature($url, $data = array())
+    {
+        // Sort the array by keys
+        ksort($data);
 
-		// Append them to the data string in order without delimiters
-		foreach ($data as $key => $value) {
-			$url .= "$key$value";
-		}
+        // Append them to the data string in order without delimiters
+        foreach ($data as $key => $value) {
+            $url .= "$key$value";
+        }
 
-		// This function calculates the HMAC hash of the data with the key
-		// passed in
-		return base64_encode(hash_hmac('sha1', $url, $this->token, true));
-	}
+        // This function calculates the HMAC hash of the data with the key
+        // passed in
+        return base64_encode(hash_hmac('sha1', $url, $this->token, true));
+    }
 
-	/**
-	 * Validate signature
-	 *
-	 * @param string $signature expected signature
-	 * @param string $url
-	 * @param array $data
-	 * @return bool
-	 */
-	public function validate($signature, $url, $data = array())
-	{
-		return (bool) ($this->computeSignature($url, $data) == $signature);
-	}
+    /**
+     * Validate signature
+     *
+     * @param string $signature expected signature
+     * @param string $url
+     * @param string[] $data
+     * @return bool
+     */
+    public function validate($signature, $url, $data = array())
+    {
+        return (bool)($this->computeSignature($url, $data) == $signature);
+    }
 }
 

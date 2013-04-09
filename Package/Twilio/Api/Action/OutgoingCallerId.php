@@ -12,20 +12,20 @@ use Twilio\Api\Resource\Listing;
  */
 class OutgoingCallerId extends Listing
 {
-	/**
-	 * Method overwrite
-	 *
-	 * @param string $phoneNumber
-	 * @param array $parameters
-	 * @return Instance
-	 */
-	public function create($phoneNumber, array $parameters = array())
-	{
-		return parent::create(
-			array(
-					'PhoneNumber' => $phoneNumber,
-				) + $parameters
-		);
-	}
+    /**
+     * Method overwrite
+     *
+     * @param string $phoneNumber
+     * @param string[] $parameters
+     * @return Instance
+     */
+    public function create($phoneNumber, array $parameters = array())
+    {
+        return parent::create(
+            array(
+                'PhoneNumber' => $phoneNumber,
+            ) + $parameters
+        );
+    }
 }
 

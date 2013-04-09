@@ -13,17 +13,16 @@ use Twilio\Api\Resource\Listing;
  */
 class ConnectApp extends Listing
 {
-	/**
-	 * Method overwrite
-	 *
-	 * @throws BadMethodCallException
-	 * @param mixed $name
-	 * @param array $parameters
-	 * @return void
-	 */
-	public function create($name, array $parameters = array())
-	{
-		throw new BadMethodCallException('Not allowed');
-	}
+    /**
+     * Method overwrite
+     *
+     * @throws BadMethodCallException
+     * @param mixed $name
+     * @param string[] $parameters
+     */
+    public function create($name, array $parameters = array())
+    {
+        throw new BadMethodCallException('Not allowed');
+    }
 }
 

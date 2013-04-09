@@ -12,14 +12,12 @@ use Twilio\Api\Resource\Instance;
  */
 class Participant extends Instance
 {
-	/**
-	 * Mute participant
-	 *
-	 * @return void
-	 */
-	public function mute()
-	{
-		$this->update('Muted', 'true');
-	}
+    /**
+     * Mute participant
+     */
+    public function mute()
+    {
+        $this->update('Muted', 'true');
+    }
 }
 

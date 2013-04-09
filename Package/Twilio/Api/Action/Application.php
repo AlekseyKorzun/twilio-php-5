@@ -12,20 +12,20 @@ use Twilio\Api\Resource\Listing;
  */
 class Application extends Listing
 {
-	/**
-	 * Method overwrite
-	 *
-	 * @param string $name
-	 * @param array $parameters
-	 * @return Instance
-	 */
-	public function create($name, array $parameters = array())
-	{
-		return parent::create(
-			array(
-				'FriendlyName' => $name
-				) + $parameters
-		);
-	}
+    /**
+     * Method overwrite
+     *
+     * @param string $name
+     * @param string[] $parameters
+     * @return Instance
+     */
+    public function create($name, array $parameters = array())
+    {
+        return parent::create(
+            array(
+                'FriendlyName' => $name
+            ) + $parameters
+        );
+    }
 }
 

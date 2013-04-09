@@ -13,33 +13,31 @@ use Twilio\Api\Action\Account\Sandbox;
  */
 class Account extends Instance
 {
-	/**
-	 * Initializer
-	 *
-	 * @return void
-	 */
-	protected function init()
-	{
-		// Setup actions
-		$this->setupActions(
-			'applications',
-			'available_phone_numbers',
-			'outgoing_caller_ids',
-			'calls',
-			'conferences',
-			'incoming_phone_numbers',
-			'notifications',
-			'outgoing_callerids',
-			'recordings',
-			'sms_messages',
-			'transcriptions',
-			'connect_apps',
-			'authorized_connect_apps'
-		);
+    /**
+     * Initializer
+     */
+    protected function init()
+    {
+        // Setup actions
+        $this->setupActions(
+            'applications',
+            'available_phone_numbers',
+            'outgoing_caller_ids',
+            'calls',
+            'conferences',
+            'incoming_phone_numbers',
+            'notifications',
+            'outgoing_callerids',
+            'recordings',
+            'sms_messages',
+            'transcriptions',
+            'connect_apps',
+            'authorized_connect_apps'
+        );
 
-		// Initialize sandbox
-		$this->sandbox = new Sandbox();
-		$this->sandbox->setUri($this->uri() . '/Sandbox');
-	}
+        // Initialize sandbox
+        $this->sandbox = new Sandbox();
+        $this->sandbox->setUri($this->uri() . '/Sandbox');
+    }
 }
 

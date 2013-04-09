@@ -10,91 +10,88 @@ namespace Twilio\Client;
  */
 abstract class Client
 {
-	/**
-	 * Default connection time out in seconds, adjust if you are connecting
-	 * to a local network or have a slow up-link
-	 *
-	 * @var int
-	 */
-	const TIMEOUT = 60;
+    /**
+     * Default connection time out in seconds, adjust if you are connecting
+     * to a local network or have a slow up-link
+     *
+     * @var int
+     */
+    const TIMEOUT = 60;
 
-	/**
-	 * Secure identifier to use when prompted for authentication
-	 *
-	 * @var string
-	 */
-	protected $identifier;
+    /**
+     * Secure identifier to use when prompted for authentication
+     *
+     * @var string
+     */
+    protected $identifier;
 
-	/**
-	 * Token to use when prompted for authentication
-	 *
-	 * @var string
-	 */
-	protected $token;
+    /**
+     * Token to use when prompted for authentication
+     *
+     * @var string
+     */
+    protected $token;
 
-	/**
-	 * Various options for cURL
-	 *
-	 * @var array
-	 */
-	protected $options = array();
+    /**
+     * Various options for cURL
+     *
+     * @var string[]
+     */
+    protected $options = array();
 
-	/**
-	 * Debugging switch
-	 *
-	 * @var bool
-	 */
-	protected $isDebug = false;
+    /**
+     * Debugging switch
+     *
+     * @var bool
+     */
+    protected $isDebug = false;
 
-	/**
-	 * Constructor that setups basic options
-	 *
-	 * @param string|bool $uri
-	 * @param array $parameters
-	 * @return void
-	 */
-	abstract public function __construct($uri = false, $parameters = array());
+    /**
+     * Constructor that setups basic options
+     *
+     * @param string|bool $uri
+     * @param string[] $parameters
+     */
+    abstract public function __construct($uri = false, $parameters = array());
 
-	/**
-	 * Magic call method
-	 *
-	 * @throws TinyHttp_Exception
-	 * @param string $method
-	 * @param array $arguments
-	 * @return array
-	 */
-	abstract public function __call($method, $arguments);
+    /**
+     * Magic call method
+     *
+     * @throws TinyHttp_Exception
+     * @param string $method
+     * @param string[] $arguments
+     * @return string[]
+     */
+    abstract public function __call($method, $arguments);
 
-	/**
-	 * Get identifier we use for authentication
-	 *
-	 * @return string
-	 */
-	public function identifier()
-	{
-		return (string) $this->identifier;
-	}
+    /**
+     * Get identifier we use for authentication
+     *
+     * @return string
+     */
+    public function identifier()
+    {
+        return (string)$this->identifier;
+    }
 
-	/**
-	 * Set identifier to use when making a request that requires authentication
-	 *
-	 * @param string $identifier
-	 * @return void
-	 */
-	public function setIdentifier($identifier)
-	{
-		$this->identifier = (string) $identifier;
-	}
+    /**
+     * Set identifier to use when making a request that requires authentication
+     *
+     * @param string $identifier
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = (string)$identifier;
+    }
 
-	/**
-	 * Set token to use when making a request that requires authentication
-	 *
-	 * @param string $token
-	 * @return void
-	 */
-	public function setToken($token)
-	{
-		$this->token = (string) $token;
-	}
+    /**
+     * Set token to use when making a request that requires authentication
+     *
+     * @param string $token
+     */
+    public function setToken($token)
+    {
+        $this->token = (string)$token;
+    }
 }
 
